@@ -16,7 +16,6 @@
 
 HAPROVEN is a tech community focused on turning ideas into real-world projects.  
 We bring together **hackathons, projects, and events** to help developers build, learn, and innovate together.
-
 ---
 
 ## 💡 What is HAPROVEN?
