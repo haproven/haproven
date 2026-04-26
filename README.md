@@ -6,7 +6,7 @@
   <img src="docs/Assets/IMG/haproven-bunnar.jpg" alt="Haproven Community Logo" width="100%"/>
 </p>
 
-|[viwe haproven profile ](https://github.com/haproven/) |
+|[view haproven profile ](https://github.com/haproven/) |
 
 > **Turning ideas into real-world digital innovations through collaboration, creativity, and code.**
 
