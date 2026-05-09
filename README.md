@@ -27,7 +27,7 @@ Our name represents our core foundation:
 | **Ha** | Hackathon | Rapid building & skill growth |
 | **Pro** | Project | Real-world problem solving |
 | **Ven** | Event | Learning & community |
-| **tools** |
+| **tools** -- | 
 
 **HAPROVEN** = A space where ideas are built, tested, and **proven** (सिद्ध).
 
