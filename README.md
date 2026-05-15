@@ -88,13 +88,13 @@ CEO & Developer
 
 
 <td align="center">
-<a href="https://github.com/susheel026">
-<img src="https://github.com/susheel026.png" width="120px"  alt="Team Member" />
+<a href="https://github.com/username">
+<img src="https://github.com/username.png" width="120px"  alt="Team Member" />
 <br />
-<b>susheel kumar</b>
+<b>Himanshu Kumar</b>
 </a>
 <br />
-Frontend Developer
+AI / ML
 </td>
 
 
