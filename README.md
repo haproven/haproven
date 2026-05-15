@@ -59,16 +59,90 @@ We aim to solve real-world problems through collaboration and open-source contri
 
 ---
 
+<!--  ==========================================================================================================================================================================  -->
+
+
 ## 👥 Team
 
 We are builders, problem solvers, and innovators.
 
-| Name | Role | Expertise | Profile |
-| :--- | :--- | :--- | :--- |
-| **Susheel Kumar (SusheelCoder)** | Founder / Lead Developer | Full Stack Development | [GitHub](https://github.com/susheelcoder) |
-| [Teammate 1] | UI/UX Designer | User Experience | [GitHub] |
-| [Teammate 2] | Backend Developer | APIs & Systems | [GitHub] |
-| [Teammate 3] | AI / Research | ML & Emerging Tech | [GitHub] |
+
+
+<div align="center">
+
+<table>
+<tr>
+
+<td align="center">
+<a href="https://github.com/susheelcoder">
+<img src="https://github.com/susheelcoder.png" width="120px"  alt="Team Member" />
+<br />
+<b>Susheel Kumar</b>
+</a>
+<br />
+CEO & Developer
+</td>
+
+
+
+
+
+<td align="center">
+<a href="https://github.com/github-username2">
+<img src="https://github.com/username2.png" width="120px"  alt="Team Member" />
+<br />
+<b>Member Name</b>
+</a>
+<br />
+Frontend Developer
+</td>
+
+
+
+<td align="center">
+<a href="https://github.com/github-username3">
+<img src="https://github.com/username3.png" width="120px"  alt="Team Member" />
+<br />
+<b>Member Name</b>
+</a>
+<br />
+Backend Developer
+</td>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</tr>
+</table>
+</div>
+
+
+<!--  ==========================================================================================================================================================================  -->
 
 ---
 
