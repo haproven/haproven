@@ -88,10 +88,10 @@ CEO & Developer
 
 
 <td align="center">
-<a href="https://github.com/username2">
-<img src="https://github.com/username2.png" width="120px"  alt="Team Member" />
+<a href="https://github.com/skpandit25">
+<img src="https://github.com/skpandit25.png" width="120px"  alt="Team Member" />
 <br />
-<b>Member Name</b>
+<b>susheel kumar</b>
 </a>
 <br />
 Frontend Developer
