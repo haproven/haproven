@@ -77,7 +77,10 @@ We are builders, problem solvers, and innovators.
 <a href="https://github.com/susheelcoder">
 <img src="https://github.com/susheelcoder.png" width="120px"  alt="Team Member" />
 <br />
-<b>susheel kumar (Susheelcoder)</b>
+<b>susheel kumar
+  br
+  (Susheelcoder)
+</b>
 </a>
 <br />
 CEO & Developer
