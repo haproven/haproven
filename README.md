@@ -88,10 +88,10 @@ CEO & Developer
 
 
 <td align="center">
-<a href="https://github.com/susheelcoder">
-<img src="https://github.com/susheelcoder.png" width="120px"  alt="Team Member" />
+<a href="https://github.com/username2">
+<img src="https://github.com/username2.png" width="120px"  alt="Team Member" />
 <br />
-<b>susheel kumar</b>
+<b>Member Name</b>
 </a>
 <br />
 Frontend Developer
@@ -100,7 +100,7 @@ Frontend Developer
 
 
 <td align="center">
-<a href="https://github.com/github-username3">
+<a href="https://github.com/username3">
 <img src="https://github.com/username3.png" width="120px"  alt="Team Member" />
 <br />
 <b>Member Name</b>
