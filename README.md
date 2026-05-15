@@ -75,10 +75,10 @@ We are builders, problem solvers, and innovators.
 
 <td align="center">
 <a href="https://github.com/susheelcoder">
-<img src="https://github.com/susheelcoder.png" width="120px"  alt="Team Member" />
+<img src="https://github.com/susheelcoder.png" width="120px"  alt="Susheelcoder" />
 <br />
 <b>susheel kumar
-  br
+ <br />
   (Susheelcoder)
 </b>
 </a>
@@ -91,8 +91,8 @@ CEO & Developer
 
 
 <td align="center">
-<a href="https://github.com/username">
-<img src="https://github.com/username.png" width="120px"  alt="Team Member" />
+<a href="https://github.com/username2">
+<img src="https://github.com/username2.png" width="120px"  alt="Himanshu Kumar" />
 <br />
 <b>Himanshu Kumar</b>
 </a>
