@@ -94,10 +94,10 @@ CEO & Developer
 <a href="https://github.com/username2">
 <img src="https://github.com/username2.png" width="120px"  alt="Himanshu Kumar" />
 <br />
-<b>full name</b>
+<b>Member Name</b>
 </a>
 <br />
-rool
+<span>Role</span>
 </td>
 
 
@@ -109,7 +109,7 @@ rool
 <b>Member Name</b>
 </a>
 <br />
-Backend Developer
+<span>Role</span>
 </td>
 
 
