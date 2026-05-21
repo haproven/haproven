@@ -74,12 +74,12 @@ We are builders, problem solvers, and innovators.
 <tr>
 
 <td align="center">
-<a href="https://github.com/susheelcoder">
-<img src="https://github.com/susheelcoder.png" width="120px"  alt="Susheelcoder" />
+<a href="https://github.com/codersusheel">
+<img src="https://github.com/codersusheel.png" width="120px"  alt="codersusheel" />
 <br />
 <b>susheel kumar
  <br />
-  (Susheelcoder)
+  (codersusheel)
 </b>
 </a>
 <br />
