@@ -94,10 +94,10 @@ CEO & Developer
 <a href="https://github.com/username2">
 <img src="https://github.com/username2.png" width="120px"  alt="Himanshu Kumar" />
 <br />
-<b>Himanshu Kumar</b>
+<b>full name</b>
 </a>
 <br />
-AI / ML
+rool
 </td>
 
 
