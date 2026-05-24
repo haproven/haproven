@@ -48,16 +48,6 @@ We aim to solve real-world problems through collaboration and open-source contri
 
 ---
 
-## 🧰 Tech Stack
-
-| Category | Technologies |
-| :--- | :--- |
-| **Frontend** | HTML, CSS, JavaScript, React |
-| **Backend** | Node.js, Express |
-| **Database** | MongoDB, Firebase |
-| **Tools** | GitHub, VS Code, Netlify, Docker |
-
----
 
 <!--  ==========================================================================================================================================================================  -->
 
