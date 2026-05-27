@@ -1,0 +1,71 @@
+{
+  "liveText": " Live 27-07-2026 ",
+  "projects": [
+    {
+      "name": "HaproID",
+      "url": "https://haproid.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "Hapro..Core",
+      "url": "https://haproven-core.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproFun",
+      "url": "https://haprofun.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproSel",
+      "url": "https://haprosel.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproLearn",
+      "url": "https://haprolearn.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproAPI",
+      "url": "https://haproapi.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "Hapro.Blog",
+      "url": "https://haproven-blog.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    }
+  ],
+  "stats": [
+    {
+      "value": "4+",
+      "label": "Core Members"
+    },
+    {
+      "value": "8+",
+      "label": "Active Projects"
+    },
+    {
+      "value": "5+",
+      "label": "Digital Platforms"
+    }
+  ],
+  "updates": [
+    {
+      "badge": "Latest Update",
+      "title": "4+ Core Members",
+      "desc": "Active developers, designers and creators working in Haproven Core."
+    },
+    {
+      "badge": "Projects",
+      "title": "8+ Active Projects",
+      "desc": "We are building APIs, dashboards and digital platforms."
+    },
+    {
+      "badge": "Platforms",
+      "title": "5+ Digital Platforms",
+      "desc": "HaproID, HaproAPI, HaproDash and more systems."
+    }
+  ]
+}

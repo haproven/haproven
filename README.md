@@ -3,7 +3,7 @@
 **Hackathons • Projects • Events • Technology • Innovation**
 
 <p align="center">
-  <img src="docs/Assets/IMG/haproven-bunnar.jpg" alt="Haproven Community Logo" width="100%"/>
+  <img src="roots/assets/img/haproven-bunnar.jpg" alt="Haproven Community Logo" width="100%"/>
 </p>
 
 |[view haproven profile ](https://github.com/haproven/) |
