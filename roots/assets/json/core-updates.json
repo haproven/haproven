@@ -67,5 +67,64 @@
       "title": "5+ Digital Platforms",
       "desc": "HaproID, HaproAPI, HaproDash and more systems."
     }
+  ],
+  "sidebar_laptop": [
+    {
+      "title": "Haproven Core",
+      "type": "submenu",
+      "items": [
+        { "name": "Directory", "url": "https://haproven.netlify.app/Directory/" },
+        { "name": "Projects", "url": "https://haproven.netlify.app/Directory/projects/" },
+        { "name": "Tools", "url": "https://haproven.netlify.app/Directory/tools/" },
+        { "name": "Hackathon", "url": "https://haproven.netlify.app/Directory/Hackathon/" }
+      ]
+    },
+    {
+      "title": "Haproid",
+      "type": "link",
+      "url": "https://haproid.netlify.app/"
+    }
+  ],
+
+  "sidebar_mobile": [
+    {
+      "label": "Main Menu",
+      "type": "title"
+    },
+    {
+      "name": "Haproven",
+      "icon": "fa-folder",
+      "url": "https://haproven.netlify.app/"
+    },
+    {
+      "name": "Directory",
+      "icon": "fa-folder",
+      "url": "https://haproven.netlify.app/Directory/"
+    },
+    {
+      "name": "Projects",
+      "icon": "fa-folder",
+      "url": "https://haproven.netlify.app/Directory/projects/"
+    },
+    {
+      "name": "Haproid",
+      "icon": "fa-user",
+      "url": "https://haproid.netlify.app/"
+    },
+    {
+      "name": "Tools",
+      "icon": "fa-folder",
+      "url": "https://haproven.netlify.app/Directory/tools/"
+    },
+    {
+      "name": "Team",
+      "icon": "fa-user",
+      "url": "/page/support/team.html"
+    },
+    {
+      "name": "Contact",
+      "icon": "fa-envelope",
+      "url": "/page/support/connect.html"
+    }
   ]
 }
