@@ -118,5 +118,94 @@ loadStats();
 
 
 
+/*===========================================================
+////////   sidebar_laptop    link                  //////////
+============================================================*/
+async function loadMenus() {
+    const res = await fetch("./assets/json/core-updates.json");
+    const data = await res.json();
+
+    loadLaptopMenu(data.sidebar_laptop);
+    loadMobileMenu(data.sidebar_mobile);
+}
+
+function loadLaptopMenu(menu) {
+    const list = document.getElementById("nav-list");
+    list.innerHTML = "";
+
+    menu.forEach(item => {
+        const li = document.createElement("li");
+        li.classList.add("nav-item");
+
+        if (item.type === "submenu") {
+
+            li.classList.add("has-submenu");
+
+            const title = document.createElement("span");
+            title.classList.add("menu-title");
+            title.textContent = item.title;
+
+            const ul = document.createElement("ul");
+            ul.classList.add("submenu");
+
+            item.items.forEach(sub => {
+                const subLi = document.createElement("li");
+                const a = document.createElement("a");
+                a.href = sub.url;
+                a.textContent = sub.name;
+
+                subLi.appendChild(a);
+                ul.appendChild(subLi);
+            });
+
+            li.appendChild(title);
+            li.appendChild(ul);
+        }
+
+        if (item.type === "link") {
+            const a = document.createElement("a");
+            a.href = item.url;
+            a.textContent = item.title;
+            li.appendChild(a);
+        }
+
+        list.appendChild(li);
+    });
+}
+
+function loadMobileMenu(menu) {
+    const list = document.getElementById("mobile-menu");
+    list.innerHTML = "";
+
+    menu.forEach(item => {
+
+        if (item.type === "title") {
+            const p = document.createElement("p");
+            p.textContent = item.label;
+            list.appendChild(p);
+            return;
+        }
+
+        const li = document.createElement("li");
+
+        const a = document.createElement("a");
+        a.href = item.url;
+
+        a.innerHTML = `<i class="fa-solid ${item.icon}"></i> ${item.name}`;
+
+        li.appendChild(a);
+        list.appendChild(li);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", loadMenus);
+
+
+
+
+
+
+
+
 
 
