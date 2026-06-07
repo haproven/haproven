@@ -58,6 +58,7 @@ We are builders, problem solvers, and innovators.
 
 
 
+
 <div align="center">
 
 <table>
@@ -65,13 +66,16 @@ We are builders, problem solvers, and innovators.
 
 <td align="center">
 <a href="https://github.com/codersusheel">
-<img src="https://github.com/codersusheel.png" width="120px"  alt="codersusheel" />
+<img src="https://github.com/codersusheel.png" width="120px"  alt="codersusheel"/>
 <br />
 <b>susheel kumar
  <br />
   (codersusheel)
 </b>
 </a>
+
+
+
 <br />
 CEO & Developer
 </td>
@@ -82,7 +86,7 @@ CEO & Developer
 
 <td align="center">
 <a href="https://github.com/username2">
-<img src="https://github.com/username2.png" width="120px"  alt="Himanshu Kumar" />
+<img src="https://github.com/username2.png" width="120px"  alt="Member name" />
 <br />
 <b>Member Name</b>
 </a>
