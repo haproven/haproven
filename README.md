@@ -86,7 +86,7 @@ CEO & Developer
 
 <td align="center">
 <a href="https://github.com/username2">
-<img src="https://github.com/username2.png" width="120px"  alt="Member name" />
+<img src="https://github.com/username2.png" width="120px"  alt="Member name 2" />
 <br />
 <b>Member Name</b>
 </a>
