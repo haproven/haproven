@@ -1,4 +1,4 @@
-# HAPROVEN :- Tech Community
+# HAPROVEN : Tech Community
 
 **Hackathons • Projects • Events • Technology**
 
