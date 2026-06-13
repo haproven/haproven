@@ -154,7 +154,7 @@ Want to contribute?
 1. Fork the repo  
 2. Create a branch: `feature/your-feature`  
 3. Commit changes  
-4. Open a Pull Request 🚀  
+4. Open a Pull Request 
 
 ---
 
