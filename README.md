@@ -1,6 +1,6 @@
 # HAPROVEN: The Premier Tech Community
 
-**Hackathons • Projects • Events • Technology **
+**Hackathons • Projects • Events • Technology**
 
 <p align="center">
   <img src="roots/assets/img/haproven-bunnar.jpg" alt="Haproven Community Logo" width="100%"/>
