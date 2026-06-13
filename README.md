@@ -127,13 +127,6 @@ CEO & Developer
 
 
 
-
-
-
-
-
-
-
 </tr>
 </table>
 </div>
@@ -143,7 +136,7 @@ CEO & Developer
 
 ---
 
-## 📈 Roadmap
+## Roadmap
 
 | Status | Milestone |
 | :--- | :--- |
@@ -154,7 +147,7 @@ CEO & Developer
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Want to contribute?
 
