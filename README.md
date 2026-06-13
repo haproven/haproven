@@ -1,4 +1,4 @@
-# HAPROVEN: The Premier Tech Community
+# HAPROVEN: The Tech Community
 
 **Hackathons • Projects • Events • Technology**
 
