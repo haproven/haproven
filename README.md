@@ -1,4 +1,4 @@
-# 🌟 HAPROVEN: The Premier Tech Community
+# HAPROVEN: The Premier Tech Community
 
 **Hackathons • Projects • Events • Technology • Innovation**
 
@@ -12,13 +12,13 @@
 
 ---
 
-## 🚀 About HAPROVEN
+## About HAPROVEN
 
 HAPROVEN is a tech community focused on turning ideas into real-world projects.  
 We bring together **hackathons, projects, and events** to help developers build, learn, and innovate together.
 ---
 
-## 💡 What is HAPROVEN?
+##  What is HAPROVEN?
 
 Our name represents our core foundation:
 
@@ -33,14 +33,14 @@ Our name represents our core foundation:
 
 ---
 
-## 🎯 Our Mission
+## Our Mission
 
 **To build, learn, and innovate together.**  
 We aim to solve real-world problems through collaboration and open-source contribution.
 
 ---
 
-## 🔥 Why HAPROVEN?
+##  Why HAPROVEN?
 
 - We focus on **building**, not just learning  
 - We turn **ideas into working projects**  
@@ -52,7 +52,7 @@ We aim to solve real-world problems through collaboration and open-source contri
 <!--  ==========================================================================================================================================================================  -->
 
 
-## 👥 Team
+##  Team
 
 We are builders, problem solvers, and innovators.
 
@@ -165,7 +165,7 @@ Want to contribute?
 
 ---
 
-## 🌐 Connect
+##  Connect
 
 जुड़ें और साथ मिलकर बनाएं:
 
@@ -176,10 +176,10 @@ Want to contribute?
 
 ---
 
-## 📜 License
+##  License
 
 MIT License — see [LICENSE](LICENSE)
 
 ---
 
-## 🌟 HAPROVEN — Where Ideas Get Proven.
+##  HAPROVEN — Where Ideas Get Proven.
