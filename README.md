@@ -6,7 +6,7 @@
   <img src="roots/assets/img/haproven-bunnar.jpg" alt="Haproven Community Logo" width="100%"/>
 </p>
 
-|[view haproven profile ](https://github.com/haproven/) |
+|[view haproven profile ](https://haproven.netlify.app/) |
 
 > **Turning ideas into real-world digital innovations through collaboration, creativity, and code.**
 
