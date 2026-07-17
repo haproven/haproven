@@ -85,13 +85,13 @@ CEO & Developer
 
 
 <td align="center">
-<a href="https://github.com/username2">
-<img src="https://github.com/username2.png" width="120px"  alt="Member name 2" />
+<a href="https://github.com/himanshukumar952527-a11y">
+<img src="https://github.com/himanshukumar952527-a11y.png" width="120px"  alt="pro-himanshu-02" />
 <br />
-<b>Member Name</b>
+<b>Himanshu Kumar</b>
 </a>
 <br />
-<span>Role</span>
+<span>Ai/ML</span>
 </td>
 
 
