@@ -110,12 +110,15 @@ CEO & Developer
 
 
 
-
-
-
-
-
-
+<td align="center">
+<a href="https://github.com/username3">
+<img src="https://github.com/username3.png" width="120px"  alt="Team Member" />
+<br />
+<b>Member Name</b>
+</a>
+<br />
+<span>Role</span>
+</td>
 
 
 
