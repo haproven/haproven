@@ -43,7 +43,9 @@ We bring together **hackathons, projects, and events** to help developers build,
     <img src="https://github.com/susheel026.png" width="120" alt="susheel026">
   </a>
 
-
+  <a href="https://github.com/surajpaniyara102-web">
+    <img src="https://github.com/surajpaniyara102-web.png" width="120" alt="surajpaniyara102-web">
+  </a>
 
 
 
