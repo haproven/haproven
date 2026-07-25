@@ -71,7 +71,7 @@ We bring together **hackathons, projects, and events** to help developers build,
 
 
 <p align="center">
-  Replace <code>https://your-image-link.com/photo.jpg</code> with your own photo URL.
+  Replace <code>https://github.com/username.png</code> with your own photo URL.
 </p>
 
 
