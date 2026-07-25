@@ -20,12 +20,38 @@ We bring together **hackathons, projects, and events** to help developers build,
 
 ## 🖼️ Haproven Photo Frame
 
-<p align="center">
-  <a href="https://github.com/codersusheel" target="_blank">
-    <img src="https://github.com/codersusheel.png" alt="CoderSusheel" width="150">
-  </a>
-</p>
 
+<p align="center">
+  
+  <a href="https://github.com/codersusheel">
+    <img src="https://github.com/codersusheel.png" width="120" alt="CoderSusheel">
+  </a>
+
+  <a href="https://github.com/rajputhimanshusingh01">
+    <img src="https://github.com/rajputhimanshusingh01.png" width="120" alt="Rajput Himanshu Singh">
+  </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</p>
 
 
 
