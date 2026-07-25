@@ -17,14 +17,14 @@
 HAPROVEN is a tech community focused on turning ideas into real-world projects.  
 We bring together **hackathons, projects, and events** to help developers build, learn, and innovate together.
 ---
+
 ## 🖼️ Haproven Photo Frame
 
-<img
-  src="https://github.com/codersusheel.png"
-  alt="Profile"
-  width="150"
-  style="border-radius:50%; border:4px solid #ff4d4d;"
-/>
+<p align="center">
+  <a href="https://github.com/codersusheel" target="_blank">
+    <img src="https://github.com/codersusheel.png" alt="CoderSusheel" width="150">
+  </a>
+</p>
 
 
 
