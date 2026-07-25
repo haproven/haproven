@@ -95,6 +95,17 @@ CEO & Developer
 </td>
 
 
+<td align="center">
+<a href="https://github.com/rajputhimanshusingh01">
+<img src="https://github.com/rajputhimanshusingh01" width="120px"  alt="pro-himanshu-01" />
+<br />
+<b>Himanshu Kumar</b>
+</a>
+<br />
+<span>  Web Developer  </span>
+</td>
+
+
 
 <td align="center">
 <a href="https://github.com/username3">
