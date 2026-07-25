@@ -17,6 +17,35 @@
 HAPROVEN is a tech community focused on turning ideas into real-world projects.  
 We bring together **hackathons, projects, and events** to help developers build, learn, and innovate together.
 ---
+## 🖼️ Haproven Photo Frame
+
+<img
+  src="https://github.com/codersusheel.png"
+  alt="Profile"
+  width="150"
+  style="border-radius:50%; border:4px solid #ff4d4d;"
+/>
+
+
+
+
+
+<p align="center">
+  Replace <code>https://your-image-link.com/photo.jpg</code> with your own photo URL.
+</p>
+
+
+
+<!--  ==========================================================================================================================================================================  -->
+
+
+
+
+
+<!--  
+
+
+
 
 ##  What is HAPROVEN?
 
@@ -48,32 +77,10 @@ We aim to solve real-world problems through collaboration and open-source contri
 
 ---
 
-## 🖼️ Haproven Photo Frame
-
-<img
-  src="https://github.com/YOUR_USERNAME.png"
-  alt="Profile"
-  width="150"
-  style="border-radius:50%; border:4px solid #ff4d4d;"
-/>
 
 
 
 
-
-<p align="center">
-  Replace <code>https://your-image-link.com/photo.jpg</code> with your own photo URL.
-</p>
-
-
-
-<!--  ==========================================================================================================================================================================  -->
-
-
-
-
-
-<!--  
 
 ##  Team
 
