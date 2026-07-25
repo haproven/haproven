@@ -48,6 +48,11 @@ We bring together **hackathons, projects, and events** to help developers build,
   </a>
 
 
+  <a href="https://github.com/Kushagra1001">
+    <img src="https://github.com/Kushagra1001.png" width="120" alt="Kushagra1001">
+  </a>
+
+
 
 
 
