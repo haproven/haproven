@@ -22,6 +22,10 @@ We bring together **hackathons, projects, and events** to help developers build,
 
 
 <p align="center">
+
+ <a href="https://github.com/haproven">
+    <img src="https://github.com/haproven.png" width="120" alt="haproven">
+  </a>
   
   <a href="https://github.com/codersusheel">
     <img src="https://github.com/codersusheel.png" width="120" alt="CoderSusheel">
@@ -29,6 +33,14 @@ We bring together **hackathons, projects, and events** to help developers build,
 
   <a href="https://github.com/rajputhimanshusingh01">
     <img src="https://github.com/rajputhimanshusingh01.png" width="120" alt="Rajput Himanshu Singh">
+  </a>
+  
+  <a href="https://github.com/udaykumar25398-droid">
+    <img src="https://github.com/udaykumar25398-droid.png" width="120" alt="udaykumar25398-droid">
+  </a>
+  
+  <a href="https://github.com/susheel026">
+    <img src="https://github.com/susheel026.png" width="120" alt="susheel026">
   </a>
 
 
