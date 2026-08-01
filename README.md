@@ -54,7 +54,9 @@ We bring together **hackathons, projects, and events** to help developers build,
 
 
 
-
+  <a href="https://github.com/coder-sk-2026">
+    <img src="https://github.com/coder-sk-2026.png" width="120" alt="coder-sk-2026">
+  </a>
 
 
 
