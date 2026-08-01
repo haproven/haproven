@@ -8,7 +8,7 @@
 
 |[view haproven profile ](https://haproven.netlify.app/) |
 
-> **Turning ideas into real-world digital innovations through collaboration, creativity, and code.**
+ Turning ideas into real-world digital innovations through collaboration, creativity, and code.
 
 ---
 
@@ -16,6 +16,7 @@
 
 HAPROVEN is a tech community focused on turning ideas into real-world projects.  
 We bring together **hackathons, projects, and events** to help developers build, learn, and innovate together.
+
 ---
 
 ## 🖼️ Haproven Photo Frame
