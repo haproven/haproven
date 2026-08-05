@@ -59,7 +59,9 @@ We bring together **hackathons, projects, and events** to help developers build,
     <img src="https://github.com/coder-sk-2026.png" width="120" alt="coder-sk-2026">
   </a>
 
-
+  <a href="https://github.com/shivamrai26">
+    <img src="https://github.com/shivamrai26" width="120" alt="shivamrai26">
+  </a>
 
 
 
