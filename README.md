@@ -60,7 +60,7 @@ We bring together **hackathons, projects, and events** to help developers build,
   </a>
 
   <a href="https://github.com/shivamrai26">
-    <img src="https://github.com/shivamrai26" width="120" alt="shivamrai26">
+    <img src="https://github.com/shivamrai26.png" width="120" alt="shivamrai26">
   </a>
 
 
