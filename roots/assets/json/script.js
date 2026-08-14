@@ -1,7 +1,7 @@
 // ======================================================
 // CONFIGURATION: Replace with your actual RAW JSON URL
 // ======================================================
-const GLOBAL_JSON_URL = "https://github.com/haproven/haproven/blob/main/roots/assets/json/demo.json";
+const GLOBAL_JSON_URL = "demo.json";
 
 /**
  * Function to fetch global data from the JSON file
