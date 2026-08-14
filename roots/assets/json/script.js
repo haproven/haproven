@@ -1,11 +1,5 @@
-// ======================================================
-// CONFIGURATION: Replace with your actual RAW JSON URL
-// ======================================================
-const GLOBAL_JSON_URL = "demo.json";
+const GLOBAL_JSON_URL = "https://raw.githubusercontent.com/haproven/haproven/main/roots/assets/json/demo.json";
 
-/**
- * Function to fetch global data from the JSON file
- */
 async function fetchGlobalData() {
     const statusEl = document.getElementById("status");
     const titleEl = document.getElementById("title");
@@ -14,42 +8,37 @@ async function fetchGlobalData() {
     const authorEl = document.getElementById("author");
     const updatedEl = document.getElementById("updated");
 
-    // Show loading state
     statusEl.className = "status-badge loading";
     statusEl.innerText = "Connecting...";
 
     try {
-        // Cache bypass parameter added to ensure fresh data
-        const cacheBuster = "?t=" + new Date().getTime();
-        const response = await fetch(GLOBAL_JSON_URL + cacheBuster);
+        const response = await fetch(GLOBAL_JSON_URL + "?t=" + new Date().getTime());
 
         if (!response.ok) {
-            throw new Error(`HTTP Error! Status: ${response.status}`);
+            throw new Error(`HTTP Error: ${response.status}`);
         }
 
         const data = await response.json();
+        
+        // --- YE CONSOLE LOG AAPKO DIKHAYEGA KI DATA KYA AAYA HAI ---
+        console.log("JSON se ye data mila:", data);
 
-        // Update HTML elements with JSON data
-        titleEl.innerText = data.siteTitle || "No Title";
-        descEl.innerText = data.announcement || "No announcement available.";
+        // Agar JSON me keys alag hain toh fallback (||) use hoga
+        titleEl.innerText = data.siteTitle || data.title || data.name || "No Title Found";
+        descEl.innerText = data.announcement || data.message || data.description || "No Content Found";
         versionEl.innerText = data.version || "N/A";
         authorEl.innerText = data.author || "N/A";
         updatedEl.innerText = data.lastUpdated || "N/A";
 
-        // Success State
         statusEl.className = "status-badge success";
-        statusEl.innerText = "Connected & Updated";
+        statusEl.innerText = "Connected & Data Loaded";
 
     } catch (error) {
         console.error("Fetch Error:", error);
-
-        // Error State Display
         titleEl.innerText = "Connection Failed";
-        descEl.innerText = "Unable to fetch data from the provided JSON URL. Make sure the URL is valid and accessible.";
         statusEl.className = "status-badge error";
         statusEl.innerText = "Fetch Error";
     }
 }
 
-// Initial fetch when page loads
 document.addEventListener("DOMContentLoaded", fetchGlobalData);
