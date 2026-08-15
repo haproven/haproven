@@ -1,0 +1,125 @@
+
+
+{
+  "liveText": "new day ho jya hai",
+   "projects": [
+    {
+      "name": "HaproID",
+      "url": "https://haproid.netlify.app/",
+      "img": "https://haproid.netlify.app/assets/img/haproid-icon.png"
+    },
+    {
+      "name": "Hapro..Core",
+      "url": "https://haproven-core.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+     {
+      "name": "HaproShow",
+      "url": "https://haprohow.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproFun",
+      "url": "https://haprofun.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproSel",
+      "url": "https://haprosel.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproLearn",
+      "url": "https://haprolearn.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "HaproAPI",
+      "url": "https://haproapi.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    },
+    {
+      "name": "Hapro.Blog",
+      "url": "https://haproven-blog.netlify.app/",
+      "img": "https://haproven.netlify.app/assets/img/haproven-logo.png"
+    }
+   
+  ],
+
+  "stats": [
+    {
+      "value": "4+",
+      "label": "Core Members"
+    },
+    {
+      "value": "9+",
+      "label": "Active Projects"
+    },
+    {
+      "value": "5+",
+      "label": "Digital Platforms"
+    }
+  ],
+  "updates": [
+    {
+      "badge": "Latest Update",
+      "title": "4+ Core Members",
+      "desc": "Active developers, designers and creators working in Haproven Core."
+    },
+    {
+      "badge": "Projects",
+      "title": "8+ Active Projects",
+      "desc": "We are building APIs, dashboards and digital platforms."
+    },
+    {
+      "badge": "Platforms",
+      "title": "5+ Digital Platforms",
+      "desc": "HaproID, HaproAPI, HaproDash and more systems."
+    }
+  ],
+  "sidebar_laptop": [
+    {
+      "title": "Haproid pages",
+      "type": "submenu",
+      "items": [
+        { "name": "Users Directory", "url": "/user/" },
+        { "name": "Users Directory 2", "url": "/user/HaproLab.html" }
+      ]
+    },
+    {
+      "title": "Haproid Users List",
+      "type": "submenu",
+      "items": [
+        { "name": "pro-susheel-01", "url": "/user/pro-susheel-01/" },
+        { "name": "pro-anand-01", "url": "/user/pro-anand-01/" },
+        { "name": "pro-raksha-01", "url": "/user/pro-raksha-01/" },
+        { "name": "pro-himanshu-01", "url": "/user/pro-himanshu-01/" },
+        { "name": "pro-shishir-01", "url": "/user/pro-shishir-01/" },
+        { "name": "pro-kajal-01", "url": "/user/pro-kajal-01/" },
+        { "name": "pro-yashika-01", "url": "/user/pro-yashika-01/" },
+        { "name": "pro-himanshu-02", "url": "/user/pro-himanshu-02/" },
+        { "name": "pro-anshu-01", "url": "/user/pro-anshu-01/" },
+        { "name": "pro-suraj-01", "url": "/user/pro-suraj-01/" },
+        { "name": "pro-kushagra-01", "url": "/user/pro-kushagra-01/" },
+        { "name": "User Directory 2", "url": "/user/HaproLab.html" }
+      ]
+    },
+    {
+      "title": "Haproid pages ",
+      "type": "link",
+      "url": "/"
+    }
+  ],
+
+  "sidebar_mobile": [
+    {
+      "label": "Main Menu",
+      "type": "title"
+    },
+    {
+      "name": "User Directory",
+      "icon": "fa-folder",
+      "url": "/user/"
+    }
+  ]
+}
