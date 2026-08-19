@@ -1,0 +1,205 @@
+name: Update Haproven Frame
+
+on:
+  push:
+    branches:
+      - main
+
+  schedule:
+    # Every day at 00:00 UTC
+    - cron: "0 0 * * *"
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-frame:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      # ==========================================
+      # Checkout repository
+      # ==========================================
+
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+
+      # ==========================================
+      # Fetch contributors from GitHub API
+      # ==========================================
+
+      - name: Update Haproven Frame
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        run: |
+
+          python <<'PY'
+
+          import json
+          import urllib.request
+          from pathlib import Path
+
+          OWNER = "haproven"
+          REPO = "haproven"
+
+          README = Path("README.md")
+
+          API_URL = (
+              f"https://api.github.com/repos/"
+              f"{OWNER}/{REPO}/contributors"
+              f"?per_page=100"
+          )
+
+          # ------------------------------------------
+          # GitHub API request
+          # ------------------------------------------
+
+          request = urllib.request.Request(
+              API_URL,
+              headers={
+                  "Accept": "application/vnd.github+json",
+                  "Authorization": f"Bearer {__import__('os').environ['GITHUB_TOKEN']}",
+                  "X-GitHub-Api-Version": "2026-03-10",
+                  "User-Agent": "Haproven-Frame-Updater"
+              }
+          )
+
+          with urllib.request.urlopen(request) as response:
+              contributors = json.load(response)
+
+          # ------------------------------------------
+          # Only real GitHub users
+          # Ignore anonymous contributors
+          # ------------------------------------------
+
+          contributors = [
+              user for user in contributors
+              if user.get("type") == "User"
+              and user.get("login")
+              and user.get("avatar_url")
+              and user.get("html_url")
+          ]
+
+          # ------------------------------------------
+          # Create Haproven Frame
+          # ------------------------------------------
+
+          frame = []
+
+          frame.append(
+              '<p align="center">'
+          )
+
+          frame.append("")
+
+          for user in contributors:
+
+              username = user["login"]
+              profile = user["html_url"]
+              avatar = user["avatar_url"]
+
+              frame.append(
+                  f'<a href="{profile}">'
+              )
+
+              frame.append(
+                  f'  <img src="{avatar}" '
+                  f'width="90" '
+                  f'alt="{username} — Haproven Contributor">'
+              )
+
+              frame.append("</a>")
+              frame.append("")
+
+          frame.append("</p>")
+
+          frame_html = "\n".join(frame)
+
+          # ------------------------------------------
+          # Read README
+          # ------------------------------------------
+
+          content = README.read_text(
+              encoding="utf-8"
+          )
+
+          START = "<!-- HAPROVEN-FRAME:START -->"
+          END = "<!-- HAPROVEN-FRAME:END -->"
+
+          # ------------------------------------------
+          # Check markers
+          # ------------------------------------------
+
+          if START not in content:
+              raise SystemExit(
+                  "ERROR: HAPROVEN-FRAME:START marker not found."
+              )
+
+          if END not in content:
+              raise SystemExit(
+                  "ERROR: HAPROVEN-FRAME:END marker not found."
+              )
+
+          # ------------------------------------------
+          # Replace old frame
+          # ------------------------------------------
+
+          start_index = content.index(START) + len(START)
+          end_index = content.index(END)
+
+          new_content = (
+              content[:start_index]
+              + "\n\n"
+              + frame_html
+              + "\n\n"
+              + content[end_index:]
+          )
+
+          # ------------------------------------------
+          # Write README
+          # ------------------------------------------
+
+          README.write_text(
+              new_content,
+              encoding="utf-8"
+          )
+
+          print(
+              f"Updated Haproven Frame "
+              f"with {len(contributors)} contributors."
+          )
+
+          PY
+
+
+      # ==========================================
+      # Commit updated README
+      # ==========================================
+
+      - name: Commit Haproven Frame
+        run: |
+
+          git config user.name "Haproven Frame Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add README.md
+
+          if git diff --cached --quiet; then
+
+            echo "No changes to Haproven Frame."
+
+          else
+
+            git commit -m "chore: update Haproven Frame"
+
+            git push
+
+          fi
