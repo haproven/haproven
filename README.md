@@ -1,271 +1,121 @@
-# HAPROVEN : Tech Community
-
-**Hackathons • Projects • Events • Technology**
+# 🚀 HAPROVEN — Tech Community
 
 <p align="center">
-  <img src="roots/assets/img/haproven-bunnar.jpg" alt="Haproven Community Logo" width="100%"/>
+  <img src="roots/assets/img/haproven-bunnar.jpg" alt="Haproven Tech Community Banner" width="100%">
 </p>
 
-|[view haproven profile ](https://haproven.netlify.app/) |
+<p align="center">
+  <b>Hackathons • Projects • Events • Technology</b>
+</p>
 
- Turning ideas into real-world digital innovations through collaboration, creativity, and code.
-
----
-
-## About HAPROVEN
-
-HAPROVEN is a tech community focused on turning ideas into real-world projects.  
-We bring together **hackathons, projects, and events** to help developers build, learn, and innovate together.
+<p align="center">
+  Turning ideas into real-world digital solutions through collaboration, creativity, and code.
+</p>
 
 ---
 
-## 🖼️ Haproven Photo Frame
+## 🖼️ HAPROVEN COMMUNITY
 
+<p align="center">
+  <b>🤝 Builders • Developers • Contributors</b>
+</p>
 
 <p align="center">
 
- <a href="https://github.com/haproven">
-    <img src="https://github.com/haproven.png" width="120" alt="haproven">
-  </a>
-  
-  <a href="https://github.com/codersusheel">
-    <img src="https://github.com/codersusheel.png" width="120" alt="CoderSusheel">
-  </a>
+<a href="https://github.com/haproven">
+<img src="https://github.com/haproven.png" width="85" alt="Haproven">
+</a>&nbsp;
 
-  <a href="https://github.com/rajputhimanshusingh01">
-    <img src="https://github.com/rajputhimanshusingh01.png" width="120" alt="Rajput Himanshu Singh">
-  </a>
-  
-  <a href="https://github.com/udaykumar25398-droid">
-    <img src="https://github.com/udaykumar25398-droid.png" width="120" alt="udaykumar25398-droid">
-  </a>
-  
-  <a href="https://github.com/susheel026">
-    <img src="https://github.com/susheel026.png" width="120" alt="susheel026">
-  </a>
-
-  <a href="https://github.com/surajpaniyara102-web">
-    <img src="https://github.com/surajpaniyara102-web.png" width="120" alt="surajpaniyara102-web">
-  </a>
-
-
-  <a href="https://github.com/Kushagra1001">
-    <img src="https://github.com/Kushagra1001.png" width="120" alt="Kushagra1001">
-  </a>
-
-
-
-  <a href="https://github.com/coder-sk-2026">
-    <img src="https://github.com/coder-sk-2026.png" width="120" alt="coder-sk-2026">
-  </a>
-
-  <a href="https://github.com/shivamrai26">
-    <img src="https://github.com/shivamrai26.png" width="120" alt="shivamrai26">
-  </a>
-
-
-
-
-
-
-
-
-
-
-
-
-
-</p>
-
-
-
-
-<p align="center">
-  Replace <code>https://github.com/username.png</code> with your own photo URL.
-</p>
-
-
-
-<!--  ==========================================================================================================================================================================  -->
-
-
-
-
-
-<!--  
-
-
-
-
-##  What is HAPROVEN?
-
-Our name represents our core foundation:
-
-| Abbreviation | Meaning | Core Value |
-| :--- | :--- | :--- |
-| **Ha** | Hackathon | Rapid building & skill growth |
-| **Pro** | Project | Real-world problem solving |
-| **Ven** | Event | Learning & community |
-| **tech** | Technology | -- | 
-
-**HAPROVEN** = A space where ideas are built, tested, and **proven** (सिद्ध).
-
----
-
-## Our Mission
-
-**To build, learn, and innovate together.**  
-We aim to solve real-world problems through collaboration and open-source contribution.
-
----
-
-##  Why HAPROVEN?
-
-- We focus on **building**, not just learning  
-- We turn **ideas into working projects**  
-- We create **real opportunities through collaboration**  
-
----
-
-
-
-
-
-
-##  Team
-
-We are builders, problem solvers, and innovators.
-
-
-
-
-<div align="center">
-
-<table>
-<tr>
-
-<td align="center">
 <a href="https://github.com/codersusheel">
-<img src="https://github.com/codersusheel.png" width="120px"  alt="codersusheel"/>
-<br />
-<b>susheel kumar
- <br />
-  (codersusheel)
-</b>
-</a>
+<img src="https://github.com/codersusheel.png" width="85" alt="CoderSusheel">
+</a>&nbsp;
 
-
-
-<br />
-CEO & Developer
-</td>
-
-
-
-
-
-<td align="center">
-<a href="https://github.com/himanshukumar952527-a11y">
-<img src="https://github.com/himanshukumar952527-a11y.png" width="120px"  alt="pro-himanshu-02" />
-<br />
-<b>Himanshu Kumar</b>
-</a>
-<br />
-<span>Ai/ML</span>
-</td>
-
-
-<td align="center">
 <a href="https://github.com/rajputhimanshusingh01">
-<img src="https://github.com/rajputhimanshusingh01" width="120px"  alt="pro-himanshu-01" />
-<br />
-<b>Himanshu Kumar</b>
+<img src="https://github.com/rajputhimanshusingh01.png" width="85" alt="Rajput Himanshu Singh">
+</a>&nbsp;
+
+<a href="https://github.com/udaykumar25398-droid">
+<img src="https://github.com/udaykumar25398-droid.png" width="85" alt="Uday Kumar">
+</a>&nbsp;
+
+<a href="https://github.com/susheel026">
+<img src="https://github.com/susheel026.png" width="85" alt="Susheel">
+</a>&nbsp;
+
+<a href="https://github.com/surajpaniyara102-web">
+<img src="https://github.com/surajpaniyara102-web.png" width="85" alt="Suraj Paniyara">
+</a>&nbsp;
+
+<a href="https://github.com/Kushagra1001">
+<img src="https://github.com/Kushagra1001.png" width="85" alt="Kushagra">
+</a>&nbsp;
+
+<a href="https://github.com/coder-sk-2026">
+<img src="https://github.com/coder-sk-2026.png" width="85" alt="Coder SK">
+</a>&nbsp;
+
+<a href="https://github.com/shivamrai26">
+<img src="https://github.com/shivamrai26.png" width="85" alt="Shivam Rai">
 </a>
-<br />
-<span>  Web Developer  </span>
-</td>
 
+</p>
 
-
-<td align="center">
-<a href="https://github.com/username3">
-<img src="https://github.com/username3.png" width="120px"  alt="Team Member" />
-<br />
-<b>Member Name</b>
-</a>
-<br />
-<span>Role</span>
-</td>
-
-
-
-
-
-<td align="center">
-<a href="https://github.com/username3">
-<img src="https://github.com/username3.png" width="120px"  alt="Team Member" />
-<br />
-<b>Member Name</b>
-</a>
-<br />
-<span>Role</span>
-</td>
-
-
-
-
-
-
-
-
-
-
-
-</tr>
-</table>
-</div>
-
-==========================================================================================================================================================================  -->
+<p align="center">
+  <sub>✨ Proud members of the Haproven community</sub>
+</p>
 
 ---
 
-## Roadmap
+## 💡 About HAPROVEN
 
-| Status | Milestone |
-| :--- | :--- |
-| ✅ | Branding & team setup |
-| ⬜ | First hackathon |
-| ⬜ | Official website launch |
-| ⬜ | Open-source release |
+**HAPROVEN** is a technology community where developers, students, and creators come together to **learn, build, collaborate, and innovate**.
+
+We focus on practical development, real-world projects, hackathons, technology events, and open-source collaboration.
 
 ---
 
-## Contributing
+## ⚡ What We Do
 
-Want to contribute?
-
-1. Fork the repo  
-2. Create a branch: `feature/your-feature`  
-3. Commit changes  
-4. Open a Pull Request 
-
----
-
-##  Connect
-
-जुड़ें और साथ मिलकर बनाएं:
-
-- 🌐 Website: https://haproven.netlify.app/  
-- 💻 GitHub: https://github.com/haproven/  
-- 📸 Instagram: https://instagram.com/haproven  
-- ▶️ YouTube: https://youtube.com/@Haproven  
+🏆 **Hackathons** — Build, compete & solve problems
+💻 **Projects** — Turn ideas into real products
+🎯 **Events** — Learn, connect & collaborate
+🛠️ **Technology** — Explore modern development
+🌱 **Open Source** — Build and contribute together
 
 ---
 
-##  License
+## 🌐 HAPROVEN Ecosystem
 
-MIT License — see [LICENSE](LICENSE)
+**HaproID** • **HaproShow** • **HaproLearn** • **HaproAPI** • **HaproFun**
+
+A growing ecosystem for **developer profiles, project showcasing, learning, APIs, tools, and community activities.**
 
 ---
 
-##  HAPROVEN — Where Ideas Get Proven.
+## 🚀 Our Vision
+
+> **Build ideas. Create solutions. Grow together.**
+
+We want to create an environment where every developer can **learn by building, collaborate with others, showcase their work, and turn ideas into reality.**
+
+---
+
+## 🔗 Connect With HAPROVEN
+
+<p align="center">
+
+<a href="https://haproven.netlify.app/">🌐 Website</a> • <a href="https://github.com/haproven/">💻 GitHub</a> • <a href="https://instagram.com/haproven">📸 Instagram</a> • <a href="https://youtube.com/@Haproven">▶️ YouTube</a>
+
+</p>
+
+<p align="center">
+
+### 🚀 HAPROVEN
+
+<b>Where Ideas Get Proven.</b>
+
+<br>
+
+<i>Build • Learn • Collaborate • Innovate</i>
+
+</p>
