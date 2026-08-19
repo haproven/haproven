@@ -42,7 +42,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/haproven/haproven/contributors/">
+  <a href="https://github.com/haproven/haproven/tree/main/suggestions">
     🤝 View Haproven Contributors
   </a>
 </p>
