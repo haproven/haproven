@@ -16,6 +16,69 @@
 </p>
 
 ---
+---
+
+
+
+
+
+
+## 🖼️ Haproven Frame
+
+<p align="center">
+  <b>The People Behind Haproven</b>
+</p>
+
+<p align="center">
+  Haproven Frame recognizes the developers, builders, and contributors
+  helping Haproven grow through open-source collaboration.
+</p>
+
+<!-- HAPROVEN-FRAME:START -->
+
+<!-- HAPROVEN-FRAME:END -->
+
+<p align="center">
+  <sub>
+    👆 Click a profile photo to visit that contributor's GitHub profile.
+  </sub>
+</p>
+
+<p align="center">
+  <a href="https://github.com/haproven/haproven/graphs/contributors">
+    View all contributors →
+  </a>
+</p>
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+---
 
 
 ## 🖼️ Haproven Frame
@@ -32,13 +95,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="https://github.com/haproven/haproven/graphs/contributors">
-    <img
-      src="https://contrib.rocks/image?repo=haproven/haproven"
-      alt="Haproven Frame — Haproven Contributors">
-  </a>
-</p>
 
 <p align="center">
   <sub>
