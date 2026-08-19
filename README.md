@@ -17,29 +17,32 @@
 
 ---
 
-## 🖼️ HAPROVEN COMMUNITY
+
+## 🖼️ Haproven Frame
 
 <p align="center">
-  <b>🤝 Builders • Developers • Contributors</b>
+  <b>The People Behind Haproven</b>
 </p>
 
 <p align="center">
   <a href="https://github.com/haproven/haproven/graphs/contributors">
     <img
       src="https://contrib.rocks/image?repo=haproven/haproven"
-      alt="Haproven GitHub contributors">
+      alt="Haproven Frame — Haproven Community Contributors">
   </a>
 </p>
 
 <p align="center">
   <sub>
-    Want to see your GitHub profile here?
+    Haproven Frame highlights the developers, builders, and contributors
+    helping Haproven grow.
     <br>
-    Become a contributor or share your profile with the Haproven team.
+    Want to be part of the Haproven Frame? Contribute or share your idea with us.
   </sub>
 </p>
 
 ---
+
 
 ## 💡 About HAPROVEN
 
