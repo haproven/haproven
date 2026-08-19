@@ -1,7 +1,9 @@
 # 🚀 HAPROVEN — Tech Community
 
 <p align="center">
-  <img src="roots/assets/img/haproven-bunnar.jpg" alt="Haproven Tech Community Banner" width="100%">
+  <img src="roots/assets/img/haproven-bunnar.jpg"
+       alt="Haproven Tech Community Banner"
+       width="100%">
 </p>
 
 <p align="center">
@@ -9,7 +11,8 @@
 </p>
 
 <p align="center">
-  Turning ideas into real-world digital solutions through collaboration, creativity, and code.
+  Turning ideas into real-world digital solutions through
+  <b>collaboration, creativity, and code.</b>
 </p>
 
 ---
@@ -21,66 +24,37 @@
 </p>
 
 <p align="center">
-
-<a href="https://github.com/haproven">
-<img src="https://github.com/haproven.png" width="85" alt="Haproven">
-</a>&nbsp;
-
-<a href="https://github.com/codersusheel">
-<img src="https://github.com/codersusheel.png" width="85" alt="CoderSusheel">
-</a>&nbsp;
-
-<a href="https://github.com/rajputhimanshusingh01">
-<img src="https://github.com/rajputhimanshusingh01.png" width="85" alt="Rajput Himanshu Singh">
-</a>&nbsp;
-
-<a href="https://github.com/udaykumar25398-droid">
-<img src="https://github.com/udaykumar25398-droid.png" width="85" alt="Uday Kumar">
-</a>&nbsp;
-
-<a href="https://github.com/susheel026">
-<img src="https://github.com/susheel026.png" width="85" alt="Susheel">
-</a>&nbsp;
-
-<a href="https://github.com/surajpaniyara102-web">
-<img src="https://github.com/surajpaniyara102-web.png" width="85" alt="Suraj Paniyara">
-</a>&nbsp;
-
-<a href="https://github.com/Kushagra1001">
-<img src="https://github.com/Kushagra1001.png" width="85" alt="Kushagra">
-</a>&nbsp;
-
-<a href="https://github.com/coder-sk-2026">
-<img src="https://github.com/coder-sk-2026.png" width="85" alt="Coder SK">
-</a>&nbsp;
-
-<a href="https://github.com/shivamrai26">
-<img src="https://github.com/shivamrai26.png" width="85" alt="Shivam Rai">
-</a>
-
+  <a href="https://github.com/haproven/haproven/graphs/contributors">
+    <img
+      src="https://contrib.rocks/image?repo=haproven/haproven"
+      alt="Haproven GitHub contributors">
+  </a>
 </p>
 
 <p align="center">
-  <sub>✨ Proud members of the Haproven community</sub>
+  <sub>
+    Want to see your GitHub profile here?
+    <br>
+    Become a contributor or share your profile with the Haproven team.
+  </sub>
 </p>
 
 ---
 
 ## 💡 About HAPROVEN
 
-**HAPROVEN** is a technology community where developers, students, and creators come together to **learn, build, collaborate, and innovate**.
+**HAPROVEN** is a technology community for developers, students, creators, and technology enthusiasts.
 
-We focus on practical development, real-world projects, hackathons, technology events, and open-source collaboration.
+We bring people together to **learn, build, collaborate, and innovate** through real-world projects, hackathons, events, open-source development, and technology initiatives.
 
----
+### 🎯 Our Focus
 
-## ⚡ What We Do
-
-🏆 **Hackathons** — Build, compete & solve problems
-💻 **Projects** — Turn ideas into real products
-🎯 **Events** — Learn, connect & collaborate
-🛠️ **Technology** — Explore modern development
-🌱 **Open Source** — Build and contribute together
+* 🏆 Hackathons
+* 💻 Real-world Projects
+* 🎯 Technology Events
+* 🌱 Open Source
+* 🤝 Developer Collaboration
+* 🚀 Learning & Innovation
 
 ---
 
@@ -88,15 +62,81 @@ We focus on practical development, real-world projects, hackathons, technology e
 
 **HaproID** • **HaproShow** • **HaproLearn** • **HaproAPI** • **HaproFun**
 
-A growing ecosystem for **developer profiles, project showcasing, learning, APIs, tools, and community activities.**
+Our ecosystem is built to help developers **create profiles, showcase projects, learn technologies, explore developer tools, and participate in community activities.**
 
 ---
 
-## 🚀 Our Vision
+## 💭 Have an Idea for HAPROVEN?
 
-> **Build ideas. Create solutions. Grow together.**
+We want to hear from you.
 
-We want to create an environment where every developer can **learn by building, collaborate with others, showcase their work, and turn ideas into reality.**
+If you have an idea, improvement, event concept, project suggestion, feature request, or anything related to Haproven, you can share it with us.
+
+📁 **Suggestions folder:** [`suggestions/`](./suggestions/)
+
+You can suggest things like:
+
+* 💡 New Haproven features
+* 🛠️ Website improvements
+* 🏆 Hackathon ideas
+* 🎯 Event ideas
+* 💻 Project ideas
+* 🌐 New ecosystem services
+* 🤝 Community activities
+* 📚 Learning initiatives
+* 🎨 UI/UX improvements
+* 🚀 Any useful idea related to Haproven
+
+**No idea is too small if it can help the community grow.**
+
+---
+
+## 🪪 Want Your Profile in the HAPROVEN Community?
+
+If you are a developer, contributor, builder, or active community member and want your GitHub profile to become part of the Haproven community, we'd love to see you contribute.
+
+Start by:
+
+1. ⭐ Exploring Haproven
+2. 💻 Contributing to a project
+3. 💡 Sharing a useful suggestion
+4. 🤝 Participating in community activities
+5. 🚀 Building something with Haproven
+
+Your contributions help the community grow — and your profile can become part of that journey.
+
+---
+
+## 🤝 How You Can Contribute
+
+You don't need to be an expert.
+
+You can contribute through:
+
+**Code** → Build & improve projects
+**Ideas** → Suggest useful improvements
+**Design** → Improve UI/UX
+**Documentation** → Improve guides & information
+**Events** → Help organize community activities
+**Feedback** → Tell us what can be better
+
+Every useful contribution matters.
+
+---
+
+## 🔐 Suggestions & Privacy
+
+The `suggestions/` folder is intended for **private suggestions and internal discussion**.
+
+Please do **not** submit:
+
+* Passwords
+* API keys
+* Personal documents
+* Private credentials
+* Sensitive personal information
+
+Only share information that is appropriate for the Haproven team to review.
 
 ---
 
@@ -107,6 +147,8 @@ We want to create an environment where every developer can **learn by building, 
 <a href="https://haproven.netlify.app/">🌐 Website</a> • <a href="https://github.com/haproven/">💻 GitHub</a> • <a href="https://instagram.com/haproven">📸 Instagram</a> • <a href="https://youtube.com/@Haproven">▶️ YouTube</a>
 
 </p>
+
+---
 
 <p align="center">
 
