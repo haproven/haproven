@@ -33,6 +33,14 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/haproven/haproven/graphs/contributors">
+    <img
+      src="https://contrib.rocks/image?repo=haproven/haproven"
+      alt="Haproven Frame — Haproven Contributors">
+  </a>
+</p>
+
+<p align="center">
   <sub>
     Haproven Frame highlights the developers, builders, and contributors
     helping Haproven grow.
