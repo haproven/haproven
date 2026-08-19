@@ -1,10 +1,13 @@
 # 💡 Haproven Suggestions
 
+
+
 <p align="center">
-  <img
-    src="https://contrib.rocks/image?repo=haproven/haproven"
-    alt="Haproven contributors and community members"
-  >
+  <a href="https://github.com/haproven/haproven/graphs/contributors">
+    <img
+      src="https://contrib.rocks/image?repo=haproven/haproven"
+      alt="Haproven Frame — Haproven Community Contributors">
+  </a>
 </p>
 
 <p align="center">
