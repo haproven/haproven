@@ -84,8 +84,8 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/haproven/haproven/graphs/contributors">
-    View all contributors →
+  <a href="https://github.com/haproven/haproven/tree/main/suggestions">
+    🤝 Share Your Idea →
   </a>
 </p>
 
