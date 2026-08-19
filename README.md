@@ -38,40 +38,40 @@
 
 <p align="center">
 
-<a href="https://github.com/haproven">
-  <img src="https://avatars.githubusercontent.com/u/279256795?v=4" width="90" alt="haproven — Haproven Contributor">
+<a href="https://github.com/haproven" title="haproven — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/279256795?v=4" width="90" height="90" loading="lazy" alt="haproven — Haproven Contributor">
 </a>
 
-<a href="https://github.com/codersusheel">
-  <img src="https://avatars.githubusercontent.com/u/195109254?v=4" width="90" alt="codersusheel — Haproven Contributor">
+<a href="https://github.com/codersusheel" title="codersusheel — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/195109254?v=4" width="90" height="90" loading="lazy" alt="codersusheel — Haproven Contributor">
 </a>
 
-<a href="https://github.com/coder-sk-2026">
-  <img src="https://avatars.githubusercontent.com/u/310669286?v=4" width="90" alt="coder-sk-2026 — Haproven Contributor">
+<a href="https://github.com/coder-sk-2026" title="coder-sk-2026 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/310669286?v=4" width="90" height="90" loading="lazy" alt="coder-sk-2026 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/susheel026">
-  <img src="https://avatars.githubusercontent.com/u/199501106?v=4" width="90" alt="susheel026 — Haproven Contributor">
+<a href="https://github.com/susheel026" title="susheel026 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/199501106?v=4" width="90" height="90" loading="lazy" alt="susheel026 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/Kushagra1001">
-  <img src="https://avatars.githubusercontent.com/u/146299482?v=4" width="90" alt="Kushagra1001 — Haproven Contributor">
+<a href="https://github.com/Kushagra1001" title="Kushagra1001 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/146299482?v=4" width="90" height="90" loading="lazy" alt="Kushagra1001 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/shivamrai26">
-  <img src="https://avatars.githubusercontent.com/u/285886682?v=4" width="90" alt="shivamrai26 — Haproven Contributor">
+<a href="https://github.com/shivamrai26" title="shivamrai26 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/285886682?v=4" width="90" height="90" loading="lazy" alt="shivamrai26 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/surajpaniyara102-web">
-  <img src="https://avatars.githubusercontent.com/u/240368312?v=4" width="90" alt="surajpaniyara102-web — Haproven Contributor">
+<a href="https://github.com/surajpaniyara102-web" title="surajpaniyara102-web — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/240368312?v=4" width="90" height="90" loading="lazy" alt="surajpaniyara102-web — Haproven Contributor">
 </a>
 
-<a href="https://github.com/rajputhimanshusingh01">
-  <img src="https://avatars.githubusercontent.com/u/224974472?v=4" width="90" alt="rajputhimanshusingh01 — Haproven Contributor">
+<a href="https://github.com/rajputhimanshusingh01" title="rajputhimanshusingh01 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/224974472?v=4" width="90" height="90" loading="lazy" alt="rajputhimanshusingh01 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/udaykumar25398-droid">
-  <img src="https://avatars.githubusercontent.com/u/297070626?v=4" width="90" alt="udaykumar25398-droid — Haproven Contributor">
+<a href="https://github.com/udaykumar25398-droid" title="udaykumar25398-droid — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/297070626?v=4" width="90" height="90" loading="lazy" alt="udaykumar25398-droid — Haproven Contributor">
 </a>
 
 </p>
