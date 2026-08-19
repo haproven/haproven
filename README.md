@@ -16,8 +16,6 @@
 </p>
 
 ---
----
-
 
 
 
@@ -90,7 +88,6 @@
   </a>
 </p>
 
----
 
 
 
@@ -110,46 +107,6 @@
 
 
 
-
-
-
-
-
-
-
----
----
-
-
-## 🖼️ Haproven Frame
-
-<p align="center">
-  <b>The People Behind Haproven</b>
-</p>
-
-<p align="center">
-  <a href="https://github.com/haproven/haproven/graphs/contributors">
-    <img
-      src="https://contrib.rocks/image?repo=haproven/haproven"
-      alt="Haproven Frame — Haproven Community Contributors">
-  </a>
-</p>
-
-
-<p align="center">
-  <sub>
-    Haproven Frame highlights the developers, builders, and contributors
-    helping Haproven grow.
-    <br>
-    Want to be part of the Haproven Frame? Contribute or share your idea with us.
-  </sub>
-</p>
-
-<p align="center">
-  <a href="https://github.com/haproven/haproven/tree/main/suggestions">
-    🤝 View Haproven Contributors
-  </a>
-</p>
 
 ---
 
