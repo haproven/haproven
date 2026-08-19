@@ -1,9 +1,10 @@
 # 🚀 HAPROVEN — Tech Community
 
 <p align="center">
-  <img src="https://media.licdn.com/dms/image/v2/D5616AQG68aoRgTPCDw/profile-displaybackgroundimage-shrink_200_800/B56Z_zX0.GKEAQ-/0/1786494538016?e=1788998400&v=beta&t=_B-sdhggbR0v4ZQIRB5eQjHqB4INpSipWelMbaka3WM"
-       alt="Haproven Tech Community Banner"
-       width="100%">
+  <img
+    src="https://media.licdn.com/dms/image/v2/D5616AQG68aoRgTPCDw/profile-displaybackgroundimage-shrink_200_800/B56Z_zX0.GKEAQ-/0/1786494538016?e=1788998400&v=beta&t=_B-sdhggbR0v4ZQIRB5eQjHqB4INpSipWelMbaka3WM"
+    alt="Haproven Tech Community Banner"
+    width="100%">
 </p>
 
 <p align="center">
