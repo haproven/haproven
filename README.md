@@ -53,6 +53,10 @@
   <img src="https://avatars.githubusercontent.com/u/199501106?v=4" width="90" height="90" loading="lazy" alt="susheel026 — Haproven Contributor">
 </a>
 
+<a href="https://github.com/deepakyadav1425" title="deepakyadav1425 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/321023452?v=4" width="90" height="90" loading="lazy" alt="deepakyadav1425 — Haproven Contributor">
+</a>
+
 <a href="https://github.com/Kushagra1001" title="Kushagra1001 — Haproven Contributor">
   <img src="https://avatars.githubusercontent.com/u/146299482?v=4" width="90" height="90" loading="lazy" alt="Kushagra1001 — Haproven Contributor">
 </a>
