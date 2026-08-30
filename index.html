@@ -3,370 +3,260 @@
 
 <head>
 
+    <!-- =========================
+     Haproven Frame — SEO Meta
+========================= -->
+
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="description"
-        content="Haproven Frame — developers, builders and contributors behind Haproven."
-    >
+    <meta name="description"
+        content="Haproven Frame is the developer and builder community behind Haproven — showcasing developers, creators, contributors, projects, skills, achievements and open-source work.">
 
-    <title>Haproven Frame | Haproven Tech Community</title>
+    <meta name="keywords"
+        content="Haproven Frame, Haproven, Haproven Tech Community, developers, web developers, software developers, builders, creators, contributors, open source, projects, technology community, coding community">
 
-    <style>
+    <meta name="author" content="Haproven">
 
-        * {
-            box-sizing: border-box;
-        }
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 15px;
+    <meta name="googlebot" content="index, follow">
 
-            font-family:
-                Inter,
-                system-ui,
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                sans-serif;
+    <meta name="theme-color" content="#ffffff">
 
-            background: #f5f7fb;
-            color: #15171a;
-        }
+    <link rel="canonical" href="https://haproven.netlify.app/frame/">
 
-        /* =========================================
-           FRAME
-        ========================================= */
+    <title>
+        Haproven Frame — Developers, Builders & Contributors | Haproven
+    </title>
 
-        .haproven-frame {
-            width: 100%;
-            max-width: 1100px;
-            padding: 55px 30px;
 
-            background: #ffffff;
+    <!-- =========================
+     Open Graph
+========================= -->
 
-            border: 1px solid #e7e9ee;
-            border-radius: 28px;
+    <meta property="og:type" content="website">
 
-            box-shadow:
-                0 20px 60px rgba(0, 0, 0, .08);
+    <meta property="og:title" content="Haproven Frame — Developers, Builders & Contributors">
 
-            text-align: center;
-        }
+    <meta property="og:description"
+        content="Discover the developers, builders and contributors behind Haproven, their skills, projects, achievements and contributions to the tech community.">
 
+    <meta property="og:url" content="https://haproven.netlify.app/frame/">
 
-        /* =========================================
-           HEADER
-        ========================================= */
+    <meta property="og:site_name" content="Haproven">
 
-        .frame-label {
-            display: inline-block;
+    <meta property="og:locale" content="en_US">
 
-            margin-bottom: 12px;
 
-            font-size: 12px;
-            font-weight: 800;
+    <!-- =========================
+     Twitter / X
+========================= -->
 
-            letter-spacing: 2px;
+    <meta name="twitter:card" content="summary_large_image">
 
-            text-transform: uppercase;
+    <meta name="twitter:title" content="Haproven Frame — Developers, Builders & Contributors">
 
-            color: #667085;
-        }
+    <meta name="twitter:description"
+        content="Meet the developers, builders and contributors shaping Haproven through technology, projects, open source and community contributions.">
 
 
-        .haproven-frame h1 {
+    <!-- =========================
+     Additional SEO
+========================= -->
 
-            margin: 0;
+    <meta name="application-name" content="Haproven Frame">
 
-            font-size:
-                clamp(32px, 6vw, 52px);
+    <meta name="apple-mobile-web-app-title" content="Haproven Frame">
 
-            line-height: 1.1;
+    <meta name="format-detection" content="telephone=no">
+  
 
-            font-weight: 800;
-
-            letter-spacing: -1.5px;
-        }
-
-
-        .frame-description {
-
-            max-width: 650px;
-
-            margin:
-                16px auto 0;
-
-            color: #667085;
-
-            font-size: 16px;
-
-            line-height: 1.7;
-        }
-
-
-        /* =========================================
-           CONTRIBUTORS
-        ========================================= */
-
-        .haproven-frame-grid {
-
-            display: flex;
-
-            flex-wrap: wrap;
-
-            justify-content: center;
-
-            gap: 22px;
-
-            margin-top: 45px;
-
-            min-height: 100px;
-        }
-
-
-        /* =========================================
-           MEMBER
-        ========================================= */
-
-        .haproven-member {
-
-            position: relative;
-
-            display: block;
-
-            width: 92px;
-            height: 92px;
-
-            flex: 0 0 92px;
-
-            border-radius: 50%;
-
-            overflow: hidden;
-
-            background: #eef1f5;
-
-            border: 3px solid #ffffff;
-
-            box-shadow:
-                0 6px 20px rgba(0, 0, 0, .12);
-
-            transition:
-                transform .35s ease,
-                box-shadow .35s ease;
-        }
-
-
-        .haproven-member::after {
-
-            content: "";
-
-            position: absolute;
-
-            inset: 0;
-
-            border-radius: inherit;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(255,255,255,.35),
-                    transparent
-                );
-
-            pointer-events: none;
-        }
-
-
-        .haproven-member:hover {
-
-            transform:
-                translateY(-10px)
-                scale(1.08);
-
-            box-shadow:
-                0 15px 35px rgba(0, 0, 0, .18);
-
-            z-index: 2;
-        }
-
-
-        .haproven-member img {
-
-            width: 100%;
-            height: 100%;
-
-            display: block;
-
-            object-fit: cover;
-        }
-
-
-        /* =========================================
-           LOADING
-        ========================================= */
-
-        .frame-loading {
-
-            width: 100%;
-
-            padding: 30px;
-
-            color: #667085;
-
-            font-size: 14px;
-        }
-
-
-        .loading-dot {
-
-            display: inline-block;
-
-            width: 8px;
-            height: 8px;
-
-            margin: 0 3px;
-
-            border-radius: 50%;
-
-            background: currentColor;
-
-            animation:
-                loading 1s infinite ease-in-out;
-        }
-
-
-        .loading-dot:nth-child(2) {
-            animation-delay: .15s;
-        }
-
-        .loading-dot:nth-child(3) {
-            animation-delay: .3s;
-        }
-
-
-        @keyframes loading {
-
-            0%,
-            80%,
-            100% {
-                transform: scale(.5);
-                opacity: .4;
-            }
-
-            40% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        .frame-footer {
-
-            margin-top: 40px;
-
-            color: #667085;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
-
-
-        .frame-footer a {
-
-            color: inherit;
-
-            font-weight: 700;
-
-            text-decoration: none;
-        }
-
-
-        .frame-footer a:hover {
-
-            text-decoration: underline;
-        }
-
-
-        .frame-brand {
-
-            margin-top: 8px;
-
-            font-weight: 800;
-
-            color: #15171a;
-        }
-
-
-        /* =========================================
-           MOBILE
-        ========================================= */
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 15px;
-            }
-
-            .haproven-frame {
-
-                padding:
-                    40px 15px;
-
-                border-radius: 22px;
-            }
-
-            .haproven-member {
-
-                width: 70px;
-                height: 70px;
-
-                flex-basis: 70px;
-            }
-
-            .haproven-frame-grid {
-
-                gap: 15px;
-            }
-
-        }
-
-    </style>
+    <link rel="stylesheet" href="https://codersusheel.github.io/haprobase/external/css/base.css">
 
 </head>
 
 
+
+
 <body>
 
+    
+    <header id="header">
 
-    <main
-        class="haproven-frame"
-        id="haprovenFrameSection"
-    >
+        <div class="header">
+            <div class="logo">
+                <a href="/">
+                    <div class="haproven-brand animate" data-name="Haproven by haproven ">haproven</div>
+                </a>
+            </div>
+
+            <div class="header-senter">
+                <ul id="header-links">
+                    <li class="nav-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</li>
+                    <li class="nav-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</li>
+                    <li class="nav-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</li>
+                </ul>
+            </div>
+
+
+            <div class="header-right-side">
+
+                <div class="header-manu">
+                    <div class="menu-wrapper">
+
+                        <button class="dot-menu-btn" id="dot6menu" aria-label="Toggle Apps Menu">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </button>
+
+                        <div class="team-dropdown" id="teamDropdown">
+
+                            <div class="quick-actions" id="dot6">
+                                <a href="javascript:void(0)" class="action-box" onclick="toggleLanguage()">
+                                    <div class="language-switch">
+                                        <button id="langBtn">हिंदी</button>
+                                    </div>
+                                    <span>Lang..</span>
+                                </a>
+                                <a id="theme-toggle" class="action-box" href="javascript:void(0)">
+                                    <span class="icon sun">☀️</span>
+                                    <span class="icon moon">🌙</span>
+                                    <span>Theme</span>
+                                </a>
+                                <a href="#" id="login-action" class="action-box">
+                                    <i class="ri-login-circle-line"></i>
+                                    <span>Login</span>
+                                </a>
+
+                                <a href="#" id="main-audio-button" class="action-box">
+                                    <i class="fa-solid fa-volume-low"></i>
+                                    <span>Audio</span>
+                                </a>
+
+                            </div>
+
+                            <ul class="by-haproven" id="by-haproven">
+                                <!-- haproven eco. link -->
+                                <li>
+                                    <a href="" class="member-box">
+                                        <i class="fas fa-circle-notch fa-spin fa-4px"></i>
+                                        <span>Loading...</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="member-box">
+                                        <i class="fas fa-circle-notch fa-spin fa-4px"></i>
+                                        <span>Loading...</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" class="member-box">
+                                        <i class="fas fa-circle-notch fa-spin fa-4px"></i>
+                                        <span>Loading...</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav id="navbar-mobile">
+                    <div class="menu-title">Main Menu</div>
+
+                    <ul class="navbar-mobile" id="mobile-sidebar">
+                        <li class="sidebar-icon-loading">
+                            <i class="fas fa-circle-notch fa-spin"></i> <span>Loading Menu...</span>
+                        </li>
+                    </ul>
+
+                    <hr class="hr">
+
+                    <div class="mobile-social haproven-sosal-links">
+                        <a aria-label="loading"><i class="fas fa-circle-notch fa-spin" style="color: #007bff;"></i></a>
+                        <a aria-label="loading"><i class="fas fa-circle-notch fa-spin" style="color: #007bff;"></i></a>
+                        <a aria-label="loading"><i class="fas fa-circle-notch fa-spin" style="color: #007bff;"></i></a>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+    </header>
+
+
+
+
+
+
+    <!-- =====================================================
+     ///////          aside      sidebar           ////////////
+    ======================================================= -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="sidebar-live-box">
+                <p id="live-text">
+                    <i class="fas fa-circle-notch fa-spin icon-loader"></i> <span>Loading status...</span>
+                </p>
+            </div>
+            <!-- <br> -->
+
+            <p id="liv-open-page">
+                <span class="page-loading"><i class="fas fa-spinner fa-spin"></i> Detecting Page...</span>
+            </p>
+        </div>
+
+
+
+
+        <nav class="sidebar-nav" id="sidebar_lapto">
+            <ul class="nav-list" id="laptop-sidebar">
+
+                <li class="nav-item has-submenu">
+                    <a href=""> Page link.</a>
+                    <ul class="submenu">
+                        <li><i class="fas fa-spinner fa-spin"></i> Loading... </li>
+                        <li><i class="fas fa-spinner fa-spin"></i> Loading... </li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
+
+        <div class="sidebar-footer">
+            <hr>
+            <ul class="social-links haproven-sosal-links">
+                <li><i class="fas fa-spinner fa-spin social-loader"></i></li>
+                <li><i class="fas fa-spinner fa-spin social-loader"></i></li>
+                <li><i class="fas fa-spinner fa-spin social-loader"></i></li>
+                <li><i class="fas fa-spinner fa-spin social-loader"></i></li>
+                <li><i class="fas fa-spinner fa-spin social-loader"></i></li>
+            </ul>
+        </div>
+
+    </aside>
+
+
+
+
+    <main class="haproven-frame" id="haprovenFrameSection">
 
         <span class="frame-label">
             HAPROVEN COMMUNITY
         </span>
 
-
         <h1>
             🖼️ Haproven Frame
         </h1>
-
 
         <p class="frame-description">
             The people behind Haproven —
@@ -377,10 +267,7 @@
 
         <!-- Contributors -->
 
-        <div
-            class="haproven-frame-grid"
-            id="haprovenFrame"
-        >
+        <div class="haproven-frame-grid" id="haprovenFrame">
 
             <div class="frame-loading">
 
@@ -399,11 +286,8 @@
 
         <div class="frame-footer">
 
-            <a
-                href="https://github.com/haproven/haproven/graphs/contributors"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+            <a href="https://github.com/haproven/haproven/graphs/contributors" target="_blank"
+                rel="noopener noreferrer">
                 View all Haproven contributors →
             </a>
 
@@ -415,56 +299,463 @@
 
     </main>
 
-
     <script>
+        (function () {
+            "use strict";
 
-        /* =========================================
-           HAPROVEN FRAME
-           GitHub Contributors API
-        ========================================= */
+            /* =====================================================
+               HAPROVEN FRAME
+               Smart GitHub Contributor System
+               Cache + Rate Limit Protection + Auto Update
+            ===================================================== */
 
-        const REPOSITORY =
-            "haproven/haproven";
+            const REPOSITORY = "haproven/haproven";
 
+            const frame = document.getElementById("haprovenFrame");
 
-        const frame =
-            document.getElementById(
-                "haprovenFrame"
-            );
-
-
-        async function loadHaprovenFrame() {
-
-            try {
-
-                const apiURL =
-                    `https://api.github.com/repos/${REPOSITORY}/contributors`;
+            if (!frame) {
+                console.error(
+                    "Haproven Frame: #haprovenFrame not found."
+                );
+                return;
+            }
 
 
-                const response =
-                    await fetch(apiURL, {
-                        headers: {
-                            "Accept":
-                                "application/vnd.github+json"
-                        }
-                    });
+            /* =====================================================
+               SETTINGS
+            ===================================================== */
+
+            // GitHub contributors API:
+            // Maximum once every 15 minutes
+            const REFRESH_INTERVAL =
+                15 * 60 * 1000;
+
+            // GitHub profile cache:
+            // 24 hours
+            const PROFILE_REFRESH_INTERVAL =
+                24 * 60 * 60 * 1000;
+
+            const CONTRIBUTORS_KEY =
+                "haproven_frame_smart_contributors_v3";
+
+            const PROFILE_PREFIX =
+                "haproven_frame_smart_profile_v3_";
+
+            const RATE_LIMIT_KEY =
+                "haproven_frame_rate_limit_v3";
 
 
-                if (!response.ok) {
+            /* =====================================================
+               SAFE STORAGE
+            ===================================================== */
 
-                    throw new Error(
-                        `GitHub API Error: ${response.status}`
+            function readStorage(key) {
+
+                try {
+
+                    const value =
+                        localStorage.getItem(key);
+
+                    if (!value) {
+                        return null;
+                    }
+
+                    return JSON.parse(value);
+
+                } catch (error) {
+
+                    console.warn(
+                        "Haproven Frame: Storage read failed.",
+                        error
                     );
 
+                    return null;
+                }
+            }
+
+
+            function writeStorage(key, value) {
+
+                try {
+
+                    localStorage.setItem(
+                        key,
+                        JSON.stringify(value)
+                    );
+
+                    return true;
+
+                } catch (error) {
+
+                    console.warn(
+                        "Haproven Frame: Storage write failed.",
+                        error
+                    );
+
+                    return false;
+                }
+            }
+
+
+            /* =====================================================
+               RATE LIMIT
+            ===================================================== */
+
+            function getRateLimitBlock() {
+
+                const data =
+                    readStorage(
+                        RATE_LIMIT_KEY
+                    );
+
+                if (
+                    !data ||
+                    !data.reset
+                ) {
+                    return null;
                 }
 
 
-                const contributors =
-                    await response.json();
+                const reset =
+                    Number(data.reset);
 
 
-                frame.innerHTML = "";
+                if (
+                    !Number.isFinite(reset) ||
+                    Date.now() >= reset
+                ) {
 
+                    try {
+
+                        localStorage.removeItem(
+                            RATE_LIMIT_KEY
+                        );
+
+                    } catch (error) { }
+
+                    return null;
+                }
+
+
+                return data;
+            }
+
+
+            function saveRateLimit(resetSeconds) {
+
+                const seconds =
+                    Number(resetSeconds);
+
+
+                if (
+                    !Number.isFinite(seconds) ||
+                    seconds <= 0
+                ) {
+                    return;
+                }
+
+
+                const reset =
+                    seconds * 1000;
+
+
+                writeStorage(
+                    RATE_LIMIT_KEY,
+                    {
+                        reset: reset
+                    }
+                );
+
+
+                console.warn(
+                    "Haproven Frame: GitHub rate limit active until",
+                    new Date(reset).toLocaleString()
+                );
+            }
+
+
+            /* =====================================================
+               PROFILE CACHE
+            ===================================================== */
+
+            function profileKey(username) {
+
+                return (
+                    PROFILE_PREFIX +
+                    String(username).toLowerCase()
+                );
+            }
+
+
+            function getCachedProfile(username) {
+
+                const cache =
+                    readStorage(
+                        profileKey(username)
+                    );
+
+
+                if (!cache) {
+                    return null;
+                }
+
+
+                if (
+                    !cache.time ||
+                    !cache.profile
+                ) {
+                    return null;
+                }
+
+
+                const age =
+                    Date.now() -
+                    Number(cache.time);
+
+
+                if (
+                    !Number.isFinite(age) ||
+                    age > PROFILE_REFRESH_INTERVAL
+                ) {
+                    return null;
+                }
+
+
+                return cache.profile;
+            }
+
+
+            function saveProfile(
+                username,
+                profile
+            ) {
+
+                if (!profile) {
+                    return;
+                }
+
+
+                writeStorage(
+                    profileKey(username),
+                    {
+                        time: Date.now(),
+                        profile: profile
+                    }
+                );
+            }
+
+
+            /* =====================================================
+               CREATE MEMBER CARD
+            ===================================================== */
+
+            function createMemberCard(
+                contributor
+            ) {
+
+                const username =
+                    contributor.login ||
+                    "unknown";
+
+
+                const githubURL =
+                    contributor.html_url ||
+                    (
+                        "https://github.com/" +
+                        encodeURIComponent(username)
+                    );
+
+
+                /* ===============================
+                   CARD
+                =============================== */
+
+                const link =
+                    document.createElement("a");
+
+                link.className =
+                    "haproven-member";
+
+                link.href =
+                    githubURL;
+
+                link.target =
+                    "_blank";
+
+                link.rel =
+                    "noopener noreferrer";
+
+                link.title =
+                    username +
+                    " — Haproven Contributor";
+
+
+                /* ===============================
+                   PHOTO
+                =============================== */
+
+                const image =
+                    document.createElement("img");
+
+                image.className =
+                    "member-avatar";
+
+                image.src =
+                    contributor.avatar_url ||
+                    (
+                        "https://github.githubassets.com/" +
+                        "images/modules/logos_page/GitHub-Mark.png"
+                    );
+
+                image.alt =
+                    (
+                        contributor.name ||
+                        username
+                    ) +
+                    " — Haproven Contributor";
+
+                image.loading =
+                    "lazy";
+
+                image.referrerPolicy =
+                    "no-referrer";
+
+
+                /* ===============================
+                   NAME
+                =============================== */
+
+                const name =
+                    document.createElement("div");
+
+                name.className =
+                    "member-name";
+
+                name.textContent =
+                    contributor.name ||
+                    username;
+
+
+                /* ===============================
+                   USERNAME
+                =============================== */
+
+                const usernameElement =
+                    document.createElement("div");
+
+                usernameElement.className =
+                    "member-username";
+
+                usernameElement.textContent =
+                    "@" + username;
+
+
+                /* ===============================
+                   BIO
+                =============================== */
+
+                const bio =
+                    document.createElement("div");
+
+                bio.className =
+                    "member-bio";
+
+
+                if (contributor.bio) {
+
+                    bio.textContent =
+                        contributor.bio;
+
+                } else {
+
+                    bio.textContent =
+                        "Haproven contributor";
+
+                    bio.classList.add(
+                        "no-bio"
+                    );
+                }
+
+
+                /* ===============================
+                   BOTTOM
+                =============================== */
+
+                const bottom =
+                    document.createElement("div");
+
+                bottom.className =
+                    "member-bottom";
+
+
+                const github =
+                    document.createElement("span");
+
+                github.className =
+                    "member-github";
+
+                github.textContent =
+                    "🐙 GitHub";
+
+
+                const contributions =
+                    document.createElement("span");
+
+                contributions.className =
+                    "member-contributions";
+
+                contributions.textContent =
+                    Number(
+                        contributor.contributions || 0
+                    ).toLocaleString() +
+                    " contributions";
+
+
+                bottom.appendChild(
+                    github
+                );
+
+                bottom.appendChild(
+                    contributions
+                );
+
+
+                /* ===============================
+                   APPEND
+                =============================== */
+
+                link.appendChild(
+                    image
+                );
+
+                link.appendChild(
+                    name
+                );
+
+                link.appendChild(
+                    usernameElement
+                );
+
+                link.appendChild(
+                    bio
+                );
+
+                link.appendChild(
+                    bottom
+                );
+
+
+                return link;
+            }
+
+
+            /* =====================================================
+               RENDER
+            ===================================================== */
+
+            function render(
+                contributors
+            ) {
 
                 if (
                     !Array.isArray(contributors) ||
@@ -472,110 +763,837 @@
                 ) {
 
                     frame.innerHTML = `
-                        <div class="frame-loading">
-                            No contributors found yet.
-                        </div>
-                    `;
+                <div class="frame-loading">
+                    No contributors found yet.
+                </div>
+            `;
 
                     return;
                 }
 
 
+                const fragment =
+                    document.createDocumentFragment();
+
+
                 contributors.forEach(
-                    contributor => {
+                    function (contributor) {
 
-                        const link =
-                            document.createElement("a");
-
-
-                        link.className =
-                            "haproven-member";
-
-
-                        link.href =
-                            contributor.html_url;
-
-
-                        link.target =
-                            "_blank";
-
-
-                        link.rel =
-                            "noopener noreferrer";
-
-
-                        link.title =
-                            `${contributor.login} — Haproven Contributor`;
-
-
-                        const image =
-                            document.createElement("img");
-
-
-                        image.src =
-                            contributor.avatar_url;
-
-
-                        image.alt =
-                            `${contributor.login} — Haproven Contributor`;
-
-
-                        image.loading =
-                            "lazy";
-
-
-                        link.appendChild(
-                            image
-                        );
-
-
-                        frame.appendChild(
-                            link
+                        fragment.appendChild(
+                            createMemberCard(
+                                contributor
+                            )
                         );
 
                     }
                 );
 
+
+                frame.replaceChildren(
+                    fragment
+                );
             }
 
-            catch (error) {
 
-                console.error(
-                    "Haproven Frame Error:",
-                    error
+            /* =====================================================
+               GITHUB REQUEST
+            ===================================================== */
+
+            async function githubRequest(
+                url
+            ) {
+
+                /* ===============================
+                   LOCAL RATE LIMIT CHECK
+                =============================== */
+
+                if (
+                    getRateLimitBlock()
+                ) {
+
+                    const error =
+                        new Error(
+                            "GitHub rate limit locally blocked."
+                        );
+
+                    error.rateLimited =
+                        true;
+
+                    throw error;
+                }
+
+
+                /* ===============================
+                   REQUEST
+                =============================== */
+
+                let response;
+
+
+                try {
+
+                    response =
+                        await fetch(
+                            url,
+                            {
+                                method: "GET",
+
+                                headers: {
+                                    "Accept":
+                                        "application/vnd.github+json"
+                                },
+
+                                cache: "no-store"
+                            }
+                        );
+
+                } catch (error) {
+
+                    const networkError =
+                        new Error(
+                            "Unable to connect to GitHub."
+                        );
+
+                    networkError.network =
+                        true;
+
+                    throw networkError;
+                }
+
+
+                /* ===============================
+                   RATE LIMIT HEADERS
+                =============================== */
+
+                const remaining =
+                    response.headers.get(
+                        "x-ratelimit-remaining"
+                    );
+
+                const reset =
+                    response.headers.get(
+                        "x-ratelimit-reset"
+                    );
+
+
+                /* ===============================
+                   RATE LIMIT
+                =============================== */
+
+                if (
+                    response.status === 403 ||
+                    response.status === 429 ||
+                    remaining === "0"
+                ) {
+
+                    saveRateLimit(
+                        reset
+                    );
+
+
+                    const error =
+                        new Error(
+                            "GitHub API rate limit reached."
+                        );
+
+                    error.rateLimited =
+                        true;
+
+                    error.status =
+                        response.status;
+
+                    throw error;
+                }
+
+
+                /* ===============================
+                   OTHER ERROR
+                =============================== */
+
+                if (!response.ok) {
+
+                    const error =
+                        new Error(
+                            "GitHub API error: " +
+                            response.status
+                        );
+
+                    error.status =
+                        response.status;
+
+                    throw error;
+                }
+
+
+                return await response.json();
+            }
+
+
+            /* =====================================================
+               FETCH CONTRIBUTORS
+            ===================================================== */
+
+            async function fetchContributors() {
+
+                const url =
+                    "https://api.github.com/repos/" +
+                    REPOSITORY +
+                    "/contributors?per_page=100";
+
+
+                return await githubRequest(
+                    url
+                );
+            }
+
+
+            /* =====================================================
+               FETCH PROFILE
+            ===================================================== */
+
+            async function fetchProfile(
+                username
+            ) {
+
+                /* ===============================
+                   CACHE FIRST
+                =============================== */
+
+                const cached =
+                    getCachedProfile(
+                        username
+                    );
+
+
+                if (cached) {
+
+                    return cached;
+                }
+
+
+                /* ===============================
+                   RATE LIMIT
+                =============================== */
+
+                if (
+                    getRateLimitBlock()
+                ) {
+
+                    return null;
+                }
+
+
+                try {
+
+                    const url =
+                        "https://api.github.com/users/" +
+                        encodeURIComponent(username);
+
+
+                    const profile =
+                        await githubRequest(
+                            url
+                        );
+
+
+                    saveProfile(
+                        username,
+                        profile
+                    );
+
+
+                    return profile;
+
+                } catch (error) {
+
+                    console.warn(
+                        "Haproven Frame: Profile skipped → " +
+                        username
+                    );
+
+                    return null;
+                }
+            }
+
+
+            /* =====================================================
+               ENRICH CONTRIBUTORS
+            ===================================================== */
+
+            async function enrichContributors(
+                contributors
+            ) {
+
+                const output = [];
+
+
+                for (
+                    const contributor of contributors
+                ) {
+
+                    let result = {
+                        ...contributor
+                    };
+
+
+                    if (
+                        contributor.login &&
+                        !getRateLimitBlock()
+                    ) {
+
+                        const profile =
+                            await fetchProfile(
+                                contributor.login
+                            );
+
+
+                        if (profile) {
+
+                            result = {
+
+                                ...result,
+
+                                name:
+                                    profile.name ||
+                                    contributor.login,
+
+                                bio:
+                                    profile.bio ||
+                                    "",
+
+                                avatar_url:
+                                    profile.avatar_url ||
+                                    contributor.avatar_url,
+
+                                html_url:
+                                    profile.html_url ||
+                                    contributor.html_url
+                            };
+                        }
+                    }
+
+
+                    output.push(
+                        result
+                    );
+
+
+                    /*
+                        Small delay.
+                        Prevents a huge request burst.
+                    */
+
+                    await new Promise(
+                        function (resolve) {
+
+                            setTimeout(
+                                resolve,
+                                200
+                            );
+
+                        }
+                    );
+                }
+
+
+                return output;
+            }
+
+
+            /* =====================================================
+               CONTRIBUTOR CACHE
+            ===================================================== */
+
+            function saveContributors(
+                contributors
+            ) {
+
+                writeStorage(
+                    CONTRIBUTORS_KEY,
+                    {
+                        time: Date.now(),
+                        contributors: contributors
+                    }
+                );
+            }
+
+
+            function getContributorCache() {
+
+                return readStorage(
+                    CONTRIBUTORS_KEY
+                );
+            }
+
+
+            function shouldRefresh() {
+
+                const cache =
+                    getContributorCache();
+
+
+                if (!cache) {
+                    return true;
+                }
+
+
+                if (
+                    !cache.time
+                ) {
+                    return true;
+                }
+
+
+                const age =
+                    Date.now() -
+                    Number(cache.time);
+
+
+                return (
+                    !Number.isFinite(age) ||
+                    age >= REFRESH_INTERVAL
+                );
+            }
+
+
+            /* =====================================================
+               CHECK CHANGES
+            ===================================================== */
+
+            function contributorsChanged(
+                oldContributors,
+                latestContributors
+            ) {
+
+                if (
+                    !Array.isArray(
+                        oldContributors
+                    ) ||
+                    !Array.isArray(
+                        latestContributors
+                    )
+                ) {
+
+                    return true;
+                }
+
+
+                /* ===============================
+                   COUNT CHANGED
+                =============================== */
+
+                if (
+                    oldContributors.length !==
+                    latestContributors.length
+                ) {
+
+                    return true;
+                }
+
+
+                /* ===============================
+                   OLD MAP
+                =============================== */
+
+                const oldMap =
+                    new Map();
+
+
+                oldContributors.forEach(
+                    function (contributor) {
+
+                        if (
+                            contributor &&
+                            contributor.login
+                        ) {
+
+                            oldMap.set(
+                                contributor.login,
+                                contributor
+                            );
+                        }
+
+                    }
                 );
 
 
-                frame.innerHTML = `
+                /* ===============================
+                   COMPARE
+                =============================== */
 
-                    <div class="frame-loading">
+                for (
+                    const contributor of
+                    latestContributors
+                ) {
 
-                        Unable to load contributors.
+                    if (
+                        !contributor ||
+                        !contributor.login
+                    ) {
 
-                        <br><br>
+                        continue;
+                    }
 
-                        <a
-                            href="https://github.com/haproven/haproven/graphs/contributors"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            View contributors on GitHub →
-                        </a>
 
-                    </div>
+                    const old =
+                        oldMap.get(
+                            contributor.login
+                        );
 
-                `;
 
+                    /* New contributor */
+
+                    if (!old) {
+
+                        return true;
+                    }
+
+
+                    /* Contributions changed */
+
+                    if (
+                        Number(
+                            old.contributions || 0
+                        ) !==
+                        Number(
+                            contributor.contributions || 0
+                        )
+                    ) {
+
+                        return true;
+                    }
+
+
+                    /* Avatar changed */
+
+                    if (
+                        old.avatar_url !==
+                        contributor.avatar_url
+                    ) {
+
+                        return true;
+                    }
+                }
+
+
+                return false;
             }
 
-        }
+
+            /* =====================================================
+               UPDATE FROM GITHUB
+            ===================================================== */
+
+            async function updateFromGitHub() {
+
+                /* ===============================
+                   RATE LIMIT
+                =============================== */
+
+                if (
+                    getRateLimitBlock()
+                ) {
+
+                    console.log(
+                        "Haproven Frame: GitHub rate limit active. Cache kept."
+                    );
+
+                    return false;
+                }
 
 
-        loadHaprovenFrame();
+                try {
 
+                    console.log(
+                        "Haproven Frame: Checking GitHub..."
+                    );
+
+
+                    /* ===============================
+                       GET LATEST CONTRIBUTORS
+                    =============================== */
+
+                    const latest =
+                        await fetchContributors();
+
+
+                    if (
+                        !Array.isArray(latest)
+                    ) {
+
+                        return false;
+                    }
+
+
+                    /* ===============================
+                       OLD CACHE
+                    =============================== */
+
+                    const oldCache =
+                        getContributorCache();
+
+
+                    const oldContributors =
+                        Array.isArray(
+                            oldCache?.contributors
+                        )
+                            ? oldCache.contributors
+                            : [];
+
+
+                    /* ===============================
+                       CHECK CHANGES
+                    =============================== */
+
+                    const changed =
+                        contributorsChanged(
+                            oldContributors,
+                            latest
+                        );
+
+
+                    /* ===============================
+                       NO CHANGE
+                    =============================== */
+
+                    if (
+                        !changed &&
+                        oldContributors.length > 0
+                    ) {
+
+                        console.log(
+                            "Haproven Frame: No changes found."
+                        );
+
+
+                        /*
+                            Update timestamp only.
+        
+                            This prevents another GitHub
+                            request for 15 minutes.
+                        */
+
+                        saveContributors(
+                            oldContributors
+                        );
+
+
+                        return true;
+                    }
+
+
+                    /* ===============================
+                       CHANGES FOUND
+                    =============================== */
+
+                    console.log(
+                        "Haproven Frame: New/update detected."
+                    );
+
+
+                    /*
+                        Show latest GitHub data immediately.
+                    */
+
+                    render(
+                        latest
+                    );
+
+
+                    /* ===============================
+                       PROFILE DATA
+                    =============================== */
+
+                    const enriched =
+                        await enrichContributors(
+                            latest
+                        );
+
+
+                    /* ===============================
+                       SAVE
+                    =============================== */
+
+                    saveContributors(
+                        enriched
+                    );
+
+
+                    /* ===============================
+                       FINAL RENDER
+                    =============================== */
+
+                    render(
+                        enriched
+                    );
+
+
+                    console.log(
+                        "Haproven Frame: Updated successfully."
+                    );
+
+
+                    return true;
+
+                } catch (error) {
+
+                    console.warn(
+                        "Haproven Frame: GitHub update skipped.",
+                        error
+                    );
+
+
+                    /*
+                        IMPORTANT:
+        
+                        Never remove existing cached
+                        contributors if GitHub fails.
+                    */
+
+                    const cache =
+                        getContributorCache();
+
+
+                    if (
+                        cache &&
+                        Array.isArray(
+                            cache.contributors
+                        )
+                    ) {
+
+                        render(
+                            cache.contributors
+                        );
+
+                        return false;
+                    }
+
+
+                    return false;
+                }
+            }
+
+
+            /* =====================================================
+               INITIAL LOAD
+            ===================================================== */
+
+            async function start() {
+
+                const cache =
+                    getContributorCache();
+
+
+                /* ===============================
+                   CACHE EXISTS
+                =============================== */
+
+                if (
+                    cache &&
+                    Array.isArray(
+                        cache.contributors
+                    ) &&
+                    cache.contributors.length > 0
+                ) {
+
+                    /*
+                        Show cached data immediately.
+                    */
+
+                    render(
+                        cache.contributors
+                    );
+
+
+                    /*
+                        GitHub check only after
+                        15 minutes.
+                    */
+
+                    if (
+                        shouldRefresh()
+                    ) {
+
+                        /*
+                            Do not block page rendering.
+                        */
+
+                        updateFromGitHub();
+                    }
+
+
+                    return;
+                }
+
+
+                /* ===============================
+                   NO CACHE
+                =============================== */
+
+                frame.innerHTML = `
+            <div class="frame-loading">
+                Loading contributors
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+            </div>
+        `;
+
+
+                await updateFromGitHub();
+
+
+                /* ===============================
+                   FINAL FALLBACK
+                =============================== */
+
+                const finalCache =
+                    getContributorCache();
+
+
+                if (
+                    !finalCache ||
+                    !Array.isArray(
+                        finalCache.contributors
+                    ) ||
+                    finalCache.contributors.length === 0
+                ) {
+
+                    frame.innerHTML = `
+                <div class="frame-loading">
+
+                    Unable to load contributors.
+
+                    <br><br>
+
+                    <a
+                        href="https://github.com/haproven/haproven/graphs/contributors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View contributors on GitHub →
+                    </a>
+
+                </div>
+            `;
+                }
+            }
+
+
+            /* =====================================================
+               START
+            ===================================================== */
+
+            start();
+
+
+        })();
     </script>
 
 
+<script src="suggestions/susheel/api.js"></script>
+
 </body>
+
 
 </html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================
+     Haproven Frame — SEO Meta
+========================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Haproven Frame is the developer and builder community behind Haproven — showcasing developers, creators, contributors, projects, skills, achievements and open-source work.">
+
+    <meta name="keywords"
+        content="Haproven Frame, Haproven, Haproven Tech Community, developers, web developers, software developers, builders, creators, contributors, open source, projects, technology community, coding community">
+
+    <meta name="author" content="Haproven">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta name="googlebot" content="index, follow">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="https://haproven.netlify.app/frame/">
+
+    <title>
+        Haproven Frame — Developers, Builders & Contributors | Haproven
+    </title>
+
+
+    <!-- =========================
+     Open Graph
+========================= -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Haproven Frame — Developers, Builders & Contributors">
+
+    <meta property="og:description"
+        content="Discover the developers, builders and contributors behind Haproven, their skills, projects, achievements and contributions to the tech community.">
+
+    <meta property="og:url" content="https://haproven.netlify.app/frame/">
+
+    <meta property="og:site_name" content="Haproven">
+
+    <meta property="og:locale" content="en_US">
+
+
+    <!-- =========================
+     Twitter / X
+========================= -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Haproven Frame — Developers, Builders & Contributors">
+
+    <meta name="twitter:description"
+        content="Meet the developers, builders and contributors shaping Haproven through technology, projects, open source and community contributions.">
+
+
+    <!-- =========================
+     Additional SEO
+========================= -->
+
+    <meta name="application-name" content="Haproven Frame">
+
+    <meta name="apple-mobile-web-app-title" content="Haproven Frame">
+
+    <meta name="format-detection" content="telephone=no">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 15px;
+
+            font-family:
+                Inter,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background: #f5f7fb;
+            color: #15171a;
+        }
+
+        /* =========================================
+           FRAME
+        ========================================= */
+
+        .haproven-frame {
+            width: 100%;
+            max-width: 1100px;
+            padding: 55px 30px;
+
+            background: #ffffff;
+
+            border: 1px solid #e7e9ee;
+            border-radius: 28px;
+
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, .08);
+
+            text-align: center;
+        }
+
+
+        /* =========================================
+           HEADER
+        ========================================= */
+
+        .frame-label {
+            display: inline-block;
+
+            margin-bottom: 12px;
+
+            font-size: 12px;
+            font-weight: 800;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            color: #667085;
+        }
+
+
+        .haproven-frame h1 {
+
+            margin: 0;
+
+            font-size:
+                clamp(32px, 6vw, 52px);
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            letter-spacing: -1.5px;
+        }
+
+
+        .frame-description {
+
+            max-width: 650px;
+
+            margin:
+                16px auto 0;
+
+            color: #667085;
+
+            font-size: 16px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           CONTRIBUTORS
+        ========================================= */
+
+        .haproven-frame-grid {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 22px;
+
+            margin-top: 45px;
+
+            min-height: 100px;
+        }
+
+
+        /* =========================================
+           MEMBER
+        ========================================= */
+
+        .haproven-member {
+
+            position: relative;
+
+            display: block;
+
+            width: 92px;
+            height: 92px;
+
+            flex: 0 0 92px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            background: #eef1f5;
+
+            border: 3px solid #ffffff;
+
+            box-shadow:
+                0 6px 20px rgba(0, 0, 0, .12);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease;
+        }
+
+
+        .haproven-member::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            border-radius: inherit;
+
+            background:
+                linear-gradient(135deg,
+                    rgba(255, 255, 255, .35),
+                    transparent);
+
+            pointer-events: none;
+        }
+
+
+        .haproven-member:hover {
+
+            transform:
+                translateY(-10px) scale(1.08);
+
+            box-shadow:
+                0 15px 35px rgba(0, 0, 0, .18);
+
+            z-index: 2;
+        }
+
+
+        .haproven-member img {
+
+            width: 100%;
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+        }
+
+
+        /* =========================================
+           LOADING
+        ========================================= */
+
+        .frame-loading {
+
+            width: 100%;
+
+            padding: 30px;
+
+            color: #667085;
+
+            font-size: 14px;
+        }
+
+
+        .loading-dot {
+
+            display: inline-block;
+
+            width: 8px;
+            height: 8px;
+
+            margin: 0 3px;
+
+            border-radius: 50%;
+
+            background: currentColor;
+
+            animation:
+                loading 1s infinite ease-in-out;
+        }
+
+
+        .loading-dot:nth-child(2) {
+            animation-delay: .15s;
+        }
+
+        .loading-dot:nth-child(3) {
+            animation-delay: .3s;
+        }
+
+
+        @keyframes loading {
+
+            0%,
+            80%,
+            100% {
+                transform: scale(.5);
+                opacity: .4;
+            }
+
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .frame-footer {
+
+            margin-top: 40px;
+
+            color: #667085;
+
+            font-size: 14px;
+
+            line-height: 1.7;
+        }
+
+
+        .frame-footer a {
+
+            color: inherit;
+
+            font-weight: 700;
+
+            text-decoration: none;
+        }
+
+
+        .frame-footer a:hover {
+
+            text-decoration: underline;
+        }
+
+
+        .frame-brand {
+
+            margin-top: 8px;
+
+            font-weight: 800;
+
+            color: #15171a;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            body {
+                padding: 15px;
+            }
+
+            .haproven-frame {
+
+                padding:
+                    40px 15px;
+
+                border-radius: 22px;
+            }
+
+            .haproven-member {
+
+                width: 70px;
+                height: 70px;
+
+                flex-basis: 70px;
+            }
+
+            .haproven-frame-grid {
+
+                gap: 15px;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+    <main class="haproven-frame" id="haprovenFrameSection">
+
+        <span class="frame-label">
+            HAPROVEN COMMUNITY
+        </span>
+
+
+        <h1>
+            🖼️ Haproven Frame
+        </h1>
+
+
+        <p class="frame-description">
+            The people behind Haproven —
+            developers, builders and contributors
+            helping the community grow.
+        </p>
+
+
+        <!-- Contributors -->
+
+        <div class="haproven-frame-grid" id="haprovenFrame">
+
+            <div class="frame-loading">
+
+                Loading contributors
+
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="frame-footer">
+
+            <a href="https://github.com/haproven/haproven/graphs/contributors" target="_blank"
+                rel="noopener noreferrer">
+                View all Haproven contributors →
+            </a>
+
+            <div class="frame-brand">
+                🚀 HAPROVEN — Where Ideas Get Proven.
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =========================================
+           HAPROVEN FRAME
+           GitHub Contributors API
+        ========================================= */
+
+        const REPOSITORY =
+            "haproven/haproven";
+
+
+        const frame =
+            document.getElementById(
+                "haprovenFrame"
+            );
+
+
+        async function loadHaprovenFrame() {
+
+            try {
+
+                const apiURL =
+                    `https://api.github.com/repos/${REPOSITORY}/contributors`;
+
+
+                const response =
+                    await fetch(apiURL, {
+                        headers: {
+                            "Accept":
+                                "application/vnd.github+json"
+                        }
+                    });
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `GitHub API Error: ${response.status}`
+                    );
+
+                }
+
+
+                const contributors =
+                    await response.json();
+
+
+                frame.innerHTML = "";
+
+
+                if (
+                    !Array.isArray(contributors) ||
+                    contributors.length === 0
+                ) {
+
+                    frame.innerHTML = `
+                        <div class="frame-loading">
+                            No contributors found yet.
+                        </div>
+                    `;
+
+                    return;
+                }
+
+
+                contributors.forEach(
+                    contributor => {
+
+                        const link =
+                            document.createElement("a");
+
+
+                        link.className =
+                            "haproven-member";
+
+
+                        link.href =
+                            contributor.html_url;
+
+
+                        link.target =
+                            "_blank";
+
+
+                        link.rel =
+                            "noopener noreferrer";
+
+
+                        link.title =
+                            `${contributor.login} — Haproven Contributor`;
+
+
+                        const image =
+                            document.createElement("img");
+
+
+                        image.src =
+                            contributor.avatar_url;
+
+
+                        image.alt =
+                            `${contributor.login} — Haproven Contributor`;
+
+
+                        image.loading =
+                            "lazy";
+
+
+                        link.appendChild(
+                            image
+                        );
+
+
+                        frame.appendChild(
+                            link
+                        );
+
+                    }
+                );
+
+            }
+
+            catch (error) {
+
+                console.error(
+                    "Haproven Frame Error:",
+                    error
+                );
+
+
+                frame.innerHTML = `
+
+                    <div class="frame-loading">
+
+                        Unable to load contributors.
+
+                        <br><br>
+
+                        <a
+                            href="https://github.com/haproven/haproven/graphs/contributors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View contributors on GitHub →
+                        </a>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        loadHaprovenFrame();
+
+    </script>
+
+
+</body>
+
+</html>

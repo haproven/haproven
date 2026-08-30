@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================
+     Haproven Frame — SEO Meta
+========================= -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Haproven Frame is the developer and builder community behind Haproven — showcasing developers, creators, contributors, projects, skills, achievements and open-source work.">
+
+    <meta name="keywords"
+        content="Haproven Frame, Haproven, Haproven Tech Community, developers, web developers, software developers, builders, creators, contributors, open source, projects, technology community, coding community">
+
+    <meta name="author" content="Haproven">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+    <meta name="googlebot" content="index, follow">
+
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="canonical" href="https://haproven.netlify.app/frame/">
+
+    <title>
+        Haproven Frame — Developers, Builders & Contributors | Haproven
+    </title>
+
+
+    <!-- =========================
+     Open Graph
+========================= -->
+
+    <meta property="og:type" content="website">
+
+    <meta property="og:title" content="Haproven Frame — Developers, Builders & Contributors">
+
+    <meta property="og:description"
+        content="Discover the developers, builders and contributors behind Haproven, their skills, projects, achievements and contributions to the tech community.">
+
+    <meta property="og:url" content="https://haproven.netlify.app/frame/">
+
+    <meta property="og:site_name" content="Haproven">
+
+    <meta property="og:locale" content="en_US">
+
+
+    <!-- =========================
+     Twitter / X
+========================= -->
+
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Haproven Frame — Developers, Builders & Contributors">
+
+    <meta name="twitter:description"
+        content="Meet the developers, builders and contributors shaping Haproven through technology, projects, open source and community contributions.">
+
+
+    <!-- =========================
+     Additional SEO
+========================= -->
+
+    <meta name="application-name" content="Haproven Frame">
+
+    <meta name="apple-mobile-web-app-title" content="Haproven Frame">
+
+    <meta name="format-detection" content="telephone=no">
+
+
+</head>
+
+
+
+<body>
+
+    <main class="haproven-frame" id="haprovenFrameSection">
+
+        <span class="frame-label">
+            HAPROVEN COMMUNITY
+        </span>
+
+        <h1>
+            🖼️ Haproven Frame
+        </h1>
+
+        <p class="frame-description">
+            The people behind Haproven —
+            developers, builders and contributors
+            helping the community grow.
+        </p>
+
+
+        <!-- =========================
+             Contributors
+        ========================== -->
+
+        <div class="haproven-frame-grid" id="haprovenFrame">
+
+            <div class="frame-loading">
+
+                Loading contributors
+
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             Footer
+        ========================== -->
+
+        <div class="frame-footer">
+
+            <a href="https://github.com/haproven/haproven/graphs/contributors" target="_blank"
+                rel="noopener noreferrer">
+                🐙 View all Haproven contributors →
+            </a>
+
+            <div class="frame-brand">
+                🚀 HAPROVEN — Where Ideas Get Proven.
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <style>
+        /* =========================================
+           HAPROVEN FRAME
+        ========================================= */
+
+        .haproven-frame {
+            width: min(1400px, 94%);
+            margin: 0 auto;
+            padding: 70px 0 60px;
+            text-align: center;
+        }
+
+
+        /* =========================================
+           Label
+        ========================================= */
+
+        .frame-label {
+            display: inline-block;
+
+            padding: 9px 20px;
+
+            border: 1px solid rgba(150, 120, 255, .35);
+            border-radius: 14px;
+
+            background: rgba(120, 90, 255, .08);
+
+            color: #b98cff;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* =========================================
+           Heading
+        ========================================= */
+
+        .haproven-frame h1 {
+            margin: 20px 0 12px;
+
+            font-size: clamp(38px, 5vw, 64px);
+
+            line-height: 1.1;
+
+            font-weight: 800;
+
+            background:
+                linear-gradient(90deg,
+                    #d89cff,
+                    #79a9ff);
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        /* =========================================
+           Description
+        ========================================= */
+
+        .frame-description {
+            max-width: 720px;
+
+            margin: 0 auto 55px;
+
+            color: #b8bdca;
+
+            font-size: 18px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           Grid
+        ========================================= */
+
+        .haproven-frame-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit,
+                    minmax(230px, 1fr));
+
+            gap: 18px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================
+           Member Card
+        ========================================= */
+
+        .haproven-member {
+
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            min-height: 365px;
+
+            padding: 28px 20px 22px;
+
+            border-radius: 16px;
+
+            border: 1px solid rgba(150, 165, 190, .22);
+
+            background:
+                linear-gradient(145deg,
+                    rgba(25, 37, 57, .96),
+                    rgba(12, 23, 40, .96));
+
+            text-decoration: none;
+
+            color: inherit;
+
+            overflow: hidden;
+
+            transition:
+                transform .25s ease,
+                border-color .25s ease,
+                box-shadow .25s ease;
+        }
+
+
+        .haproven-member::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            height: 2px;
+
+            background:
+                linear-gradient(90deg,
+                    #a65cff,
+                    #4ea1ff);
+
+            opacity: .65;
+        }
+
+
+        .haproven-member:hover {
+
+            transform: translateY(-7px);
+
+            border-color:
+                rgba(165, 120, 255, .55);
+
+            box-shadow:
+                0 18px 45px rgba(0, 0, 0, .28);
+        }
+
+
+        /* =========================================
+           Profile Photo
+        ========================================= */
+
+        .member-avatar {
+
+            width: 118px;
+            height: 118px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border: 2px solid rgba(255, 255, 255, .22);
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, .25);
+
+            margin-bottom: 18px;
+        }
+
+
+        /* =========================================
+           Real Name
+        ========================================= */
+
+        .member-name {
+
+            width: 100%;
+
+            color: #ffffff;
+
+            font-size: 20px;
+
+            font-weight: 750;
+
+            line-height: 1.3;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+        }
+
+
+        /* =========================================
+           GitHub Username
+        ========================================= */
+
+        .member-username {
+
+            margin-top: 5px;
+
+            color: #b77cff;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           GitHub Bio
+        ========================================= */
+
+        .member-bio {
+
+            display: -webkit-box;
+
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+
+            overflow: hidden;
+
+            min-height: 63px;
+
+            margin: 15px 0 18px;
+
+            color: #c1c7d2;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        .member-bio.no-bio {
+
+            color: #777f8d;
+
+            font-style: italic;
+        }
+
+
+        /* =========================================
+           Card Bottom
+        ========================================= */
+
+        .member-bottom {
+
+            width: 100%;
+
+            margin-top: auto;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid rgba(255, 255, 255, .10);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+
+        /* =========================================
+           GitHub
+        ========================================= */
+
+        .member-github {
+
+            color: #ffffff;
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================
+           Contributions
+        ========================================= */
+
+        .member-contributions {
+
+            color: #55e58a;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================
+           Loading
+        ========================================= */
+
+        .frame-loading {
+
+            grid-column: 1 / -1;
+
+            min-height: 220px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
+
+            color: #aeb5c2;
+
+            font-size: 16px;
+        }
+
+
+        .loading-dot {
+
+            width: 5px;
+            height: 5px;
+
+            margin-top: 10px;
+
+            border-radius: 50%;
+
+            background: #a66cff;
+
+            animation:
+                haprovenDot 1.2s infinite ease-in-out;
+        }
+
+
+        .loading-dot:nth-child(2) {
+            animation-delay: .15s;
+        }
+
+        .loading-dot:nth-child(3) {
+            animation-delay: .3s;
+        }
+
+
+        @keyframes haprovenDot {
+
+            0%,
+            80%,
+            100% {
+                opacity: .3;
+                transform: translateY(0);
+            }
+
+            40% {
+                opacity: 1;
+                transform: translateY(-5px);
+            }
+        }
+
+
+        /* =========================================
+           Footer
+        ========================================= */
+
+        .frame-footer {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            margin-top: 35px;
+        }
+
+
+        .frame-footer>a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            padding: 14px 22px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(150, 100, 255, .6);
+
+            background:
+                linear-gradient(135deg,
+                    rgba(115, 65, 255, .25),
+                    rgba(55, 120, 255, .18));
+
+            color: #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            transition: .25s ease;
+        }
+
+
+        .frame-footer>a:hover {
+
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(180, 140, 255, .9);
+        }
+
+
+        .frame-brand {
+
+            padding: 14px 22px;
+
+            border-radius: 12px;
+
+            border: 1px solid rgba(150, 165, 190, .2);
+
+            color: #d6dae3;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           Mobile
+        ========================================= */
+
+        @media (max-width: 600px) {
+
+            .haproven-frame {
+                width: 92%;
+                padding: 45px 0;
+            }
+
+            .frame-description {
+                font-size: 15px;
+                margin-bottom: 35px;
+            }
+
+            .haproven-frame-grid {
+                grid-template-columns:
+                    repeat(1, 1fr);
+            }
+
+            .haproven-member {
+                min-height: 350px;
+            }
+
+        }
+    </style>
+
+
+
+    <script>
+
+        /* =========================================
+           HAPROVEN FRAME
+           GitHub Contributors + User Profile API
+        ========================================= */
+
+        const REPOSITORY =
+            "haproven/haproven";
+
+        const frame =
+            document.getElementById(
+                "haprovenFrame"
+            );
+
+
+        /* =========================================
+           Create Member Card
+        ========================================= */
+
+        function createMemberCard(
+            contributor,
+            profile
+        ) {
+
+            const link =
+                document.createElement("a");
+
+            link.className =
+                "haproven-member";
+
+            link.href =
+                contributor.html_url;
+
+            link.target =
+                "_blank";
+
+            link.rel =
+                "noopener noreferrer";
+
+
+            /* =========================
+               Avatar
+            ========================== */
+
+            const image =
+                document.createElement("img");
+
+            image.className =
+                "member-avatar";
+
+            image.src =
+                profile.avatar_url ||
+                contributor.avatar_url;
+
+            image.alt =
+                `${profile.name || contributor.login} — Haproven Contributor`;
+
+            image.loading =
+                "lazy";
+
+
+            /* =========================
+               Real Name
+            ========================== */
+
+            const name =
+                document.createElement("div");
+
+            name.className =
+                "member-name";
+
+            name.textContent =
+                profile.name ||
+                contributor.login;
+
+
+            /* =========================
+               Username
+            ========================== */
+
+            const username =
+                document.createElement("div");
+
+            username.className =
+                "member-username";
+
+            username.textContent =
+                `@${contributor.login}`;
+
+
+            /* =========================
+               GitHub Bio
+            ========================== */
+
+            const bio =
+                document.createElement("div");
+
+            bio.className =
+                "member-bio";
+
+
+            if (profile.bio) {
+
+                bio.textContent =
+                    profile.bio;
+
+            } else {
+
+                bio.textContent =
+                    "Haproven contributor";
+
+                bio.classList.add(
+                    "no-bio"
+                );
+
+            }
+
+
+            /* =========================
+               Bottom
+            ========================== */
+
+            const bottom =
+                document.createElement("div");
+
+            bottom.className =
+                "member-bottom";
+
+
+            const github =
+                document.createElement("span");
+
+            github.className =
+                "member-github";
+
+            github.textContent =
+                "🐙 GitHub";
+
+
+            const contributions =
+                document.createElement("span");
+
+            contributions.className =
+                "member-contributions";
+
+            contributions.textContent =
+                `${contributor.contributions} contributions`;
+
+
+            bottom.appendChild(github);
+
+            bottom.appendChild(
+                contributions
+            );
+
+
+            /* =========================
+               Build Card
+            ========================== */
+
+            link.appendChild(image);
+
+            link.appendChild(name);
+
+            link.appendChild(username);
+
+            link.appendChild(bio);
+
+            link.appendChild(bottom);
+
+
+            return link;
+        }
+
+
+
+        /* =========================================
+           Load GitHub User Profile
+        ========================================= */
+
+        async function getGitHubProfile(
+            username
+        ) {
+
+            try {
+
+                const response =
+                    await fetch(
+                        `https://api.github.com/users/${encodeURIComponent(username)}`,
+                        {
+                            headers: {
+                                "Accept":
+                                    "application/vnd.github+json"
+                            }
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `Profile API Error: ${response.status}`
+                    );
+
+                }
+
+
+                return await response.json();
+
+            }
+            catch (error) {
+
+                console.warn(
+                    `Unable to load profile: ${username}`,
+                    error
+                );
+
+                return {};
+            }
+        }
+
+
+
+        /* =========================================
+           Main Loader
+        ========================================= */
+
+        async function loadHaprovenFrame() {
+
+            try {
+
+                const apiURL =
+                    `https://api.github.com/repos/${REPOSITORY}/contributors`;
+
+
+                const response =
+                    await fetch(
+                        apiURL,
+                        {
+                            headers: {
+                                "Accept":
+                                    "application/vnd.github+json"
+                            }
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        `GitHub API Error: ${response.status}`
+                    );
+
+                }
+
+
+                const contributors =
+                    await response.json();
+
+
+                if (
+                    !Array.isArray(contributors) ||
+                    contributors.length === 0
+                ) {
+
+                    frame.innerHTML = `
+
+                        <div class="frame-loading">
+
+                            No contributors found yet.
+
+                        </div>
+
+                    `;
+
+                    return;
+                }
+
+
+                /* Clear loader */
+
+                frame.innerHTML = "";
+
+
+                /* =================================
+                   Load profiles
+                ================================= */
+
+                const profiles =
+                    await Promise.all(
+                        contributors.map(
+                            contributor =>
+                                getGitHubProfile(
+                                    contributor.login
+                                )
+                        )
+                    );
+
+
+                /* =================================
+                   Create Cards
+                ================================= */
+
+                contributors.forEach(
+                    (
+                        contributor,
+                        index
+                    ) => {
+
+                        const profile =
+                            profiles[index] || {};
+
+
+                        const card =
+                            createMemberCard(
+                                contributor,
+                                profile
+                            );
+
+
+                        frame.appendChild(card);
+
+                    }
+                );
+
+            }
+
+
+            catch (error) {
+
+                console.error(
+                    "Haproven Frame Error:",
+                    error
+                );
+
+
+                frame.innerHTML = `
+
+                    <div class="frame-loading">
+
+                        Unable to load contributors.
+
+                        <br><br>
+
+                        <a
+                            href="https://github.com/haproven/haproven/graphs/contributors"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            View contributors on GitHub →
+                        </a>
+
+                    </div>
+
+                `;
+
+            }
+
+        }
+
+
+        /* =========================================
+           Start
+        ========================================= */
+
+        loadHaprovenFrame();
+
+    </script>
+
+</body>
+
+</html>
