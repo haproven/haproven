@@ -4,11 +4,8 @@ Hi! I'm a developer passionate about building useful, creative, and user-friendl
 
 ## 🛠️ Skills
 
-* HTML
-* CSS
-* JavaScript
-* Git & GitHub
-* Responsive Web Design
+HTML • CSS • JavaScript • Git • GitHub • Responsive Design
+
 
 ## 🔗 Profiles
 
