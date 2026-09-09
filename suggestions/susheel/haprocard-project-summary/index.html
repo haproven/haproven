@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haprocard – Project Summary</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --green: #4ade80;
+      --orange: #fb923c;
+      --purple: #c084fc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      background: linear-gradient(135deg, #38bdf8, #c084fc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 8px;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #1e3a5f;
+      color: var(--accent);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-top: 12px;
+      border: 1px solid #0369a1;
+    }
+
+    section {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    section h2 {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    section h2 span {
+      font-size: 1.5rem;
+    }
+
+    .problem {
+      border-left: 4px solid #f87171;
+    }
+
+    .solution {
+      border-left: 4px solid var(--green);
+    }
+
+    .flow {
+      border-left: 4px solid var(--accent);
+    }
+
+    .file {
+      border-left: 4px solid var(--orange);
+    }
+
+    .api {
+      border-left: 4px solid var(--purple);
+    }
+
+    .roadmap {
+      border-left: 4px solid #a78bfa;
+    }
+
+    ul, ol {
+      padding-left: 22px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-family: 'Cascadia Code', 'Fira Code', monospace;
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .card-mini {
+      background: #0f172a;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .card-mini h3 {
+      font-size: 0.95rem;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .card-mini p {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      background: var(--accent);
+      color: #0f172a;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .arrow {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.4rem;
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #1e293b;
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      margin: 3px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>Haprocard</h1>
+      <p>GitHub se Website tak Automatic Project Showcase</p>
+      <div class="badge">One File → Auto Update</div>
+    </header>
+
+    <!-- PROBLEM -->
+    <section class="problem">
+      <h2><span>🎯</span> Problem</h2>
+      <p>Website ke Projects section me naya project add karne ke liye baar-baar HTML / JSON edit karna padta hai — image, title, description, live link, technologies sab manually daalna padta hai.</p>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="solution">
+      <h2><span>💡</span> Solution</h2>
+      <p>Ek simple API banegi jo GitHub repositories ko scan karegi. Jis repo me <strong>haprocard.md</strong> file hogi, woh project automatically website pe dikhega.</p>
+      <p style="margin-top:12px; color:var(--green);">Developer ko website ka code kabhi touch nahi karna padega.</p>
+    </section>
+
+    <!-- CORE IDEA -->
+    <section>
+      <h2><span>⚡</span> Core Idea</h2>
+      <div class="highlight">GitHub Repo + haprocard.md = Project Source of Truth</div>
+      <p>GitHub pe file update → API automatically naya data padhegi → Website auto update.</p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="flow">
+      <h2><span>🔄</span> Kaise Kaam Karega</h2>
+
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>Developer naya GitHub repository banata hai</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>Repo ke <strong>root</strong> me <code>haprocard.md</code> file banata hai</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>File me project ki saari details likhta hai (title, image, live link etc.)</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div><code>git push</code> karta hai</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div>API detect karti hai → Website pe project automatically aa jata hai</div>
+      </div>
+    </section>
+
+    <!-- ACTIVATION FILE -->
+    <section class="file">
+      <h2><span>📄</span> Activation File</h2>
+      <div class="highlight">haprocard.md</div>
+      <p>Har active project ke <strong>root</strong> me yahi file honi chahiye.</p>
+      <ul style="margin-top:12px;">
+        <li>File name fixed hai → <strong>haprocard.md</strong></li>
+        <li>Location → Repository root only</li>
+        <li>Is file ke bina project hidden rahega</li>
+      </ul>
+    </section>
+
+    <!-- API -->
+    <section class="api">
+      <h2><span>🔗</span> Main API</h2>
+      <div class="highlight">https://api.haproven.com/github/{username}</div>
+      <p>Example:</p>
+      <div class="highlight">https://api.haproven.com/github/codersusheel</div>
+      <p style="margin-top:10px;">Ye API user ke saare public repos scan karegi aur sirf un projects ko return karegi jisme <code>haprocard.md</code> maujood hai.</p>
+    </section>
+
+    <!-- FILE CONTENT -->
+    <section>
+      <h2><span>📝</span> haprocard.md me Kya Likhenge</h2>
+      <div class="grid">
+        <div class="card-mini">
+          <h3>Basic Info</h3>
+          <p>Title, Project ID, Category, Status, Author, Date</p>
+        </div>
+        <div class="card-mini">
+          <h3>Content</h3>
+          <p>Description, Technologies, Image URL</p>
+        </div>
+        <div class="card-mini">
+          <h3>Links</h3>
+          <p>Live Project URL, GitHub Repository</p>
+        </div>
+        <div class="card-mini">
+          <h3>Extra (Future)</h3>
+          <p>Featured, Strength Score, Tags</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section>
+      <h2><span>✨</span> Fayde</h2>
+      <ul>
+        <li>Website ka code kabhi edit nahi karna padega</li>
+        <li>Naya project shuru karte hi wahi se add ho jayega</li>
+        <li>Ek hi jagah se control (GitHub)</li>
+        <li>Multiple websites ek hi API use kar sakti hain</li>
+        <li>Bahut fast aur simple system</li>
+      </ul>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="roadmap">
+      <h2><span>🛠️</span> Build Roadmap</h2>
+      <ol>
+        <li>Server Setup (Node.js + Express)</li>
+        <li>GitHub Username → Repositories list</li>
+        <li><code>haprocard.md</code> Detection</li>
+        <li>Markdown Parser (details nikaalna)</li>
+        <li>Main JSON API ready</li>
+        <li>Website pe Project Cards lagana</li>
+        <li>Caching + Rate Limit</li>
+        <li>Specific Project API</li>
+        <li>Featured / Strength Score</li>
+        <li>Embed.js + SVG Cards</li>
+        <li>Documentation</li>
+      </ol>
+    </section>
+
+    <!-- FUTURE -->
+    <section>
+      <h2><span>🔮</span> Future Features</h2>
+      <div>
+        <span class="tag">Specific Project API</span>
+        <span class="tag">Project Strength Score</span>
+        <span class="tag">Featured Projects</span>
+        <span class="tag">SVG / HTML Cards</span>
+        <span class="tag">Embed.js</span>
+        <span class="tag">Dark / Light Theme</span>
+        <span class="tag">Multiple Users</span>
+        <span class="tag">Private Repo Support</span>
+        <span class="tag">Cache Protection</span>
+      </div>
+    </section>
+
+    <footer>
+      Haprocard System • One File. Auto Update. • Made for Haproven
+    </footer>
+
+  </div>
+</body>
+</html>
