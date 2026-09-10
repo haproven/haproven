@@ -78,6 +78,10 @@
   <img src="https://avatars.githubusercontent.com/u/263568971?v=4" width="90" height="90" loading="lazy" alt="vijaylaxmi88582-art — Haproven Contributor">
 </a>
 
+<a href="https://github.com/amansingh1182006" title="amansingh1182006 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/205407093?v=4" width="90" height="90" loading="lazy" alt="amansingh1182006 — Haproven Contributor">
+</a>
+
 <a href="https://github.com/rajputhimanshusingh01" title="rajputhimanshusingh01 — Haproven Contributor">
   <img src="https://avatars.githubusercontent.com/u/224974472?v=4" width="90" height="90" loading="lazy" alt="rajputhimanshusingh01 — Haproven Contributor">
 </a>
