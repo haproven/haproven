@@ -3,7 +3,7 @@
 
 <p align="center">
   <img
-    src="https://media.licdn.com/dms/image/v2/D5616AQG68aoRgTPCDw/profile-displaybackgroundimage-shrink_200_800/B56Z_zX0.GKEAQ-/0/1786494538016?e=1788998400&v=beta&t=_B-sdhggbR0v4ZQIRB5eQjHqB4INpSipWelMbaka3WM"
+    src="suggestions/susheel/main/Banner.jpeg"
     alt="Haproven Tech Community Banner"
     width="100%">
 </p>
