@@ -6,7 +6,7 @@ title: Haproven
 description: Indian technology community and creative team building hackathons, projects, events, and developer tools.
 category: Technology Community
 status: Active
-image: https://github.com/haproven/haproven/blob/main/suggestions/susheel/main/Banner.jpeg
+image: https://haproid.netlify.app/assets/img/user/main/pro-susheel-01.webp
 
 ## Links
 
