@@ -11,8 +11,8 @@ image: https://github.com/haproven/haproven/blob/main/suggestions/susheel/main/B
 ## Links
 
 live: https://haproven.netlify.app/
-demo:
-documentation:
+demo:  https://haproven.netlify.app/
+documentation: https://haproven.netlify.app/
 
 ## Discover
 
