@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Haproven Student Fee Support Agreement</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #111;
+            --gray: #666;
+            --light: #f5f5f5;
+            --border: #ddd;
+            --green: #16834b;
+            --blue: #2457d6;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #e9e9e9;
+            color: var(--black);
+        }
+
+        /* =========================
+           EDITOR
+        ========================= */
+
+        .editor {
+            max-width: 1000px;
+            margin: 25px auto;
+            background: #111;
+            color: #fff;
+            padding: 22px;
+            border-radius: 12px;
+        }
+
+        .editor h2 {
+            margin: 0 0 5px;
+            font-size: 20px;
+        }
+
+        .editor p {
+            margin: 0 0 18px;
+            color: #aaa;
+            font-size: 13px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 11px;
+            margin-bottom: 5px;
+            color: #bbb;
+        }
+
+        .field input {
+            width: 100%;
+            padding: 9px 10px;
+            border: 1px solid #444;
+            background: #1d1d1d;
+            color: #fff;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+        }
+
+        button {
+            border: 0;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .print-btn {
+            background: #fff;
+            color: #111;
+        }
+
+        .reset-btn {
+            background: #333;
+            color: #fff;
+        }
+
+        /* =========================
+           A4 DOCUMENT
+        ========================= */
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 25px auto;
+            background: #fff;
+            padding: 13mm;
+            box-shadow: 0 0 15px rgba(0,0,0,.12);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid #111;
+            padding-bottom: 12px;
+        }
+
+        .brand h1 {
+            margin: 0;
+            font-size: 22px;
+            letter-spacing: .4px;
+        }
+
+        .brand p {
+            margin: 4px 0 0;
+            color: #666;
+            font-size: 10px;
+        }
+
+        .doc-title {
+            text-align: right;
+        }
+
+        .doc-title h2 {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        .doc-title p {
+            margin: 4px 0 0;
+            font-size: 10px;
+            color: #666;
+        }
+
+        .intro {
+            margin: 12px 0;
+            font-size: 11px;
+            line-height: 1.55;
+        }
+
+        /* =========================
+           STUDENT INFO
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--border);
+            margin-bottom: 12px;
+        }
+
+        .info-item {
+            padding: 7px 9px;
+            border-right: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .info-item:nth-child(3n) {
+            border-right: 0;
+        }
+
+        .info-item label {
+            display: block;
+            color: #777;
+            font-size: 8px;
+            text-transform: uppercase;
+            margin-bottom: 3px;
+        }
+
+        .info-item strong {
+            font-size: 10px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        .section {
+            margin-top: 12px;
+        }
+
+        .section-title {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #111;
+        }
+
+        /* =========================
+           FEE SUMMARY
+        ========================= */
+
+        .fee-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px;
+        }
+
+        .fee-card {
+            border: 1px solid var(--border);
+            padding: 8px;
+            text-align: center;
+        }
+
+        .fee-card span {
+            display: block;
+            color: #777;
+            font-size: 8px;
+            margin-bottom: 4px;
+        }
+
+        .fee-card strong {
+            font-size: 13px;
+        }
+
+        .support {
+            color: var(--green);
+        }
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border);
+            padding: 7px 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #f5f5f5;
+            font-weight: 700;
+        }
+
+        td:last-child,
+        th:last-child {
+            text-align: right;
+        }
+
+        /* =========================
+           BOXES
+        ========================= */
+
+        .compact-box {
+            border: 1px solid var(--border);
+            padding: 9px 10px;
+            font-size: 10px;
+            line-height: 1.5;
+        }
+
+        .compact-box p {
+            margin: 0 0 5px;
+        }
+
+        .compact-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            background: #f7fbf8;
+            border-left: 3px solid var(--green);
+        }
+
+        .warning {
+            background: #fafafa;
+            border-left: 3px solid #777;
+        }
+
+        /* =========================
+           TWO COLUMNS
+        ========================= */
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+        }
+
+        ul {
+            margin: 5px 0 0;
+            padding-left: 17px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        /* =========================
+           SIGNATURE
+        ========================= */
+
+        .confirmation {
+            font-size: 9px;
+            line-height: 1.45;
+            margin-top: 10px;
+        }
+
+        .signatures {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            margin-top: 22px;
+        }
+
+        .sign-box {
+            border-top: 1px solid #111;
+            padding-top: 5px;
+            font-size: 9px;
+        }
+
+        .footer {
+            margin-top: 14px;
+            padding-top: 7px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            font-size: 8px;
+            color: #777;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .editor {
+                margin: 10px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .page {
+                width: 100%;
+                min-height: auto;
+                margin: 10px 0;
+                padding: 20px;
+            }
+
+            .info-grid,
+            .fee-grid,
+            .two-col {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .header {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .form-grid,
+            .info-grid,
+            .fee-grid,
+            .two-col,
+            .signatures {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: 0;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+
+            .doc-title {
+                text-align: left;
+            }
+        }
+
+        /* =========================
+           PRINT
+        ========================= */
+
+        @media print {
+
+            body {
+                background: #fff;
+            }
+
+            .editor {
+                display: none;
+            }
+
+            .page {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                padding: 13mm;
+                box-shadow: none;
+            }
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     STUDENT DOCUMENT EDITOR
+===================================================== -->
+
+<div class="editor">
+
+    <h2>Student Fee Support Editor</h2>
+
+    <p>
+        Student details aur fee yahan change karein.
+        Haproven support automatically calculate hoga.
+    </p>
+
+    <div class="form-grid">
+
+        <div class="field">
+            <label>Reference No.</label>
+            <input id="reference" value="HAP-FS-2026-001">
+        </div>
+
+        <div class="field">
+            <label>Document Date</label>
+            <input id="docDate" type="date" value="2026-09-23">
+        </div>
+
+        <div class="field">
+            <label>Student Name</label>
+            <input id="studentName" value="Student Name">
+        </div>
+
+        <div class="field">
+            <label>Student ID</label>
+            <input id="studentId" value="STU-001">
+        </div>
+
+        <div class="field">
+            <label>Institute / Teacher</label>
+            <input id="institute" value="Institute Name">
+        </div>
+
+        <div class="field">
+            <label>Course</label>
+            <input id="course" value="Course Name">
+        </div>
+
+        <div class="field">
+            <label>Contact</label>
+            <input id="contact" value="+91 XXXXX XXXXX">
+        </div>
+
+        <div class="field">
+            <label>Monthly Fee ₹</label>
+            <input id="monthlyFee" type="number" value="500">
+        </div>
+
+        <div class="field">
+            <label>Duration (Months)</label>
+            <input id="months" type="number" value="6">
+        </div>
+
+        <div class="field">
+            <label>Haproven Support %</label>
+            <input id="supportPercent" type="number" value="12">
+        </div>
+
+        <div class="field">
+            <label>Start Date</label>
+            <input id="startDate" type="date" value="2026-09-01">
+        </div>
+
+        <div class="field">
+            <label>End Date</label>
+            <input id="endDate" type="date" value="2027-02-28">
+        </div>
+
+    </div>
+
+    <div class="buttons">
+        <button class="print-btn" onclick="window.print()">
+            Print / Save PDF
+        </button>
+
+        <button class="reset-btn" onclick="resetForm()">
+            Reset
+        </button>
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     A4 DOCUMENT
+===================================================== -->
+
+<div class="page">
+
+    <!-- HEADER -->
+
+    <div class="header">
+
+        <div class="brand">
+            <h1>HAPROVEN TECHNOLOGIES</h1>
+            <p>
+                Digital Presence • Student Recognition • Educational Benefits
+            </p>
+        </div>
+
+        <div class="doc-title">
+            <h2>STUDENT FEE SUPPORT</h2>
+            <p>Educational Fee Concession & Support Document</p>
+        </div>
+
+    </div>
+
+
+    <div class="intro">
+
+        This document records the approved educational fee support
+        arrangement between Haproven, the student and the concerned
+        Institute / Teacher for the specified support period.
+
+    </div>
+
+
+    <!-- STUDENT INFORMATION -->
+
+    <div class="section">
+
+        <div class="section-title">
+            01. Student Information
+        </div>
+
+        <div class="info-grid">
+
+            <div class="info-item">
+                <label>Reference No.</label>
+                <strong id="showReference">HAP-FS-2026-001</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Document Date</label>
+                <strong id="showDocDate">23 Sep 2026</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Student Name</label>
+                <strong id="showStudentName">Student Name</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Student ID</label>
+                <strong id="showStudentId">STU-001</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Institute / Teacher</label>
+                <strong id="showInstitute">Institute Name</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Course</label>
+                <strong id="showCourse">Course Name</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Contact</label>
+                <strong id="showContact">+91 XXXXX XXXXX</strong>
+            </div>
+
+            <div class="info-item">
+                <label>Support Period</label>
+                <strong>
+                    <span id="showStart">01 Sep 2026</span>
+                    -
+                    <span id="showEnd">28 Feb 2027</span>
+                </strong>
+            </div>
+
+            <div class="info-item">
+                <label>Support Rate</label>
+                <strong id="showPercent">12%</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FEE SUMMARY -->
+
+    <div class="section">
+
+        <div class="section-title">
+            02. Fee Summary
+        </div>
+
+        <div class="fee-grid">
+
+            <div class="fee-card">
+                <span>Monthly Normal Fee</span>
+                <strong id="showMonthly">₹500</strong>
+            </div>
+
+            <div class="fee-card">
+                <span>Duration</span>
+                <strong>
+                    <span id="showMonths">6</span> Months
+                </strong>
+            </div>
+
+            <div class="fee-card">
+                <span>Normal Total Fee</span>
+                <strong id="showNormalTotal">₹3,000</strong>
+            </div>
+
+            <div class="fee-card">
+                <span>Haproven Support</span>
+                <strong class="support" id="showSupport">
+                    ₹360
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PAYMENT DETAILS -->
+
+    <div class="section">
+
+        <div class="section-title">
+            03. Student Payment Details
+        </div>
+
+        <table>
+
+            <tr>
+                <th>Particular</th>
+                <th>Amount</th>
+            </tr>
+
+            <tr>
+                <td>Normal Monthly Fee</td>
+                <td id="tableMonthly">₹500</td>
+            </tr>
+
+            <tr>
+                <td>Haproven Monthly Support</td>
+                <td id="tableMonthlySupport">₹60</td>
+            </tr>
+
+            <tr>
+                <td><strong>Student Monthly Payable</strong></td>
+                <td>
+                    <strong id="tableStudentMonthly">₹440</strong>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Normal Total Fee</td>
+                <td id="tableNormalTotal">₹3,000</td>
+            </tr>
+
+            <tr>
+                <td>Haproven Total Support</td>
+                <td class="support" id="tableSupport">₹360</td>
+            </tr>
+
+            <tr>
+                <td><strong>Student Total Payable</strong></td>
+                <td>
+                    <strong id="tableStudentTotal">₹2,640</strong>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- PAYMENT FLOW -->
+
+    <div class="section">
+
+        <div class="section-title">
+            04. Monthly Fee Arrangement
+        </div>
+
+        <div class="compact-box highlight">
+
+            <p>
+                Student ki fee monthly basis par payable hogi.
+            </p>
+
+            <p>
+                Haproven ka approved support bhi monthly fee arrangement
+                ke according calculate hoga. Is example mein ₹500 normal
+                monthly fee mein se ₹60 Haproven support hai aur student
+                ₹440 monthly pay karega.
+            </p>
+
+            <p>
+                Haproven ka total approved support
+                <strong id="boxSupport">₹360</strong>
+                hai for the complete support period.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PARTNER INSTITUTE -->
+
+    <div class="section">
+
+        <div class="section-title">
+            05. Haproven Partner Institute
+        </div>
+
+        <div class="compact-box">
+
+            <p>
+                Agar concerned Institute / Teacher Haproven ka approved
+                collaborator / partner hai, to Haproven-supported amount
+                student se directly collect nahi kiya jayega.
+            </p>
+
+            <p>
+                Eligible support amount ko Haproven aur Partner Institute /
+                Teacher ke beech agreed terms ke according directly
+                <strong>adjust / settle</strong> kiya ja sakta hai.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TEACHER CHANGE -->
+
+    <div class="section">
+
+        <div class="section-title">
+            06. Institute / Teacher Change
+        </div>
+
+        <div class="compact-box warning">
+
+            <ul>
+
+                <li>
+                    Student ke Institute / Teacher change karne par
+                    Haproven-supported amount directly old Teacher se
+                    new Teacher ko transfer nahi hoga.
+                </li>
+
+                <li>
+                    Student ko unused support ka cash refund nahi milega.
+                </li>
+
+                <li>
+                    Remaining eligible support ko Haproven ki prior
+                    approval aur verification ke baad new eligible
+                    Institute / Teacher ki fee mein adjust kiya ja sakta hai.
+                </li>
+
+                <li>
+                    New Institute / Teacher ko Haproven ke saath directly
+                    coordination karke eligibility aur remaining support
+                    verify karna hoga.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- ADJUSTMENT -->
+
+    <div class="section">
+
+        <div class="section-title">
+            07. Support Adjustment Rule
+        </div>
+
+        <div class="two-col">
+
+            <div class="compact-box">
+
+                <strong>Not Allowed</strong>
+
+                <p>
+                    Student, old Teacher aur new Teacher ke beech
+                    Haproven-supported amount ka direct transfer ya
+                    settlement allowed nahi hoga.
+                </p>
+
+            </div>
+
+            <div class="compact-box highlight">
+
+                <strong>Allowed with Approval</strong>
+
+                <p>
+                    Remaining support ko Haproven ki written approval,
+                    eligibility verification aur new admission ke basis
+                    par new fee mein adjust kiya ja sakta hai.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TERMS -->
+
+    <div class="section">
+
+        <div class="section-title">
+            08. Important Terms
+        </div>
+
+        <div class="compact-box">
+
+            <ul>
+
+                <li>
+                    Support sirf approved student, course aur support
+                    period ke liye applicable hai.
+                </li>
+
+                <li>
+                    Support amount monthly basis par calculate /
+                    settle kiya ja sakta hai.
+                </li>
+
+                <li>
+                    Unused support automatically cash mein payable nahi hoga.
+                </li>
+
+                <li>
+                    Institute / Teacher change hone par Haproven ki
+                    verification aur approval required hogi.
+                </li>
+
+                <li>
+                    Any adjustment / transfer Haproven ke approved terms
+                    ke according hi hoga.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- CONFIRMATION -->
+
+    <div class="section">
+
+        <div class="section-title">
+            09. Confirmation
+        </div>
+
+        <div class="compact-box">
+
+            <p>
+                The parties acknowledge that the above fee arrangement,
+                Haproven support and adjustment rules apply only for the
+                stated support period and approved educational purpose.
+            </p>
+
+            <p>
+                Any change in Institute, Teacher, Course or support
+                arrangement must be communicated to Haproven before
+                continuing or adjusting the remaining support.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- SIGNATURE -->
+
+    <div class="signatures">
+
+        <div class="sign-box">
+            <strong>For Haproven Technologies</strong><br>
+            Susheel Kumar<br>
+            Founder<br>
+            Date: __________________
+        </div>
+
+        <div class="sign-box">
+            <strong>Student / Parent / Guardian</strong><br>
+            Name: __________________<br>
+            Signature: ______________<br>
+            Date: __________________
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <span>
+            haproven.netlify.app
+        </span>
+
+        <span>
+            haproven.tech@gmail.com
+        </span>
+
+        <span>
+            Haproven Technologies
+        </span>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* =========================
+       HELPERS
+    ========================= */
+
+    function money(value) {
+        return "₹" + Math.round(value).toLocaleString("en-IN");
+    }
+
+    function formatDate(value) {
+
+        if (!value) return "—";
+
+        const date = new Date(value + "T00:00:00");
+
+        return date.toLocaleDateString("en-IN", {
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+        });
+
+    }
+
+
+    /* =========================
+       UPDATE DOCUMENT
+    ========================= */
+
+    function updateDocument() {
+
+        const reference =
+            document.getElementById("reference").value;
+
+        const docDate =
+            document.getElementById("docDate").value;
+
+        const studentName =
+            document.getElementById("studentName").value;
+
+        const studentId =
+            document.getElementById("studentId").value;
+
+        const institute =
+            document.getElementById("institute").value;
+
+        const course =
+            document.getElementById("course").value;
+
+        const contact =
+            document.getElementById("contact").value;
+
+        const monthlyFee =
+            Number(document.getElementById("monthlyFee").value) || 0;
+
+        const months =
+            Number(document.getElementById("months").value) || 0;
+
+        const percent =
+            Number(document.getElementById("supportPercent").value) || 0;
+
+        const startDate =
+            document.getElementById("startDate").value;
+
+        const endDate =
+            document.getElementById("endDate").value;
+
+
+        /* =========================
+           CALCULATIONS
+        ========================= */
+
+        const normalTotal =
+            monthlyFee * months;
+
+        const totalSupport =
+            normalTotal * percent / 100;
+
+        const monthlySupport =
+            totalSupport / months || 0;
+
+        const studentTotal =
+            normalTotal - totalSupport;
+
+        const studentMonthly =
+            studentTotal / months || 0;
+
+
+        /* =========================
+           STUDENT INFORMATION
+        ========================= */
+
+        document.getElementById("showReference").textContent =
+            reference || "—";
+
+        document.getElementById("showDocDate").textContent =
+            formatDate(docDate);
+
+        document.getElementById("showStudentName").textContent =
+            studentName || "—";
+
+        document.getElementById("showStudentId").textContent =
+            studentId || "—";
+
+        document.getElementById("showInstitute").textContent =
+            institute || "—";
+
+        document.getElementById("showCourse").textContent =
+            course || "—";
+
+        document.getElementById("showContact").textContent =
+            contact || "—";
+
+        document.getElementById("showStart").textContent =
+            formatDate(startDate);
+
+        document.getElementById("showEnd").textContent =
+            formatDate(endDate);
+
+        document.getElementById("showPercent").textContent =
+            percent + "%";
+
+
+        /* =========================
+           SUMMARY
+        ========================= */
+
+        document.getElementById("showMonthly").textContent =
+            money(monthlyFee);
+
+        document.getElementById("showMonths").textContent =
+            months;
+
+        document.getElementById("showNormalTotal").textContent =
+            money(normalTotal);
+
+        document.getElementById("showSupport").textContent =
+            money(totalSupport);
+
+
+        /* =========================
+           TABLE
+        ========================= */
+
+        document.getElementById("tableMonthly").textContent =
+            money(monthlyFee);
+
+        document.getElementById("tableMonthlySupport").textContent =
+            money(monthlySupport);
+
+        document.getElementById("tableStudentMonthly").textContent =
+            money(studentMonthly);
+
+        document.getElementById("tableNormalTotal").textContent =
+            money(normalTotal);
+
+        document.getElementById("tableSupport").textContent =
+            money(totalSupport);
+
+        document.getElementById("tableStudentTotal").textContent =
+            money(studentTotal);
+
+        document.getElementById("boxSupport").textContent =
+            money(totalSupport);
+
+    }
+
+
+    /* =========================
+       INPUT LISTENERS
+    ========================= */
+
+    document.querySelectorAll(".editor input")
+        .forEach(input => {
+
+            input.addEventListener("input", updateDocument);
+            input.addEventListener("change", updateDocument);
+
+        });
+
+
+    /* =========================
+       RESET
+    ========================= */
+
+    function resetForm() {
+
+        document.getElementById("reference").value =
+            "HAP-FS-2026-001";
+
+        document.getElementById("docDate").value =
+            "2026-09-23";
+
+        document.getElementById("studentName").value =
+            "Student Name";
+
+        document.getElementById("studentId").value =
+            "STU-001";
+
+        document.getElementById("institute").value =
+            "Institute Name";
+
+        document.getElementById("course").value =
+            "Course Name";
+
+        document.getElementById("contact").value =
+            "+91 XXXXX XXXXX";
+
+        document.getElementById("monthlyFee").value =
+            500;
+
+        document.getElementById("months").value =
+            6;
+
+        document.getElementById("supportPercent").value =
+            12;
+
+        document.getElementById("startDate").value =
+            "2026-09-01";
+
+        document.getElementById("endDate").value =
+            "2027-02-28";
+
+        updateDocument();
+
+    }
+
+
+    /* INITIAL LOAD */
+
+    updateDocument();
+
+</script>
+
+</body>
+</html>

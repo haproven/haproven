@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Educational Fee Concession | Haproven Technologies</title>
+
+    <meta name="description"
+        content="Student Educational Fee Concession and Sponsorship Confirmation issued by Haproven Technologies.">
+
+    <style>
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #eeeeee;
+            color: #151515;
+            line-height: 1.55;
+        }
+
+        /* =========================================================
+           DOCUMENT WRAPPER
+        ========================================================== */
+
+        .document-wrapper {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 25px auto;
+            background: #ffffff;
+            box-shadow: 0 8px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .page {
+            padding: 18mm 17mm;
+        }
+
+        /* =========================================================
+           HEADER
+        ========================================================== */
+
+        .header {
+            border-bottom: 2px solid #111;
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .brand {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .brand span {
+            font-weight: 400;
+        }
+
+        .contact {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        .document-title {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .document-title h1 {
+            font-size: 22px;
+            line-height: 1.25;
+            letter-spacing: 0.5px;
+        }
+
+        .document-title p {
+            margin-top: 5px;
+            font-size: 12px;
+            color: #555;
+        }
+
+        /* =========================================================
+           META
+        ========================================================== */
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px 25px;
+            margin-bottom: 25px;
+            font-size: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            gap: 6px;
+        }
+
+        .meta-label {
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           SECTIONS
+        ========================================================== */
+
+        .section {
+            margin-top: 23px;
+        }
+
+        .section-title {
+            font-size: 14px;
+            font-weight: 800;
+            text-transform: uppercase;
+            border-bottom: 1px solid #222;
+            padding-bottom: 6px;
+            margin-bottom: 12px;
+        }
+
+        .section-title span {
+            color: #666;
+            font-size: 11px;
+            font-weight: 500;
+            margin-left: 5px;
+        }
+
+        .section p {
+            font-size: 12px;
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        /* =========================================================
+           STUDENT INFORMATION
+        ========================================================== */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid #bbb;
+        }
+
+        .info-item {
+            padding: 9px 11px;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .info-item:nth-child(even) {
+            border-right: none;
+        }
+
+        .info-item:nth-last-child(-n+2) {
+            border-bottom: none;
+        }
+
+        .info-label {
+            display: block;
+            font-size: 10px;
+            color: #666;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        /* =========================================================
+           FEE TABLE
+        ========================================================== */
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .fee-table th,
+        .fee-table td {
+            border: 1px solid #999;
+            padding: 9px 10px;
+            font-size: 12px;
+        }
+
+        .fee-table th {
+            text-align: left;
+            background: #f2f2f2;
+            font-weight: 700;
+        }
+
+        .fee-table td:last-child,
+        .fee-table th:last-child {
+            text-align: right;
+            font-weight: 700;
+        }
+
+        .final-row td {
+            background: #111;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 800;
+        }
+
+        /* =========================================================
+           CALCULATION BOX
+        ========================================================== */
+
+        .calculation-box {
+            margin-top: 15px;
+            padding: 13px 15px;
+            border-left: 4px solid #111;
+            background: #f6f6f6;
+        }
+
+        .calculation-box p {
+            margin-bottom: 4px;
+            font-size: 12px;
+        }
+
+        .calculation-box strong {
+            font-weight: 800;
+        }
+
+        /* =========================================================
+           SUPPORT HIGHLIGHT
+        ========================================================== */
+
+        .support-box {
+            margin-top: 15px;
+            border: 1px solid #222;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .support-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .support-amount {
+            margin-top: 3px;
+            font-size: 24px;
+            font-weight: 900;
+        }
+
+        .support-text {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #555;
+        }
+
+        /* =========================================================
+           TERMS
+        ========================================================== */
+
+        .terms {
+            padding-left: 20px;
+        }
+
+        .terms li {
+            font-size: 11px;
+            margin-bottom: 6px;
+            padding-left: 3px;
+        }
+
+        /* =========================================================
+           SIGNATURES
+        ========================================================== */
+
+        .signature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+            margin-top: 35px;
+        }
+
+        .signature-box {
+            min-height: 125px;
+        }
+
+        .signature-title {
+            font-size: 12px;
+            font-weight: 800;
+            margin-bottom: 45px;
+        }
+
+        .signature-line {
+            border-top: 1px solid #222;
+            padding-top: 5px;
+            font-size: 10px;
+        }
+
+        .student-signature {
+            margin-top: 35px;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        .footer {
+            border-top: 1px solid #bbb;
+            margin-top: 35px;
+            padding-top: 12px;
+            text-align: center;
+        }
+
+        .footer strong {
+            display: block;
+            font-size: 11px;
+        }
+
+        .footer span {
+            display: block;
+            margin-top: 4px;
+            font-size: 10px;
+            color: #666;
+        }
+
+        /* =========================================================
+           CONTROL PANEL
+        ========================================================== */
+
+        .control-panel {
+            width: 210mm;
+            margin: 20px auto 0;
+            background: #111;
+            color: #fff;
+            padding: 18px;
+        }
+
+        .control-panel h2 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .control-panel p {
+            font-size: 11px;
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 10px;
+            margin-bottom: 4px;
+            color: #ccc;
+        }
+
+        .form-group input {
+            width: 100%;
+            border: 1px solid #555;
+            background: #222;
+            color: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        button {
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .print-btn {
+            background: #fff;
+            color: #111;
+        }
+
+        .reset-btn {
+            background: #333;
+            color: #fff;
+            border: 1px solid #666;
+        }
+
+        /* =========================================================
+           PRINT
+        ========================================================== */
+
+        @media print {
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                background: #fff;
+            }
+
+            .control-panel {
+                display: none !important;
+            }
+
+            .document-wrapper {
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0;
+                box-shadow: none;
+            }
+
+            .page {
+                padding: 16mm 16mm;
+            }
+        }
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (max-width: 850px) {
+
+            body {
+                background: #fff;
+            }
+
+            .document-wrapper,
+            .control-panel {
+                width: 100%;
+                margin: 0;
+            }
+
+            .page {
+                padding: 25px 18px;
+            }
+
+            .form-grid,
+            .meta-grid,
+            .info-grid,
+            .signature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-item {
+                border-right: none;
+            }
+
+            .info-item:nth-last-child(-n+2) {
+                border-bottom: 1px solid #ddd;
+            }
+
+            .info-item:last-child {
+                border-bottom: none;
+            }
+
+            .document-title h1 {
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================================
+         EDIT STUDENT DATA HERE
+         ========================================================= -->
+
+    <script>
+        const STUDENT_DATA = {
+
+            referenceNo: "HAP-EDU-2026-001",
+            date: "23 September 2026",
+
+            studentName: "Rahul Kumar",
+            studentId: "STU-2026-001",
+            institute: "ABC Educational Institute",
+            course: "Full Stack Development",
+            contact: "+91 9876543210",
+
+            monthlyFee: 500,
+            durationMonths: 6,
+            concessionPercent: 12,
+
+            startDate: "01 October 2026",
+            endDate: "31 March 2027",
+
+            haprovenRepresentative: "Susheel Kumar",
+            haprovenDesignation: "Founder",
+
+            instituteRepresentative: "",
+            instituteDesignation: ""
+        };
+    </script>
+
+
+    <!-- =========================================================
+         CONTROL PANEL
+    ========================================================= -->
+
+    <div class="control-panel">
+
+        <h2>Student Data Editor</h2>
+
+        <p>
+            नीचे details बदलें। Fee, concession और final amount automatically calculate होंगे।
+        </p>
+
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label>Student Name</label>
+                <input id="inputStudentName" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Student ID</label>
+                <input id="inputStudentId" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Institute</label>
+                <input id="inputInstitute" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Course / Program</label>
+                <input id="inputCourse" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Contact</label>
+                <input id="inputContact" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Monthly Fee ₹</label>
+                <input id="inputMonthlyFee" type="number">
+            </div>
+
+            <div class="form-group">
+                <label>Duration (Months)</label>
+                <input id="inputDuration" type="number">
+            </div>
+
+            <div class="form-group">
+                <label>Concession %</label>
+                <input id="inputConcession" type="number">
+            </div>
+
+            <div class="form-group">
+                <label>Start Date</label>
+                <input id="inputStartDate" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>End Date</label>
+                <input id="inputEndDate" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Reference No.</label>
+                <input id="inputReference" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>Document Date</label>
+                <input id="inputDate" type="text">
+            </div>
+
+        </div>
+
+        <div class="button-row">
+
+            <button class="print-btn" onclick="window.print()">
+                Print / Save PDF
+            </button>
+
+            <button class="reset-btn" onclick="loadDefaultData()">
+                Reset
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DOCUMENT
+    ========================================================== -->
+
+    <main class="document-wrapper">
+
+        <div class="page">
+
+            <!-- HEADER -->
+
+            <header class="header">
+
+                <div class="brand">
+                    HAPROVEN <span>TECHNOLOGIES</span>
+                </div>
+
+                <div class="contact">
+                    haproven.netlify.app • haproven.tech@gmail.com • +91 9122704118
+                </div>
+
+                <div class="document-title">
+
+                    <h1>
+                        STUDENT EDUCATIONAL FEE CONCESSION
+                        <br>
+                        & SPONSORSHIP CONFIRMATION
+                    </h1>
+
+                    <p>
+                        विद्यार्थी शैक्षणिक शुल्क रियायत एवं प्रायोजन पुष्टि पत्र
+                    </p>
+
+                </div>
+
+            </header>
+
+
+            <!-- META -->
+
+            <div class="meta-grid">
+
+                <div class="meta-item">
+                    <span class="meta-label">Reference No:</span>
+                    <span id="referenceNo"></span>
+                </div>
+
+                <div class="meta-item">
+                    <span class="meta-label">Date:</span>
+                    <span id="documentDate"></span>
+                </div>
+
+            </div>
+
+
+            <!-- STUDENT INFORMATION -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    1. Student Information
+                </div>
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+                        <span class="info-label">Student Name</span>
+                        <span class="info-value" id="studentName"></span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Student ID / Roll No.</span>
+                        <span class="info-value" id="studentId"></span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Institute / Organization</span>
+                        <span class="info-value" id="institute"></span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Course / Program</span>
+                        <span class="info-value" id="course"></span>
+                    </div>
+
+                    <div class="info-item">
+                        <span class="info-label">Contact</span>
+                        <span class="info-value" id="contact"></span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EDUCATIONAL SUPPORT -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    2. Educational Support
+                </div>
+
+                <p>
+                    Haproven Technologies के student support initiative के अंतर्गत,
+                    eligible student के educational fee में concession उपलब्ध कराने
+                    के लिए संबंधित institute / educational team के साथ discussion
+                    एवं mutual agreement किया गया है।
+                </p>
+
+                <p>
+                    इस support का उद्देश्य eligible student को उसकी education जारी
+                    रखने में financial assistance प्रदान करना है।
+                </p>
+
+                <p>
+                    यह benefit केवल इस document में निर्धारित student, course और
+                    approved duration के लिए लागू होगा।
+                </p>
+
+            </section>
+
+
+            <!-- FEE STRUCTURE -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    3. Approved Fee Structure
+                </div>
+
+                <table class="fee-table">
+
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Monthly Fee</td>
+                            <td id="monthlyFee"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Approved Duration</td>
+                            <td id="duration"></td>
+                        </tr>
+
+                        <tr>
+                            <td>Normal Total Fee</td>
+                            <td id="normalTotal"></td>
+                        </tr>
+
+                        <tr>
+                            <td id="concessionLabel">
+                                Haproven Negotiated Concession
+                            </td>
+                            <td id="concessionAmount"></td>
+                        </tr>
+
+                        <tr class="final-row">
+
+                            <td>
+                                FINAL APPROVED FEE
+                            </td>
+
+                            <td id="finalFee"></td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+
+                <!-- CALCULATION -->
+
+                <div class="calculation-box">
+
+                    <p>
+                        <strong>Calculation:</strong>
+                    </p>
+
+                    <p id="calculationOne"></p>
+
+                    <p id="calculationTwo"></p>
+
+                    <p id="calculationThree"></p>
+
+                </div>
+
+            </section>
+
+
+            <!-- HAPROVEN SUPPORT -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    4. Haproven Support
+                </div>
+
+                <p>
+                    Haproven Technologies agreed terms के अनुसार student के लिए
+                    approved fee concession को facilitate करेगा।
+                </p>
+
+                <p>
+                    इस arrangement में Haproven संबंधित institute / educational
+                    team के साथ coordination करके approved concession के बाद
+                    निर्धारित amount की payment / fee support उपलब्ध कराने की
+                    व्यवस्था करेगा।
+                </p>
+
+                <p>
+                    Payment का actual method institute / educational team और
+                    Haproven के बीच agreed process के अनुसार होगा।
+                </p>
+
+
+                <div class="support-box">
+
+                    <div class="support-label">
+                        Approved Educational Fee Support
+                    </div>
+
+                    <div class="support-amount" id="supportAmount">
+                        ₹0
+                    </div>
+
+                    <div class="support-text">
+                        Approved duration के लिए calculated final fee
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- DURATION -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    5. Duration of Benefit
+                </div>
+
+                <p>
+                    यह fee support केवल
+                    <strong id="startDate"></strong>
+                    से
+                    <strong id="endDate"></strong>
+                    तक लागू होगा।
+                </p>
+
+                <p>
+                    Approved Duration:
+                    <strong id="durationText"></strong>
+                </p>
+
+                <p>
+                    इस अवधि के बाद किसी भी additional fee, renewal, extension
+                    या नए course के लिए नया approval आवश्यक हो सकता है।
+                </p>
+
+            </section>
+
+
+            <!-- TERMS -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    6. Terms & Conditions
+                </div>
+
+                <ol class="terms">
+
+                    <li>
+                        यह benefit केवल ऊपर दिए गए student और approved course
+                        के लिए लागू होगा।
+                    </li>
+
+                    <li>
+                        Fee concession की calculation agreed monthly fee और
+                        approved duration के आधार पर की गई है।
+                    </li>
+
+                    <li>
+                        इस document में approved concession
+                        <strong id="termsPercent"></strong>
+                        है।
+                    </li>
+
+                    <li>
+                        Approved duration के लिए normal fee
+                        <strong id="termsNormalFee"></strong>
+                        है और concession के बाद approved amount
+                        <strong id="termsFinalFee"></strong>
+                        है।
+                    </li>
+
+                    <li>
+                        Additional charges, examination fees, registration fees,
+                        study material charges या अन्य charges इसमें शामिल नहीं
+                        होंगे, जब तक कि अलग से लिखित रूप में approve न किए जाएँ।
+                    </li>
+
+                    <li>
+                        किसी भी fee change के लिए Haproven और संबंधित institute /
+                        educational team के बीच नया agreement आवश्यक होगा।
+                    </li>
+
+                    <li>
+                        यह document किसी दूसरे student को automatically
+                        transferable नहीं है।
+                    </li>
+
+                    <li>
+                        Payment / fee support संबंधित institute या educational
+                        team के verification और agreed terms के अनुसार किया जाएगा।
+                    </li>
+
+                    <li>
+                        किसी भी discrepancy की स्थिति में Haproven और संबंधित
+                        institute / educational team आपसी discussion द्वारा
+                        matter resolve करेंगे।
+                    </li>
+
+                </ol>
+
+            </section>
+
+
+            <!-- CONFIRMATION -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    7. Confirmation
+                </div>
+
+                <p>
+                    इस document के माध्यम से Haproven Technologies यह पुष्टि
+                    करता है कि ऊपर उल्लिखित student के लिए approved educational
+                    fee support arrangement पर संबंधित team के साथ discussion
+                    किया गया है।
+                </p>
+
+                <p>
+                    <strong>Approved Educational Support:</strong>
+                    <span id="confirmationPercent"></span>
+                </p>
+
+                <p>
+                    <strong>Approved Duration:</strong>
+                    <span id="confirmationDuration"></span>
+                </p>
+
+                <p>
+                    <strong>Final Approved Fee Support Amount:</strong>
+                    <span id="confirmationAmount"></span>
+                </p>
+
+            </section>
+
+
+            <!-- SIGNATURES -->
+
+            <section class="section">
+
+                <div class="section-title">
+                    8. Approval & Signatures
+                </div>
+
+                <div class="signature-grid">
+
+                    <div class="signature-box">
+
+                        <div class="signature-title">
+                            For Haproven Technologies
+                        </div>
+
+                        <div class="signature-line">
+                            Name:
+                            <strong id="haprovenName"></strong>
+                        </div>
+
+                        <div class="signature-line">
+                            Designation:
+                            <strong id="haprovenDesignation"></strong>
+                        </div>
+
+                        <div class="signature-line">
+                            Signature:
+                            ______________________
+                        </div>
+
+                        <div class="signature-line">
+                            Date:
+                            ______________________
+                        </div>
+
+                    </div>
+
+
+                    <div class="signature-box">
+
+                        <div class="signature-title">
+                            For Institute / Educational Team
+                        </div>
+
+                        <div class="signature-line">
+                            Name:
+                            ______________________
+                        </div>
+
+                        <div class="signature-line">
+                            Designation:
+                            ______________________
+                        </div>
+
+                        <div class="signature-line">
+                            Signature:
+                            ______________________
+                        </div>
+
+                        <div class="signature-line">
+                            Date:
+                            ______________________
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="student-signature">
+
+                    <div class="signature-title">
+                        Student Acknowledgement
+                    </div>
+
+                    <div class="signature-line">
+                        Student Name:
+                        <strong id="ackStudentName"></strong>
+                    </div>
+
+                    <div class="signature-line">
+                        Signature:
+                        ______________________
+                    </div>
+
+                    <div class="signature-line">
+                        Date:
+                        ______________________
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- FOOTER -->
+
+            <footer class="footer">
+
+                <strong>
+                    Haproven Technologies
+                </strong>
+
+                <span>
+                    Digital Presence • Student Recognition • Educational Benefits • Long-Term Collaboration
+                </span>
+
+                <span>
+                    Let's Build Better Opportunities for Students Together.
+                </span>
+
+            </footer>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        const defaultData = JSON.parse(JSON.stringify(STUDENT_DATA));
+
+
+        function formatMoney(value) {
+
+            return new Intl.NumberFormat("en-IN", {
+                style: "currency",
+                currency: "INR",
+                maximumFractionDigits: 0
+            }).format(value);
+
+        }
+
+
+        function setValue(id, value) {
+
+            const element = document.getElementById(id);
+
+            if (element) {
+                element.textContent = value;
+            }
+
+        }
+
+
+        function updateDocument(data) {
+
+            const monthlyFee = Number(data.monthlyFee) || 0;
+            const duration = Number(data.durationMonths) || 0;
+            const concessionPercent = Number(data.concessionPercent) || 0;
+
+            const normalTotal = monthlyFee * duration;
+
+            const concessionAmount =
+                normalTotal * concessionPercent / 100;
+
+            const finalFee =
+                normalTotal - concessionAmount;
+
+
+            /* =====================================================
+               BASIC INFORMATION
+            ====================================================== */
+
+            setValue("referenceNo", data.referenceNo);
+            setValue("documentDate", data.date);
+
+            setValue("studentName", data.studentName);
+            setValue("studentId", data.studentId);
+            setValue("institute", data.institute);
+            setValue("course", data.course);
+            setValue("contact", data.contact);
+
+
+            /* =====================================================
+               FEE
+            ====================================================== */
+
+            setValue("monthlyFee", formatMoney(monthlyFee));
+
+            setValue(
+                "duration",
+                duration + (duration === 1 ? " Month" : " Months")
+            );
+
+            setValue(
+                "normalTotal",
+                formatMoney(normalTotal)
+            );
+
+            setValue(
+                "concessionLabel",
+                `Haproven Negotiated Concession (${concessionPercent}%)`
+            );
+
+            setValue(
+                "concessionAmount",
+                "-" + formatMoney(concessionAmount)
+            );
+
+            setValue(
+                "finalFee",
+                formatMoney(finalFee)
+            );
+
+
+            /* =====================================================
+               CALCULATION
+            ====================================================== */
+
+            setValue(
+                "calculationOne",
+                `${formatMoney(monthlyFee)} × ${duration} Months = ${formatMoney(normalTotal)}`
+            );
+
+            setValue(
+                "calculationTwo",
+                `${concessionPercent}% of ${formatMoney(normalTotal)} = ${formatMoney(concessionAmount)}`
+            );
+
+            setValue(
+                "calculationThree",
+                `${formatMoney(normalTotal)} − ${formatMoney(concessionAmount)} = ${formatMoney(finalFee)}`
+            );
+
+
+            /* =====================================================
+               SUPPORT
+            ====================================================== */
+
+            setValue(
+                "supportAmount",
+                formatMoney(finalFee)
+            );
+
+
+            /* =====================================================
+               DURATION
+            ====================================================== */
+
+            setValue("startDate", data.startDate);
+            setValue("endDate", data.endDate);
+
+            setValue(
+                "durationText",
+                duration + (duration === 1 ? " Month" : " Months")
+            );
+
+
+            /* =====================================================
+               TERMS
+            ====================================================== */
+
+            setValue(
+                "termsPercent",
+                concessionPercent + "%"
+            );
+
+            setValue(
+                "termsNormalFee",
+                formatMoney(normalTotal)
+            );
+
+            setValue(
+                "termsFinalFee",
+                formatMoney(finalFee)
+            );
+
+
+            /* =====================================================
+               CONFIRMATION
+            ====================================================== */
+
+            setValue(
+                "confirmationPercent",
+                concessionPercent + "% Fee Concession"
+            );
+
+            setValue(
+                "confirmationDuration",
+                duration + (duration === 1 ? " Month" : " Months")
+            );
+
+            setValue(
+                "confirmationAmount",
+                formatMoney(finalFee)
+            );
+
+
+            /* =====================================================
+               SIGNATURE
+            ====================================================== */
+
+            setValue(
+                "haprovenName",
+                data.haprovenRepresentative
+            );
+
+            setValue(
+                "haprovenDesignation",
+                data.haprovenDesignation
+            );
+
+            setValue(
+                "ackStudentName",
+                data.studentName
+            );
+
+        }
+
+
+        /* =========================================================
+           FORM INPUTS
+        ========================================================== */
+
+        const fields = {
+
+            inputStudentName: "studentName",
+            inputStudentId: "studentId",
+            inputInstitute: "institute",
+            inputCourse: "course",
+            inputContact: "contact",
+
+            inputMonthlyFee: "monthlyFee",
+            inputDuration: "durationMonths",
+            inputConcession: "concessionPercent",
+
+            inputStartDate: "startDate",
+            inputEndDate: "endDate",
+
+            inputReference: "referenceNo",
+            inputDate: "date"
+        };
+
+
+        function loadForm(data) {
+
+            Object.keys(fields).forEach(inputId => {
+
+                const input = document.getElementById(inputId);
+                const dataKey = fields[inputId];
+
+                if (input) {
+                    input.value = data[dataKey] ?? "";
+                }
+
+            });
+
+        }
+
+
+        function getFormData() {
+
+            const data = {};
+
+            Object.keys(fields).forEach(inputId => {
+
+                const input = document.getElementById(inputId);
+                const dataKey = fields[inputId];
+
+                if (input) {
+                    data[dataKey] = input.value;
+                }
+
+            });
+
+
+            data.haprovenRepresentative =
+                STUDENT_DATA.haprovenRepresentative;
+
+            data.haprovenDesignation =
+                STUDENT_DATA.haprovenDesignation;
+
+            return data;
+        }
+
+
+        function updateFromForm() {
+
+            const data = getFormData();
+
+            updateDocument(data);
+        }
+
+
+        function loadDefaultData() {
+
+            loadForm(defaultData);
+            updateDocument(defaultData);
+        }
+
+
+        /* =========================================================
+           LIVE UPDATE
+        ========================================================== */
+
+        Object.keys(fields).forEach(inputId => {
+
+            const input = document.getElementById(inputId);
+
+            if (input) {
+
+                input.addEventListener("input", updateFromForm);
+
+                input.addEventListener("change", updateFromForm);
+
+            }
+
+        });
+
+
+        /* =========================================================
+           INITIAL LOAD
+        ========================================================== */
+
+        loadForm(STUDENT_DATA);
+
+        updateDocument(STUDENT_DATA);
+
+    </script>
+
+</body>
+</html>
