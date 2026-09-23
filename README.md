@@ -74,6 +74,10 @@
   <img src="https://avatars.githubusercontent.com/u/201027180?v=4" width="90" height="90" loading="lazy" alt="Swalih-05 — Haproven Contributor">
 </a>
 
+<a href="https://github.com/teerthroymcpe" title="teerthroymcpe — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/223886330?v=4" width="90" height="90" loading="lazy" alt="teerthroymcpe — Haproven Contributor">
+</a>
+
 <a href="https://github.com/vijaylaxmi88582-art" title="vijaylaxmi88582-art — Haproven Contributor">
   <img src="https://avatars.githubusercontent.com/u/263568971?v=4" width="90" height="90" loading="lazy" alt="vijaylaxmi88582-art — Haproven Contributor">
 </a>
