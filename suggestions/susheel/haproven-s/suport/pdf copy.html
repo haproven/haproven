@@ -1,0 +1,737 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haproven Student Fee Support Agreement</title>
+
+<style>
+:root{
+    --ink:#172033;
+    --muted:#64748b;
+    --line:#dbe2ea;
+    --soft:#f5f7fa;
+    --navy:#142b4a;
+    --green:#16834b;
+    --green-bg:#f0faf4;
+    --red:#b42318;
+}
+*{box-sizing:border-box}
+body{
+    margin:0;
+    background:#edf1f5;
+    color:var(--ink);
+    font-family:Arial,Helvetica,sans-serif;
+}
+button,input,select{font:inherit}
+
+/* EDITOR */
+.editor{
+    max-width:1000px;
+    margin:22px auto;
+    padding:22px;
+    background:#142033;
+    color:#fff;
+    border:1px solid #26364e;
+    border-radius:12px;
+    box-shadow:0 8px 28px #10203920;
+}
+.editor-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:18px;
+}
+.editor h2{font-size:19px;margin:0 0 5px}
+.editor-head p{font-size:12px;color:#b7c3d3;margin:0;line-height:1.5}
+.editor-tag{
+    padding:6px 10px;
+    border:1px solid #40516a;
+    border-radius:20px;
+    color:#dce7f5;
+    font-size:10px;
+    white-space:nowrap;
+}
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:12px;
+}
+.field{min-width:0}
+.field label{
+    display:block;
+    color:#c4cfdd;
+    font-size:11px;
+    font-weight:600;
+    margin-bottom:6px;
+}
+.field input,.field select{
+    width:100%;
+    min-width:0;
+    padding:10px 11px;
+    color:#fff;
+    background:#1c2a40;
+    border:1px solid #3b4b63;
+    border-radius:6px;
+    outline:none;
+    font-size:12px;
+}
+.field input:focus,.field select:focus{
+    border-color:#9bb9df;
+    box-shadow:0 0 0 2px #8fb5e522;
+}
+.field select option{background:#1c2a40;color:#fff}
+.editor-note{
+    margin-top:13px;
+    padding:10px 12px;
+    border:1px solid #40516a;
+    border-radius:6px;
+    color:#dce7f5;
+    font-size:11px;
+    line-height:1.5;
+}
+.validation{
+    display:none;
+    margin-top:12px;
+    padding:10px 12px;
+    background:#4a1f26;
+    border:1px solid #9b3c48;
+    border-radius:6px;
+    color:#ffe4e6;
+    font-size:12px;
+    line-height:1.5;
+}
+.validation.show{display:block}
+.buttons{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+button{
+    border:0;
+    border-radius:6px;
+    padding:10px 16px;
+    font-size:12px;
+    font-weight:700;
+    cursor:pointer;
+}
+.print-btn{background:#fff;color:#142033}
+.reset-btn{background:#2b3b52;color:#fff;border:1px solid #45566e}
+button:hover{filter:brightness(.94)}
+
+/* A4 DOCUMENT */
+.page{
+    position:relative;
+    width:210mm;
+    min-height:297mm;
+    margin:20px auto;
+    padding:10mm;
+    background:#fff;
+    box-shadow:0 5px 25px #182b421c;
+}
+.doc-topline{
+    height:5px;
+    background:var(--navy);
+    margin:-10mm -10mm 9mm;
+}
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:15px;
+    padding-bottom:9px;
+    border-bottom:2px solid var(--navy);
+}
+.brand{display:flex;align-items:center;gap:9px}
+.brand-mark{
+    width:35px;height:35px;
+    display:flex;align-items:center;justify-content:center;
+    flex:none;background:var(--navy);color:#fff;
+    border-radius:7px;font-size:15px;font-weight:800;
+    letter-spacing:-1px;
+}
+.brand h1{
+    margin:0;color:var(--navy);font-size:17px;
+    line-height:1.15;letter-spacing:.35px;
+}
+.brand p{
+    margin:4px 0 0;color:var(--muted);
+    font-size:7.5px;letter-spacing:.2px;
+}
+.doc-title{text-align:right}
+.doc-title h2{
+    margin:1px 0 4px;color:var(--navy);
+    font-size:13px;letter-spacing:.45px;
+}
+.doc-title p{margin:0;color:var(--muted);font-size:8px}
+.status{
+    display:inline-block;
+    margin-top:5px;
+    padding:4px 8px;
+    border:1px solid #b8c6d6;
+    border-radius:20px;
+    color:var(--navy);
+    font-size:7px;
+    font-weight:800;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+}
+.intro{
+    margin:9px 0 8px;padding:7px 9px;
+    background:var(--soft);
+    border-left:3px solid #8b9db4;
+    color:#39465a;font-size:8.5px;line-height:1.45;
+}
+.section{margin-top:8px}
+.section-title{
+    display:flex;align-items:center;gap:6px;
+    margin:0 0 5px;padding-bottom:4px;
+    border-bottom:1px solid #aab6c5;
+    color:var(--navy);font-size:9px;
+    font-weight:800;letter-spacing:.35px;
+    text-transform:uppercase;
+}
+.section-no{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:16px;height:16px;flex:none;
+    background:#eaf0f7;color:var(--navy);
+    border-radius:4px;font-size:7px;
+}
+.info-grid{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    border-top:1px solid var(--line);
+    border-left:1px solid var(--line);
+}
+.info-item{
+    min-width:0;padding:5px 7px;
+    border-right:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    overflow-wrap:anywhere;
+}
+.info-item label{
+    display:block;margin-bottom:3px;
+    color:var(--muted);font-size:6.5px;
+    font-weight:700;letter-spacing:.45px;
+    text-transform:uppercase;
+}
+.info-item strong{
+    display:block;color:#1e293b;
+    font-size:8px;font-weight:700;line-height:1.3;
+}
+.fee-grid{
+    display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;
+}
+.fee-card{
+    min-width:0;padding:7px 5px;text-align:center;
+    border:1px solid var(--line);border-radius:4px;
+    background:#fbfcfe;
+}
+.fee-card span{
+    display:block;margin-bottom:4px;color:var(--muted);
+    font-size:6.7px;line-height:1.2;
+}
+.fee-card strong{
+    display:block;color:var(--navy);
+    font-size:11px;line-height:1.2;overflow-wrap:anywhere;
+}
+.fee-card.support-card{background:var(--green-bg);border-color:#b8dfc7}
+.fee-card.support-card strong,.support{color:var(--green)}
+table{width:100%;border-collapse:collapse;font-size:7.8px}
+th,td{
+    padding:4px 7px;border:1px solid var(--line);
+    text-align:left;line-height:1.25;
+}
+th{
+    background:#edf2f7;color:var(--navy);
+    font-size:7px;font-weight:800;
+    letter-spacing:.3px;text-transform:uppercase;
+}
+td:last-child,th:last-child{
+    width:27%;text-align:right;white-space:nowrap;
+}
+tbody tr:nth-child(even){background:#fafbfd}
+.total-row{background:#f1f5f9!important}
+.total-row td{font-weight:800}
+.compact-box{
+    padding:6px 8px;border:1px solid var(--line);
+    border-radius:4px;color:#354256;
+    font-size:7.7px;line-height:1.45;overflow-wrap:anywhere;
+}
+.compact-box p{margin:0 0 3px}
+.compact-box p:last-child{margin-bottom:0}
+.highlight{background:var(--green-bg);border-color:#c5e4d0;border-left:3px solid var(--green)}
+.warning{background:#f8fafc;border-left:3px solid #8795a8}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.rule-heading{display:block;margin-bottom:3px;color:var(--navy);font-size:7.8px}
+ul{margin:0;padding-left:13px}
+li{margin:0 0 2px}
+li:last-child{margin-bottom:0}
+.confirmation{line-height:1.45}
+.signatures{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;margin-top:13px;
+}
+.sign-box{
+    min-width:0;min-height:62px;padding-top:5px;
+    border-top:1px solid #8d9aab;
+    color:#344256;font-size:7.5px;
+}
+.sign-box strong{color:var(--navy);font-size:8px}
+.sign-box p{margin:5px 0 0}
+.signature-line{
+    display:inline-block;min-width:65px;
+    border-bottom:1px solid #aab4c1;
+}
+.footer{
+    display:flex;justify-content:space-between;gap:8px;
+    margin-top:9px;padding-top:5px;
+    border-top:1px solid var(--line);
+    color:var(--muted);font-size:6.8px;
+}
+.footer span{overflow-wrap:anywhere}
+
+/* PRINT */
+@page{size:A4;margin:10mm}
+@media print{
+    html,body{
+        width:auto;height:auto;margin:0!important;
+        padding:0!important;background:#fff!important;
+    }
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .editor{display:none!important}
+    .page{
+        width:auto;min-height:277mm;height:auto;
+        margin:0;padding:0;box-shadow:none;
+        overflow:visible;
+    }
+    .doc-topline{margin:0 0 8mm}
+    .section{margin-top:7px}
+    .intro{margin:7px 0}
+    .compact-box,.fee-card,.info-item,.sign-box,
+    .signatures,.two-col,table,tr{
+        break-inside:avoid;page-break-inside:avoid;
+    }
+    .section-title{break-after:avoid;page-break-after:avoid}
+}
+
+/* MOBILE PREVIEW */
+@media(max-width:800px){
+    .editor{margin:10px;padding:16px}
+    .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .page{
+        width:100%;min-height:0;height:auto;
+        margin:10px 0;padding:20px;
+    }
+    .doc-topline{margin:-20px -20px 15px}
+}
+@media(max-width:500px){
+    .editor-head{align-items:flex-start}
+    .editor-tag{font-size:9px}
+    .form-grid{grid-template-columns:1fr 1fr;gap:9px}
+    .field input,.field select{font-size:11px;padding:9px 7px}
+    .header{flex-direction:column}
+    .doc-title{text-align:left}
+    .info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .fee-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .signatures{grid-template-columns:1fr;gap:18px}
+    .footer{flex-direction:column;gap:3px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="editor">
+    <div class="editor-head">
+        <div>
+            <h2>Student Fee Support Editor</h2>
+            <p>Update student, institute and approved fee details. Amounts calculate automatically.</p>
+        </div>
+        <span class="editor-tag">A4 DOCUMENT</span>
+    </div>
+
+    <div class="form-grid">
+        <div class="field"><label>Reference No. *</label><input id="reference" value="HAP-FS-2026-001" required></div>
+        <div class="field"><label>Document Date *</label><input id="docDate" type="date" value="2026-09-23" required></div>
+        <div class="field"><label>Agreement Status</label>
+            <select id="agreementStatus">
+                <option value="Draft">Draft</option>
+                <option value="Approved" selected>Approved</option>
+                <option value="Signed">Signed</option>
+            </select>
+        </div>
+
+        <div class="field"><label>Student Name *</label><input id="studentName" value="Student Name" required></div>
+        <div class="field"><label>Student ID</label><input id="studentId" value="STU-001"></div>
+        <div class="field"><label>Student Email</label><input id="studentEmail" type="email" placeholder="student@example.com"></div>
+
+        <div class="field"><label>Institute / Teacher *</label><input id="institute" value="Institute Name" required></div>
+        <div class="field"><label>Course *</label><input id="course" value="Course Name" required></div>
+        <div class="field"><label>Contact</label><input id="contact" value="+91 XXXXX XXXXX"></div>
+
+        <div class="field"><label>Program / Event</label><input id="program" placeholder="Program or Event Name"></div>
+        <div class="field"><label>Monthly Fee ₹ *</label><input id="monthlyFee" type="number" min="0" step="0.01" value="500" required></div>
+        <div class="field"><label>Duration (Months) *</label><input id="months" type="number" min="1" step="1" value="6" required></div>
+
+        <div class="field"><label>Approved Support % *</label><input id="supportPercent" type="number" min="0" max="100" step="0.01" value="12" required></div>
+        <div class="field"><label>Support Start Date *</label><input id="startDate" type="date" value="2026-09-01" required></div>
+        <div class="field"><label>Support End Date *</label><input id="endDate" type="date" value="2027-02-28" required></div>
+
+        <div class="field"><label>Approval Reference</label><input id="approvalRef" placeholder="Approval ID (if applicable)"></div>
+        <div class="field"><label>Haproven Authorized Name</label><input id="authorizedName" value="Susheel Kumar"></div>
+        <div class="field"><label>Designation</label><input id="designation" value="Founder &amp; CEO"></div>
+    </div>
+
+    <div class="editor-note">
+        <strong>Important:</strong> This agreement records approved support only. It is not proof of payment. Actual payment details and payment confirmation should be issued separately through a payment receipt.
+    </div>
+
+    <div class="validation" id="validation"></div>
+
+    <div class="buttons">
+        <button class="print-btn" type="button" onclick="printAgreement()">Print / Save PDF</button>
+        <button class="reset-btn" type="button" onclick="resetForm()">Reset</button>
+    </div>
+</div>
+
+<main class="page">
+    <div class="doc-topline"></div>
+
+    <header class="header">
+        <div class="brand">
+            <div class="brand-mark">H</div>
+            <div>
+                <h1>HAPROVEN TECHNOLOGIES</h1>
+                <p>Technology • Projects • Community • Educational Support</p>
+            </div>
+        </div>
+        <div class="doc-title">
+            <h2>STUDENT FEE SUPPORT</h2>
+            <p>Educational Fee Concession &amp; Support Agreement</p>
+            <span class="status" id="showStatus">Approved</span>
+        </div>
+    </header>
+
+    <div class="intro">
+        This agreement records the approved educational fee support arrangement between Haproven Technologies, the student and the concerned Institute / Teacher for the stated support period. The support is subject to the terms and conditions mentioned below. This document does not confirm that payment has been made.
+    </div>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">01</span> Student &amp; Program Information</h3>
+        <div class="info-grid">
+            <div class="info-item"><label>Reference No.</label><strong id="showReference">HAP-FS-2026-001</strong></div>
+            <div class="info-item"><label>Document Date</label><strong id="showDocDate">23 Sep 2026</strong></div>
+            <div class="info-item"><label>Approval Reference</label><strong id="showApprovalRef">—</strong></div>
+            <div class="info-item"><label>Student Name</label><strong id="showStudentName">Student Name</strong></div>
+            <div class="info-item"><label>Student ID</label><strong id="showStudentId">STU-001</strong></div>
+            <div class="info-item"><label>Student Email</label><strong id="showStudentEmail">—</strong></div>
+            <div class="info-item"><label>Institute / Teacher</label><strong id="showInstitute">Institute Name</strong></div>
+            <div class="info-item"><label>Course</label><strong id="showCourse">Course Name</strong></div>
+            <div class="info-item"><label>Contact</label><strong id="showContact">+91 XXXXX XXXXX</strong></div>
+            <div class="info-item"><label>Program / Event</label><strong id="showProgram">—</strong></div>
+            <div class="info-item"><label>Support Period</label><strong><span id="showStart">01 Sep 2026</span> – <span id="showEnd">28 Feb 2027</span></strong></div>
+            <div class="info-item"><label>Approved Support Rate</label><strong id="showPercent">12%</strong></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">02</span> Approved Fee Summary</h3>
+        <div class="fee-grid">
+            <div class="fee-card"><span>Monthly Normal Fee</span><strong id="showMonthly">₹500</strong></div>
+            <div class="fee-card"><span>Support Duration</span><strong><span id="showMonths">6</span> Months</strong></div>
+            <div class="fee-card"><span>Normal Total Fee</span><strong id="showNormalTotal">₹3,000</strong></div>
+            <div class="fee-card support-card"><span>Approved Haproven Support</span><strong id="showSupport">₹360</strong></div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">03</span> Student Fee Payable</h3>
+        <table>
+            <thead><tr><th>Particular</th><th>Amount (INR)</th></tr></thead>
+            <tbody>
+                <tr><td>Normal Monthly Fee</td><td id="tableMonthly">₹500</td></tr>
+                <tr><td>Approved Monthly Support (average)</td><td id="tableMonthlySupport">₹60</td></tr>
+                <tr class="total-row"><td>Student Monthly Payable (average)</td><td id="tableStudentMonthly">₹440</td></tr>
+                <tr><td>Normal Total Fee for Approved Period</td><td id="tableNormalTotal">₹3,000</td></tr>
+                <tr><td>Approved Haproven Support</td><td class="support" id="tableSupport">₹360</td></tr>
+                <tr class="total-row"><td>Student Total Payable</td><td id="tableStudentTotal">₹2,640</td></tr>
+            </tbody>
+        </table>
+        <div class="compact-box" style="margin-top:5px">
+            Monthly figures are indicative averages. The total approved support and total student payable for the full period are the controlling amounts. Any installment-level rounding adjustment should be reflected in the actual fee schedule.
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">04</span> Monthly Fee Arrangement</h3>
+        <div class="compact-box highlight">
+            The student shall pay the applicable fee on a monthly basis. Haproven's approved support shall be calculated according to the approved support rate, verified fee and stated duration. The student is responsible for paying the remaining fee after the applicable support adjustment. The total approved support for this period is <strong id="boxSupport">₹360</strong>.
+            <br><br>
+            The approved support rate is assigned to the eligible student and shall not be increased, reduced or otherwise changed solely because the concerned Institute / Teacher is or is not a Haproven partner. Any change to the approved rate requires Haproven's written approval.
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">05</span> Approval &amp; Disbursement Process</h3>
+        <div class="compact-box">
+            <ul>
+                <li>The student submits the required application and supporting details for the fee support program.</li>
+                <li>Haproven reviews eligibility, verifies the fee information and communicates the approved support rate and amount.</li>
+                <li>This agreement is issued with the approved details and must be acknowledged by the required parties.</li>
+                <li>The signed agreement must be returned to Haproven for verification before disbursement.</li>
+                <li>After verification, Haproven may disburse the approved support amount directly to the eligible Institute / Teacher according to the approved arrangement.</li>
+                <li>A separate payment receipt or confirmation will be issued after the payment is actually completed.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">06</span> Partner Institute / Teacher</h3>
+        <div class="compact-box">
+            Where the concerned Institute / Teacher is an approved Haproven collaborator or partner, the Haproven-supported amount shall not be collected directly from the student as a separate support payment. The eligible support amount may be adjusted or settled directly between Haproven and the Partner Institute / Teacher according to their mutually agreed terms.
+            <br><br>
+            The student's approved support rate remains based on Haproven's approval and eligibility review, and shall not depend solely on the partner status of the Institute / Teacher.
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">07</span> Institute / Teacher Change</h3>
+        <div class="compact-box warning">
+            <ul>
+                <li>Any proposed change of Institute / Teacher must be communicated to Haproven before the student continues under the revised arrangement.</li>
+                <li>Approved support shall not be transferred directly from the previous Teacher / Institute to the new Teacher / Institute by the student or either institution.</li>
+                <li>Unused support is not refundable to the student in cash and is not automatically payable to a new Institute / Teacher.</li>
+                <li>Remaining eligible support may be considered for adjustment against fees at a new eligible Institute / Teacher only after Haproven's prior written approval and verification.</li>
+                <li>The new Institute / Teacher must coordinate with Haproven to verify eligibility, admission details and the remaining support balance.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">08</span> Support Conditions</h3>
+        <div class="two-col">
+            <div class="compact-box">
+                <strong class="rule-heading">Not Allowed</strong>
+                Direct transfer, cash refund or private settlement of Haproven-supported funds between the student, previous Teacher and new Teacher / Institute is not permitted under this agreement.
+            </div>
+            <div class="compact-box highlight">
+                <strong class="rule-heading">Allowed with Approval</strong>
+                Remaining eligible support may be considered for adjustment against new fees after written approval, eligibility verification and confirmation of the new admission.
+            </div>
+        </div>
+        <div class="compact-box" style="margin-top:5px">
+            Support is applicable only to the approved student, course, fee basis and support period. The approved amount is based on the information verified at the time of approval. Any change in fee, course, admission status, Institute / Teacher or support period requires prior communication, verification and written approval from Haproven. Haproven may request reasonable documents to verify continued eligibility and fee details.
+        </div>
+    </section>
+
+    <section class="section">
+        <h3 class="section-title"><span class="section-no">09</span> Confirmation &amp; Acknowledgement</h3>
+        <div class="compact-box confirmation">
+            The undersigned acknowledge that they have reviewed the student details, fee summary, approved support rate, support period and terms stated in this agreement. The parties agree to follow the approved fee arrangement and communicate any proposed change to Haproven before it takes effect.
+            <br><br>
+            This agreement records the approved support arrangement only. It does not serve as proof of payment or guarantee disbursement before the required verification and approval process is complete. Any payment made by Haproven shall be documented separately.
+        </div>
+    </section>
+
+    <div class="signatures">
+        <div class="sign-box">
+            <strong>For Haproven Technologies</strong>
+            <p id="showAuthorizedName">Susheel Kumar</p>
+            <p id="showDesignation">Founder &amp; CEO</p>
+            <p>Date: <span class="signature-line"></span></p>
+            <p>Signature: <span class="signature-line"></span></p>
+        </div>
+        <div class="sign-box">
+            <strong>Student / Parent / Guardian</strong>
+            <p>Name: <span class="signature-line"></span></p>
+            <p>Relationship (if applicable): <span class="signature-line"></span></p>
+            <p>Date: <span class="signature-line"></span></p>
+            <p>Signature: <span class="signature-line"></span></p>
+        </div>
+        <div class="sign-box">
+            <strong>Institute / Authorized Teacher</strong>
+            <p>Name: <span class="signature-line"></span></p>
+            <p>Designation: <span class="signature-line"></span></p>
+            <p>Date: <span class="signature-line"></span></p>
+            <p>Signature / Stamp: <span class="signature-line"></span></p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <span>haproven.netlify.app</span>
+        <span>haproven.tech@gmail.com</span>
+        <span>Haproven Technologies</span>
+    </footer>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+
+function money(value){
+    return "₹" + Number(value || 0).toLocaleString("en-IN",{
+        minimumFractionDigits:0,
+        maximumFractionDigits:2
+    });
+}
+
+function formatDate(value){
+    if(!value) return "—";
+    const date = new Date(value + "T00:00:00");
+    if(Number.isNaN(date.getTime())) return "—";
+    return date.toLocaleDateString("en-IN",{
+        day:"2-digit",month:"short",year:"numeric"
+    });
+}
+
+function getValue(id){
+    return $(id).value.trim();
+}
+
+function updateDocument(){
+    const monthlyFee = Math.max(0, Number(getValue("monthlyFee")) || 0);
+    const months = Math.max(0, Math.floor(Number(getValue("months")) || 0));
+    const percent = Math.min(100, Math.max(0, Number(getValue("supportPercent")) || 0));
+
+    const normalTotal = monthlyFee * months;
+    const totalSupport = normalTotal * percent / 100;
+    const monthlySupport = monthlyFee * percent / 100;
+    const studentTotal = normalTotal - totalSupport;
+    const studentMonthly = monthlyFee - monthlySupport;
+
+    const values = {
+        showReference:getValue("reference") || "—",
+        showDocDate:formatDate(getValue("docDate")),
+        showStatus:getValue("agreementStatus") || "Draft",
+        showApprovalRef:getValue("approvalRef") || "—",
+        showStudentName:getValue("studentName") || "—",
+        showStudentId:getValue("studentId") || "—",
+        showStudentEmail:getValue("studentEmail") || "—",
+        showInstitute:getValue("institute") || "—",
+        showCourse:getValue("course") || "—",
+        showContact:getValue("contact") || "—",
+        showProgram:getValue("program") || "—",
+        showStart:formatDate(getValue("startDate")),
+        showEnd:formatDate(getValue("endDate")),
+        showPercent:percent + "%",
+        showMonthly:money(monthlyFee),
+        showMonths:String(months),
+        showNormalTotal:money(normalTotal),
+        showSupport:money(totalSupport),
+        tableMonthly:money(monthlyFee),
+        tableMonthlySupport:money(monthlySupport),
+        tableStudentMonthly:money(studentMonthly),
+        tableNormalTotal:money(normalTotal),
+        tableSupport:money(totalSupport),
+        tableStudentTotal:money(studentTotal),
+        boxSupport:money(totalSupport),
+        showAuthorizedName:getValue("authorizedName") || "Authorized Signatory",
+        showDesignation:getValue("designation") || "Authorized Representative"
+    };
+
+    Object.entries(values).forEach(([id,value])=>{
+        $(id).textContent = value;
+    });
+}
+
+function validateForm(){
+    const errors = [];
+    const required = [
+        ["reference","Reference number"],
+        ["docDate","Document date"],
+        ["studentName","Student name"],
+        ["institute","Institute / Teacher"],
+        ["course","Course"],
+        ["monthlyFee","Monthly fee"],
+        ["months","Duration"],
+        ["supportPercent","Approved support rate"],
+        ["startDate","Support start date"],
+        ["endDate","Support end date"]
+    ];
+
+    required.forEach(([id,label])=>{
+        if(!getValue(id)) errors.push(label + " is required.");
+    });
+
+    const fee = Number(getValue("monthlyFee"));
+    const months = Number(getValue("months"));
+    const percent = Number(getValue("supportPercent"));
+    const start = getValue("startDate");
+    const end = getValue("endDate");
+
+    if(getValue("monthlyFee") && (!Number.isFinite(fee) || fee < 0)){
+        errors.push("Monthly fee must be zero or more.");
+    }
+    if(getValue("months") && (!Number.isInteger(months) || months < 1)){
+        errors.push("Duration must be a whole number of at least 1 month.");
+    }
+    if(getValue("supportPercent") && (!Number.isFinite(percent) || percent < 0 || percent > 100)){
+        errors.push("Approved support rate must be between 0% and 100%.");
+    }
+    if(start && end && start > end){
+        errors.push("Support end date cannot be earlier than the start date.");
+    }
+
+    const email = getValue("studentEmail");
+    if(email && !$("studentEmail").checkValidity()){
+        errors.push("Please enter a valid student email address.");
+    }
+
+    const validation = $("validation");
+    if(errors.length){
+        validation.innerHTML = "<strong>Please fix the following:</strong><br>" +
+            errors.map(error => "• " + error).join("<br>");
+        validation.classList.add("show");
+        return false;
+    }
+
+    validation.textContent = "";
+    validation.classList.remove("show");
+    return true;
+}
+
+function printAgreement(){
+    updateDocument();
+    if(!validateForm()) return;
+    window.print();
+}
+
+function resetForm(){
+    if(!confirm("Are you sure you want to reset all agreement details?")) return;
+
+    const defaults = {
+        reference:"HAP-FS-2026-001",
+        docDate:"2026-09-23",
+        agreementStatus:"Approved",
+        studentName:"Student Name",
+        studentId:"STU-001",
+        studentEmail:"",
+        institute:"Institute Name",
+        course:"Course Name",
+        contact:"+91 XXXXX XXXXX",
+        program:"",
+        monthlyFee:"500",
+        months:"6",
+        supportPercent:"12",
+        startDate:"2026-09-01",
+        endDate:"2027-02-28",
+        approvalRef:"",
+        authorizedName:"Susheel Kumar",
+        designation:"Founder & CEO"
+    };
+
+    Object.entries(defaults).forEach(([id,value])=>{
+        $(id).value = value;
+    });
+
+    $("validation").textContent = "";
+    $("validation").classList.remove("show");
+    updateDocument();
+}
+
+document.querySelectorAll(".editor input,.editor select").forEach(input=>{
+    input.addEventListener("input",updateDocument);
+    input.addEventListener("change",updateDocument);
+});
+
+updateDocument();
+</script>
+</body>
+</html>

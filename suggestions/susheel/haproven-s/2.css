@@ -1,0 +1,536 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #111;
+    --gray: #666;
+    --border: #ddd;
+    --green: #16834b;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    color: var(--black);
+}
+
+/* =========================
+   EDITOR
+========================= */
+
+.editor {
+    max-width: 1000px;
+    margin: 25px auto;
+    background: #111;
+    color: #fff;
+    padding: 22px;
+    border-radius: 12px;
+}
+
+.editor h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+}
+
+.editor > p {
+    margin: 0 0 18px;
+    color: #aaa;
+    font-size: 13px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.field label {
+    display: block;
+    font-size: 11px;
+    margin-bottom: 5px;
+    color: #bbb;
+}
+
+.field input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #444;
+    background: #1d1d1d;
+    color: #fff;
+    border-radius: 6px;
+    outline: none;
+}
+
+.field input:focus {
+    border-color: #aaa;
+}
+
+.buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: 0;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.print-btn {
+    background: #fff;
+    color: #111;
+}
+
+.reset-btn {
+    background: #333;
+    color: #fff;
+}
+
+/* =========================
+   A4 DOCUMENT
+========================= */
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 25px auto;
+    padding: 13mm;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,.12);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 2px solid #111;
+    padding-bottom: 12px;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: .4px;
+}
+
+.brand p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.doc-title {
+    text-align: right;
+}
+
+.doc-title h2 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.doc-title p {
+    margin: 4px 0 0;
+    font-size: 10px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.intro {
+    margin: 12px 0;
+    font-size: 11px;
+    line-height: 1.55;
+}
+
+/* =========================
+   STUDENT INFORMATION
+========================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+}
+
+.info-item {
+    min-width: 0;
+    padding: 7px 9px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+
+.info-item:nth-child(3n) {
+    border-right: 0;
+}
+
+.info-item:nth-last-child(-n+3) {
+    border-bottom: 0;
+}
+
+.info-item label {
+    display: block;
+    color: #777;
+    font-size: 8px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.info-item strong {
+    font-size: 10px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    margin-top: 12px;
+}
+
+.section-title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #111;
+}
+
+/* =========================
+   FEE SUMMARY
+========================= */
+
+.fee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.fee-card {
+    min-width: 0;
+    border: 1px solid var(--border);
+    padding: 8px;
+    text-align: center;
+}
+
+.fee-card span {
+    display: block;
+    color: #777;
+    font-size: 8px;
+    margin-bottom: 4px;
+}
+
+.fee-card strong {
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.support {
+    color: var(--green);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 7px 8px;
+    text-align: left;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background: #f5f5f5;
+    font-weight: 700;
+}
+
+td:last-child,
+th:last-child {
+    text-align: right;
+}
+
+/* =========================
+   BOXES
+========================= */
+
+.compact-box {
+    border: 1px solid var(--border);
+    padding: 9px 10px;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.compact-box p {
+    margin: 0 0 5px;
+}
+
+.compact-box p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    background: #f7fbf8;
+    border-left: 3px solid var(--green);
+}
+
+.warning {
+    background: #fafafa;
+    border-left: 3px solid #777;
+}
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+ul {
+    margin: 5px 0 0;
+    padding-left: 17px;
+}
+
+li {
+    margin-bottom: 4px;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-top: 22px;
+}
+
+.sign-box {
+    border-top: 1px solid #111;
+    padding-top: 5px;
+    font-size: 9px;
+    min-width: 0;
+}
+
+.sign-box p {
+    margin: 7px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 14px;
+    padding-top: 7px;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: 8px;
+    color: #777;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   KEEP BOXES TOGETHER
+========================= */
+
+.compact-box,
+.fee-card,
+.info-item,
+.two-col,
+.signatures,
+.sign-box,
+table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+    .editor {
+        margin: 10px;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page {
+        width: 100%;
+        min-height: auto;
+        margin: 10px 0;
+        padding: 20px;
+    }
+
+    .info-grid,
+    .fee-grid,
+    .two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .info-item:nth-child(3n) {
+        border-right: 1px solid var(--border);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .info-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:nth-last-child(-n+2) {
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .form-grid,
+    .info-grid,
+    .fee-grid,
+    .two-col,
+    .signatures {
+        grid-template-columns: 1fr;
+    }
+
+    .info-item,
+    .info-item:nth-child(3n),
+    .info-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .info-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:last-child {
+        border-bottom: 0;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .doc-title {
+        text-align: left;
+    }
+
+    .footer {
+        flex-direction: column;
+    }
+}
+
+/* =========================
+   PRINT SETTINGS
+========================= */
+
+@page {
+    size: A4;
+    margin: 13mm 0;
+}
+
+@media print {
+    html,
+    body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .editor {
+        display: none !important;
+    }
+
+    .page {
+        width: auto;
+        min-height: 0;
+        height: auto;
+        margin: 0;
+        padding: 0 13mm;
+        box-shadow: none;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .section {
+        margin-top: 12px;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    .section-title {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .compact-box,
+    .fee-card,
+    .info-item,
+    .sign-box,
+    .signatures,
+    .two-col,
+    table tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+
+    tr,
+    img {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}

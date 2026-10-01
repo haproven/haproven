@@ -1,0 +1,1378 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10243b">
+<meta name="description" content="Haproven Student Fee Support Program application form.">
+<title>Student Application | Haproven Technologies</title>
+
+<style>
+:root {
+    --primary: #10243b;
+    --accent: #16a078;
+    --text: #263648;
+    --muted: #718096;
+    --border: #e3e9ef;
+    --bg: #f5f8fb;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+body.modal-open { overflow: hidden; }
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+
+.container {
+    width: min(850px, 94%);
+    margin: auto;
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand-logo {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    background: var(--primary);
+    border-radius: 9px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.brand-name {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.brand-subtitle {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.back-link {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+main { padding: 30px 0 50px; }
+
+.intro { margin-bottom: 18px; }
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 5px 0;
+    color: var(--primary);
+    font-size: clamp(26px, 5vw, 36px);
+}
+
+.intro p, .section-title p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.notice {
+    margin: 16px 0;
+    padding: 12px 14px;
+    color: #31517a;
+    background: #edf5ff;
+    border: 1px solid #d5e5fa;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.form-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px #10243b0d;
+}
+
+.section {
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.section-number {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+    display: grid;
+    place-items: center;
+    color: var(--accent);
+    background: #e9f8f2;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.section-title h2 {
+    color: var(--primary);
+    font-size: 15px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.field { min-width: 0; }
+.full { grid-column: 1 / -1; }
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #344054;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.required { color: #d92d20; }
+
+input, select, textarea {
+    width: 100%;
+    min-height: 41px;
+    padding: 9px 11px;
+    color: var(--text);
+    background: #fff;
+    border: 1px solid #d0d5dd;
+    border-radius: 7px;
+    outline: none;
+    font-size: 13px;
+}
+
+textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px #16a07817;
+}
+
+.hint {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 20px;
+    background: #fcfcfd;
+}
+
+.actions p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.download-btn, .preview-action-btn {
+    padding: 10px 16px;
+    color: #fff;
+    background: var(--accent);
+    border: 0;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.preview-form-btn {
+    padding: 10px 16px;
+    color: var(--primary);
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.download-btn:hover, .preview-action-btn:hover {
+    background: #128765;
+}
+
+.preview-form-btn:hover { background: #f1f5f9; }
+
+.download-btn:disabled, .preview-action-btn:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.message {
+    display: none;
+    margin: 12px 20px 0;
+    padding: 10px;
+    border-radius: 7px;
+    font-size: 12px;
+}
+
+.message.error {
+    display: block;
+    color: #b42318;
+    background: #fef3f2;
+    border: 1px solid #fecdca;
+}
+
+.message.success {
+    display: block;
+    color: #087443;
+    background: #ecfdf3;
+    border: 1px solid #abefc6;
+}
+
+.footer {
+    padding: 20px 10px;
+    color: var(--muted);
+    text-align: center;
+    font-size: 11px;
+}
+
+.footer a {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+/* Floating preview button */
+.page-preview-btn {
+    position: fixed;
+    top: 50%;
+    right: 14px;
+    z-index: 1000;
+    transform: translateY(-50%);
+    padding: 11px 13px;
+    color: #fff;
+    background: var(--primary);
+    border: 0;
+    border-radius: 9px;
+    box-shadow: 0 5px 18px #10243b30;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.page-preview-btn:hover { background: var(--accent); }
+
+/* Preview modal */
+.page-preview-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: #0b1725c9;
+    backdrop-filter: blur(4px);
+}
+
+.page-preview-modal.active { display: flex; }
+
+.preview-window {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: min(850px, 100%);
+    height: min(92vh, 900px);
+    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px #0004;
+}
+
+.preview-header {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    color: #fff;
+    background: var(--primary);
+}
+
+.preview-header strong { font-size: 13px; }
+
+.preview-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.preview-action-btn {
+    padding: 7px 11px;
+    font-size: 11px;
+}
+
+.preview-close {
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    background: #ffffff20;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 21px;
+    line-height: 1;
+}
+
+.preview-content {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    padding: 20px;
+    background: #e9eef3;
+}
+
+.preview-paper {
+    width: min(100%, 700px);
+    min-height: 500px;
+    margin: auto;
+    padding: 25px;
+    background: #fff;
+    border: 1px solid #dfe5eb;
+    box-shadow: 0 5px 20px #10243b16;
+}
+
+.preview-paper h2 {
+    margin-bottom: 5px;
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.preview-subtitle {
+    margin-bottom: 15px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.preview-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0 14px;
+    padding: 8px 10px;
+    color: #526174;
+    background: #f5f8fb;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 10px;
+}
+
+.preview-section {
+    margin-top: 13px;
+    padding-top: 9px;
+    border-top: 1px solid var(--border);
+}
+
+.preview-section h3 {
+    margin-bottom: 7px;
+    color: var(--accent);
+    font-size: 12px;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 14px;
+}
+
+.preview-field {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    font-size: 11px;
+}
+
+.preview-field.full { grid-column: 1 / -1; }
+
+.preview-field b {
+    display: block;
+    color: #667085;
+    font-size: 10px;
+}
+
+.preview-field span { color: var(--text); }
+
+.preview-note {
+    margin-top: 14px;
+    padding-top: 9px;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+}
+
+@media (max-width: 600px) {
+    .navbar { min-height: 60px; }
+    .brand-name { font-size: 11px; }
+    .brand-subtitle, .back-link { font-size: 10px; }
+    main { padding-top: 22px; }
+    .form-grid { grid-template-columns: 1fr; gap: 12px; }
+    .full { grid-column: auto; }
+    .section { padding: 17px 14px; }
+    .actions {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 15px 14px;
+    }
+    .action-buttons { width: 100%; }
+    .action-buttons button { flex: 1; }
+    .message { margin-right: 14px; margin-left: 14px; }
+    .page-preview-btn {
+        top: auto;
+        right: 12px;
+        bottom: 14px;
+        transform: none;
+        padding: 10px 12px;
+        box-shadow: 0 4px 15px #10243b40;
+    }
+    .page-preview-modal { padding: 7px; }
+    .preview-window {
+        width: 100%;
+        height: 95dvh;
+        border-radius: 9px;
+    }
+    .preview-content { padding: 10px; }
+    .preview-paper { padding: 15px; }
+    .preview-grid { grid-template-columns: 1fr; }
+    .preview-field.full { grid-column: auto; }
+    .preview-meta { flex-direction: column; }
+}
+
+@media print {
+    .header, .intro, .notice, .page-preview-btn, .page-preview-modal,
+    .footer, .actions, .message {
+        display: none !important;
+    }
+    body { background: #fff; }
+    main { width: 100%; padding: 0; }
+    .form-card { border: 0; box-shadow: none; }
+}
+</style>
+</head>
+
+<body>
+<header class="header">
+    <div class="container navbar">
+        <a href="https://haproven.netlify.app" class="brand">
+            <span class="brand-logo">H</span>
+            <span>
+                <span class="brand-name">HAPROVEN TECHNOLOGIES</span><br>
+                <span class="brand-subtitle">Educational Support Program</span>
+            </span>
+        </a>
+        <a href="student-fee-support.html" class="back-link">← Program Details</a>
+    </div>
+</header>
+
+<main class="container">
+    <div class="intro">
+        <span class="eyebrow">Student Fee Support Program</span>
+        <h1>Student Application Form</h1>
+        <p>Fill in your details to create your Student Support Application PDF.</p>
+    </div>
+
+    <div class="notice">
+        <strong>Before you start:</strong>
+        Fill in your details carefully, preview your application, download the PDF
+        and send it to Haproven Support. Submission does not guarantee approval.
+    </div>
+
+    <form id="applicationForm" class="form-card">
+        <section class="section">
+            <div class="section-title">
+                <span class="section-number">01</span>
+                <div>
+                    <h2>About You</h2>
+                    <p>Enter your personal and contact details.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="field">
+                    <label for="fullName">Full Name <span class="required">*</span></label>
+                    <input id="fullName" name="fullName" type="text" maxlength="100"
+                        autocomplete="name" placeholder="Enter full name" required>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Mobile Number <span class="required">*</span></label>
+                    <input id="phone" name="phone" type="tel" inputmode="numeric"
+                        maxlength="15" autocomplete="tel" placeholder="Mobile number" required>
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" maxlength="150"
+                        autocomplete="email" placeholder="Email (optional)">
+                </div>
+
+                <div class="field">
+                    <label for="studentId">Roll Number / Student ID</label>
+                    <input id="studentId" name="studentId" type="text"
+                        maxlength="80" placeholder="If available">
+                </div>
+
+                <div class="field full">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <textarea id="address" name="address" maxlength="300"
+                        autocomplete="street-address"
+                        placeholder="Village/City, District, State, PIN Code" required></textarea>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <span class="section-number">02</span>
+                <div>
+                    <h2>Education Details</h2>
+                    <p>Enter your school or institute information.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="field full">
+                    <label for="institute">School / Institute <span class="required">*</span></label>
+                    <input id="institute" name="institute" type="text"
+                        maxlength="180" placeholder="Institute name" required>
+                </div>
+
+                <div class="field">
+                    <label for="course">Class / Course <span class="required">*</span></label>
+                    <input id="course" name="course" type="text" maxlength="100"
+                        placeholder="e.g. Class 10, ITI" required>
+                </div>
+
+                <div class="field">
+                    <label for="academicYear">Year / Session</label>
+                    <input id="academicYear" name="academicYear" type="text"
+                        maxlength="60" placeholder="e.g. 2026–27">
+                </div>
+
+                <div class="field">
+                    <label for="teacherName">Teacher's Name <span class="required">*</span></label>
+                    <input id="teacherName" name="teacherName" type="text"
+                        maxlength="120" placeholder="Teacher's name" required>
+                </div>
+
+                <div class="field">
+                    <label for="teacherContact">Teacher's Mobile</label>
+                    <input id="teacherContact" name="teacherContact" type="tel"
+                        inputmode="numeric" maxlength="15" placeholder="If available">
+                </div>
+
+                <div class="field full">
+                    <label for="instituteLocation">Institute Location <span class="required">*</span></label>
+                    <input id="instituteLocation" name="instituteLocation" type="text"
+                        maxlength="160" placeholder="City/District, State" required>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <span class="section-number">03</span>
+                <div>
+                    <h2>Program Details</h2>
+                    <p>Enter your selection information.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="field">
+                    <label for="programName">Program / Event <span class="required">*</span></label>
+                    <input id="programName" name="programName" type="text"
+                        maxlength="150" placeholder="Program or event name" required>
+                </div>
+
+                <div class="field">
+                    <label for="winnerInfo">Selection Details <span class="required">*</span></label>
+                    <input id="winnerInfo" name="winnerInfo" type="text"
+                        maxlength="120" placeholder="e.g. Selected student" required>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-title">
+                <span class="section-number">04</span>
+                <div>
+                    <h2>Fee Details</h2>
+                    <p>Enter your current fee information.</p>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="field">
+                    <label for="monthlyFee">Monthly Fee (₹) <span class="required">*</span></label>
+                    <input id="monthlyFee" name="monthlyFee" type="number"
+                        min="1" max="10000000" step="1" inputmode="numeric"
+                        placeholder="e.g. 1500" required>
+                </div>
+
+                <div class="field">
+                    <label for="feeDate">Fee Payment Date</label>
+                    <input id="feeDate" name="feeDate" type="text"
+                        maxlength="80" placeholder="e.g. By the 10th">
+                </div>
+
+                <div class="field">
+                    <label for="feeDuration">Study Duration</label>
+                    <input id="feeDuration" name="feeDuration" type="text"
+                        maxlength="80" placeholder="e.g. 2 years">
+                </div>
+
+                <div class="field">
+                    <label for="feeType">Payment Type</label>
+                    <select id="feeType" name="feeType">
+                        <option value="">Select (optional)</option>
+                        <option value="Monthly">Monthly</option>
+                        <option value="Quarterly">Every 3 months</option>
+                        <option value="Half-yearly">Every 6 months</option>
+                        <option value="Yearly">Yearly</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="field full">
+                    <label for="reason">Reason for Support</label>
+                    <textarea id="reason" name="reason" maxlength="500"
+                        placeholder="Write a few simple lines (optional)"></textarea>
+                </div>
+            </div>
+
+            <p class="hint">Support percentage and duration will be decided after review.</p>
+        </section>
+
+        <div id="formMessage" class="message" role="alert" aria-live="polite"></div>
+
+        <div class="actions">
+            <p>Preview your details before downloading the application PDF.</p>
+            <div class="action-buttons">
+                <button id="formPreviewButton" class="preview-form-btn" type="button">
+                    ▣ Preview
+                </button>
+                <button id="downloadButton" class="download-btn" type="submit">
+                    ↓ Download PDF
+                </button>
+            </div>
+        </div>
+    </form>
+</main>
+
+<button type="button" class="page-preview-btn" id="pagePreviewOpen">
+    ▣ Preview Page
+</button>
+
+<div class="page-preview-modal" id="pagePreviewModal"
+    role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+    <div class="preview-window">
+        <div class="preview-header">
+            <strong id="previewTitle">Application Preview</strong>
+            <div class="preview-header-actions">
+                <button type="button" class="preview-action-btn" id="previewDownload">
+                    ↓ Download PDF
+                </button>
+                <button type="button" class="preview-close" id="pagePreviewClose"
+                    aria-label="Close preview">×</button>
+            </div>
+        </div>
+
+        <div class="preview-content">
+            <div class="preview-paper" id="previewPaper">
+                <h2>HAPROVEN TECHNOLOGIES</h2>
+                <p class="preview-subtitle">Student Fee Support Program — Application</p>
+                <p>Enter your details in the application form to see them here.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    © <span id="year"></span> Haproven Technologies ·
+    <a href="https://haproven.netlify.app">Official Website</a> ·
+    <a href="mailto:haproven.tech@gmail.com">Contact</a>
+</footer>
+
+<script>
+(() => {
+    "use strict";
+
+    const CONFIG = {
+        organization: "HAPROVEN TECHNOLOGIES",
+        programTitle: "Student Fee Support Program",
+        referencePrefix: "HAP-SFSP",
+        website: "https://haproven.netlify.app",
+        filePrefix: "Haproven-Student-Application"
+    };
+
+    const form = document.getElementById("applicationForm");
+    const downloadButton = document.getElementById("downloadButton");
+    const formPreviewButton = document.getElementById("formPreviewButton");
+    const message = document.getElementById("formMessage");
+
+    const pagePreviewModal = document.getElementById("pagePreviewModal");
+    const previewPaper = document.getElementById("previewPaper");
+    const previewOpen = document.getElementById("pagePreviewOpen");
+    const previewClose = document.getElementById("pagePreviewClose");
+    const previewDownload = document.getElementById("previewDownload");
+
+    let isGenerating = false;
+    let currentReference = "";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function loadScript(src) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = src;
+            script.async = true;
+            script.onload = resolve;
+            script.onerror = () => {
+                script.remove();
+                reject(new Error("Could not load PDF library"));
+            };
+            document.head.appendChild(script);
+        });
+    }
+
+    async function ensurePdfLibrary() {
+        if (window.jspdf && window.jspdf.jsPDF) return;
+
+        const sources = [
+            "./jspdf.umd.min.js",
+            "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js",
+            "https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js",
+            "https://unpkg.com/jspdf@2.5.2/dist/jspdf.umd.min.js"
+        ];
+
+        for (const src of sources) {
+            if (window.jspdf && window.jspdf.jsPDF) return;
+
+            try {
+                await loadScript(src);
+                if (window.jspdf && window.jspdf.jsPDF) return;
+            } catch (error) {
+                console.warn("PDF library source failed:", src);
+            }
+        }
+
+        throw new Error(
+            "PDF library could not be loaded. Check your internet connection or place jspdf.umd.min.js beside this HTML file."
+        );
+    }
+
+    function showMessage(text, type) {
+        message.textContent = text;
+        message.className = "message " + type;
+    }
+
+    function clearMessage() {
+        message.textContent = "";
+        message.className = "message";
+    }
+
+    function getData() {
+        const data = {};
+        new FormData(form).forEach((value, key) => {
+            data[key] = String(value).trim();
+        });
+        return data;
+    }
+
+    function createReference() {
+        const now = new Date();
+        const date = [
+            now.getFullYear(),
+            String(now.getMonth() + 1).padStart(2, "0"),
+            String(now.getDate()).padStart(2, "0")
+        ].join("");
+
+        return `${CONFIG.referencePrefix}-${date}-${Math.random()
+            .toString(36).slice(2, 8).toUpperCase()}`;
+    }
+
+    function validateData(data) {
+        const phone = data.phone.replace(/\D/g, "");
+
+        if (phone.length < 10 || phone.length > 15) {
+            return "Please enter a valid mobile number.";
+        }
+
+        if (data.teacherContact) {
+            const teacherPhone = data.teacherContact.replace(/\D/g, "");
+            if (teacherPhone.length < 10 || teacherPhone.length > 15) {
+                return "Please enter a valid teacher mobile number.";
+            }
+        }
+
+        if (!Number.isFinite(Number(data.monthlyFee)) ||
+            Number(data.monthlyFee) <= 0) {
+            return "Please enter a valid monthly fee.";
+        }
+
+        return "";
+    }
+
+    function addPreviewField(container, label, value, full = false) {
+        if (!value) return;
+
+        const field = document.createElement("div");
+        field.className = "preview-field" + (full ? " full" : "");
+
+        const title = document.createElement("b");
+        title.textContent = label;
+
+        const text = document.createElement("span");
+        text.textContent = value;
+
+        field.append(title, text);
+        container.appendChild(field);
+    }
+
+    function addPreviewSection(parent, title, fields) {
+        const section = document.createElement("section");
+        section.className = "preview-section";
+
+        const heading = document.createElement("h3");
+        heading.textContent = title;
+
+        const grid = document.createElement("div");
+        grid.className = "preview-grid";
+
+        fields.forEach(field => {
+            addPreviewField(grid, field.label, field.value, field.full);
+        });
+
+        section.append(heading, grid);
+        parent.appendChild(section);
+    }
+
+    function updatePagePreview() {
+        const data = getData();
+        previewPaper.replaceChildren();
+
+        const heading = document.createElement("h2");
+        heading.textContent = CONFIG.organization;
+
+        const subtitle = document.createElement("p");
+        subtitle.className = "preview-subtitle";
+        subtitle.textContent = CONFIG.programTitle + " — Application";
+
+        const meta = document.createElement("div");
+        meta.className = "preview-meta";
+
+        const ref = document.createElement("span");
+        ref.textContent = "Reference: " + (currentReference || "Generated on PDF download");
+
+        const date = document.createElement("span");
+        date.textContent = "Date: " + new Date().toLocaleDateString("en-IN");
+
+        meta.append(ref, date);
+        previewPaper.append(heading, subtitle, meta);
+
+        addPreviewSection(previewPaper, "01. Student Information", [
+            { label: "Full Name", value: data.fullName },
+            { label: "Mobile Number", value: data.phone },
+            { label: "Email Address", value: data.email },
+            { label: "Roll Number / Student ID", value: data.studentId },
+            { label: "Address", value: data.address, full: true }
+        ]);
+
+        addPreviewSection(previewPaper, "02. Education Details", [
+            { label: "School / Institute", value: data.institute, full: true },
+            { label: "Class / Course", value: data.course },
+            { label: "Year / Session", value: data.academicYear },
+            { label: "Teacher's Name", value: data.teacherName },
+            { label: "Teacher's Mobile", value: data.teacherContact },
+            { label: "Institute Location", value: data.instituteLocation, full: true }
+        ]);
+
+        addPreviewSection(previewPaper, "03. Program Details", [
+            { label: "Program / Event", value: data.programName },
+            { label: "Selection Details", value: data.winnerInfo }
+        ]);
+
+        addPreviewSection(previewPaper, "04. Fee Details", [
+            {
+                label: "Monthly Fee",
+                value: data.monthlyFee
+                    ? "₹" + Number(data.monthlyFee).toLocaleString("en-IN")
+                    : ""
+            },
+            { label: "Fee Payment Date", value: data.feeDate },
+            { label: "Study Duration", value: data.feeDuration },
+            { label: "Payment Type", value: data.feeType },
+            { label: "Reason for Support", value: data.reason, full: true }
+        ]);
+
+        const note = document.createElement("p");
+        note.className = "preview-note";
+        note.textContent =
+            "Application details provided by the student for Haproven Student Fee Support Program review.";
+
+        previewPaper.appendChild(note);
+    }
+
+    function buildPdf(data, reference) {
+        const { jsPDF } = window.jspdf;
+
+        const doc = new jsPDF({
+            orientation: "portrait",
+            unit: "mm",
+            format: "a4",
+            compress: true
+        });
+
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const left = 13;
+        const right = pageWidth - 13;
+        const contentWidth = right - left;
+        const gap = 7;
+        const colWidth = (contentWidth - gap) / 2;
+
+        let y = 12;
+
+        doc.setProperties({
+            title: CONFIG.programTitle + " Application",
+            author: CONFIG.organization,
+            subject: "Student Fee Support Application"
+        });
+
+        function sectionTitle(title) {
+            doc.setFillColor(233, 248, 242);
+            doc.roundedRect(left, y, contentWidth, 7, 1.5, 1.5, "F");
+
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(8);
+            doc.setTextColor(22, 128, 94);
+            doc.text(title, left + 3, y + 4.8);
+
+            y += 10;
+        }
+
+        function cleanValue(value, maxLength = 500) {
+            const text = String(value || "").replace(/\s+/g, " ").trim();
+            if (text.length <= maxLength) return text;
+            return text.slice(0, maxLength - 1).trimEnd() + "…";
+        }
+
+        /*
+         * Draws a compact field with label above value.
+         * Fixed line limits keep long user-entered text from
+         * pushing later sections over the page boundary.
+         */
+        function drawField(label, value, x, top, width, options = {}) {
+            const labelSize = 7;
+            const valueSize = 8;
+            const padding = 2.5;
+            const innerWidth = width - padding * 2;
+            const maxLines = options.maxLines || 2;
+            const valueText = cleanValue(value || "Not provided", options.maxLength || 260);
+
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(labelSize);
+            doc.setTextColor(92, 107, 122);
+            doc.text(label, x + padding, top + 3);
+
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(valueSize);
+            doc.setTextColor(38, 54, 72);
+
+            let lines = doc.splitTextToSize(valueText, innerWidth);
+
+            if (lines.length > maxLines) {
+                lines = lines.slice(0, maxLines);
+                const last = lines.length - 1;
+                lines[last] = lines[last].replace(/[.,;:\s]*$/, "") + "…";
+            }
+
+            const valueY = top + 7;
+            doc.text(lines, x + padding, valueY);
+
+            const fieldHeight = 9 + (lines.length - 1) * 3.7;
+
+            doc.setDrawColor(227, 233, 239);
+            doc.setLineWidth(0.2);
+            doc.roundedRect(x, top, width, fieldHeight + 2, 1.2, 1.2, "S");
+
+            return fieldHeight + 3;
+        }
+
+        /*
+         * Each row is measured independently. This avoids the
+         * previous left/right column y-position overlap.
+         */
+        function twoColumnFields(fields) {
+            let index = 0;
+
+            while (index < fields.length) {
+                const item = fields[index];
+
+                if (item.full) {
+                    const height = drawField(
+                        item.label,
+                        item.value,
+                        left,
+                        y,
+                        contentWidth,
+                        {
+                            maxLines: item.maxLines || 2,
+                            maxLength: item.maxLength || 260
+                        }
+                    );
+
+                    y += height + 2;
+                    index++;
+                    continue;
+                }
+
+                const next = fields[index + 1];
+
+                if (next && !next.full) {
+                    const leftHeight = drawField(
+                        item.label,
+                        item.value,
+                        left,
+                        y,
+                        colWidth,
+                        { maxLines: 2, maxLength: 150 }
+                    );
+
+                    const rightHeight = drawField(
+                        next.label,
+                        next.value,
+                        left + colWidth + gap,
+                        y,
+                        colWidth,
+                        { maxLines: 2, maxLength: 150 }
+                    );
+
+                    y += Math.max(leftHeight, rightHeight) + 2;
+                    index += 2;
+                } else {
+                    const height = drawField(
+                        item.label,
+                        item.value,
+                        left,
+                        y,
+                        colWidth,
+                        { maxLines: 2, maxLength: 150 }
+                    );
+
+                    y += height + 2;
+                    index++;
+                }
+            }
+
+            y += 1;
+        }
+
+        /* PDF header */
+        doc.setFillColor(16, 36, 59);
+        doc.roundedRect(left, y, contentWidth, 23, 2, 2, "F");
+
+        doc.setFillColor(22, 160, 120);
+        doc.roundedRect(left + 4, y + 4, 1.3, 15, 0.5, 0.5, "F");
+
+        doc.setTextColor(255, 255, 255);
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(12);
+        doc.text(CONFIG.organization, left + 9, y + 9);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(8);
+        doc.text(CONFIG.programTitle, left + 9, y + 15);
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(7);
+        doc.text("STUDENT APPLICATION", right - 4, y + 8, { align: "right" });
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(6.5);
+        doc.text(reference, right - 4, y + 14, { align: "right" });
+
+        y += 28;
+
+        doc.setFont("helvetica", "bold");
+        doc.setFontSize(9);
+        doc.setTextColor(38, 54, 72);
+        doc.text("Application Details", left, y);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(7);
+        doc.setTextColor(113, 128, 150);
+        doc.text(
+            "Created on: " + new Date().toLocaleDateString("en-IN"),
+            right,
+            y,
+            { align: "right" }
+        );
+
+        y += 6;
+
+        sectionTitle("01. STUDENT INFORMATION");
+        twoColumnFields([
+            { label: "Full Name", value: data.fullName },
+            { label: "Mobile Number", value: data.phone },
+            { label: "Email Address", value: data.email },
+            { label: "Roll Number / Student ID", value: data.studentId },
+            { label: "Address", value: data.address, full: true, maxLines: 2, maxLength: 260 }
+        ]);
+
+        sectionTitle("02. EDUCATION DETAILS");
+        twoColumnFields([
+            { label: "School / Institute", value: data.institute, full: true, maxLines: 2, maxLength: 260 },
+            { label: "Class / Course", value: data.course },
+            { label: "Year / Session", value: data.academicYear },
+            { label: "Teacher's Name", value: data.teacherName },
+            { label: "Teacher's Mobile", value: data.teacherContact },
+            { label: "Institute Location", value: data.instituteLocation, full: true, maxLines: 2, maxLength: 260 }
+        ]);
+
+        sectionTitle("03. PROGRAM DETAILS");
+        twoColumnFields([
+            { label: "Program / Event", value: data.programName },
+            { label: "Selection Details", value: data.winnerInfo }
+        ]);
+
+        sectionTitle("04. FEE DETAILS");
+        twoColumnFields([
+            {
+                label: "Monthly Fee",
+                value: "INR " + Number(data.monthlyFee).toLocaleString("en-IN")
+            },
+            { label: "Fee Payment Date", value: data.feeDate },
+            { label: "Study Duration", value: data.feeDuration },
+            { label: "Payment Type", value: data.feeType },
+            {
+                label: "Reason for Support",
+                value: data.reason,
+                full: true,
+                maxLines: 3,
+                maxLength: 360
+            }
+        ]);
+
+        /* Footer is positioned after the content, not over it. */
+        const footerY = Math.min(Math.max(y + 4, 270), pageHeight - 10);
+
+        doc.setDrawColor(227, 233, 239);
+        doc.setLineWidth(0.3);
+        doc.line(left, footerY, right, footerY);
+
+        doc.setFont("helvetica", "normal");
+        doc.setFontSize(6.5);
+        doc.setTextColor(113, 128, 150);
+        doc.text(CONFIG.website, left, footerY + 5);
+        doc.text("Student Fee Support Application", right, footerY + 5, {
+            align: "right"
+        });
+
+        /*
+         * Keep the PDF to one A4 page. If content is unusually
+         * long, field text has already been limited to avoid overlap.
+         */
+        return doc;
+    }
+
+    function makePdfBlob(doc) {
+        return doc.output("blob");
+    }
+
+    function downloadBlob(blob, reference) {
+        const fileName = CONFIG.filePrefix + "-" + reference + ".pdf";
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+
+        link.href = url;
+        link.download = fileName;
+        link.style.display = "none";
+
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+
+        window.setTimeout(() => URL.revokeObjectURL(url), 60000);
+        return fileName;
+    }
+
+    function openPreview() {
+        updatePagePreview();
+        pagePreviewModal.classList.add("active");
+        document.body.classList.add("modal-open");
+        previewClose.focus();
+    }
+
+    function closePreview() {
+        pagePreviewModal.classList.remove("active");
+        document.body.classList.remove("modal-open");
+        previewOpen.focus();
+    }
+
+    async function generatePdf(shouldDownload = true) {
+        if (isGenerating) return;
+
+        if (!form.reportValidity()) return;
+
+        const data = getData();
+        const validationError = validateData(data);
+
+        if (validationError) {
+            showMessage(validationError, "error");
+            return;
+        }
+
+        isGenerating = true;
+        clearMessage();
+
+        downloadButton.disabled = true;
+        formPreviewButton.disabled = true;
+        previewDownload.disabled = true;
+
+        const originalDownloadText = downloadButton.textContent;
+        const originalPreviewText = previewDownload.textContent;
+
+        downloadButton.textContent = "Preparing PDF...";
+        previewDownload.textContent = "Preparing...";
+
+        try {
+            await ensurePdfLibrary();
+
+            const reference = currentReference || createReference();
+            currentReference = reference;
+
+            const pdf = buildPdf(data, reference);
+            const blob = makePdfBlob(pdf);
+
+            if (shouldDownload) {
+                const fileName = downloadBlob(blob, reference);
+                showMessage(
+                    "Your application PDF is ready: " + fileName,
+                    "success"
+                );
+            } else {
+                showMessage(
+                    "Your application details are ready to preview.",
+                    "success"
+                );
+            }
+        } catch (error) {
+            console.error("PDF generation error:", error);
+            showMessage(
+                error.message || "PDF could not be created. Please try again.",
+                "error"
+            );
+        } finally {
+            isGenerating = false;
+            downloadButton.disabled = false;
+            formPreviewButton.disabled = false;
+            previewDownload.disabled = false;
+
+            downloadButton.textContent = originalDownloadText;
+            previewDownload.textContent = originalPreviewText;
+        }
+    }
+
+    form.addEventListener("submit", event => {
+        event.preventDefault();
+        generatePdf(true);
+    });
+
+    previewOpen.addEventListener("click", openPreview);
+    formPreviewButton.addEventListener("click", openPreview);
+
+    previewClose.addEventListener("click", closePreview);
+
+    pagePreviewModal.addEventListener("click", event => {
+        if (event.target === pagePreviewModal) {
+            closePreview();
+        }
+    });
+
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            pagePreviewModal.classList.contains("active")
+        ) {
+            closePreview();
+        }
+    });
+
+    previewDownload.addEventListener("click", () => {
+        generatePdf(true);
+    });
+
+    form.addEventListener("input", () => {
+        if (pagePreviewModal.classList.contains("active")) {
+            updatePagePreview();
+        }
+    });
+
+    form.addEventListener("change", () => {
+        if (pagePreviewModal.classList.contains("active")) {
+            updatePagePreview();
+        }
+    });
+})();
+</script>
+</body>
+</html>

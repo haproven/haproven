@@ -1,0 +1,1215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Apply for the Haproven Student Fee Support Program. Complete your student details and download your application PDF.">
+    <title>Student Application | Haproven</title>
+
+    <!-- PDF generation library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+
+    <style>
+        :root {
+            --primary: #2457d6;
+            --primary-dark: #1945b5;
+            --text: #182230;
+            --muted: #667085;
+            --border: #e4e7ec;
+            --surface: #ffffff;
+            --background: #f5f7fb;
+            --success: #087443;
+            --danger: #b42318;
+            --radius: 14px;
+            --shadow: 0 8px 30px rgba(16, 24, 40, .06);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        button, input, select, textarea {
+            font: inherit;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 20;
+            background: rgba(255, 255, 255, .96);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(12px);
+        }
+
+        .header-inner {
+            width: min(1120px, calc(100% - 32px));
+            min-height: 70px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: -.5px;
+        }
+
+        .brand-mark {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            color: white;
+            background: var(--primary);
+            border-radius: 10px;
+            font-size: 17px;
+        }
+
+        .header-link {
+            color: var(--muted);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .header-link:hover {
+            color: var(--primary);
+        }
+
+        .container {
+            width: min(900px, calc(100% - 32px));
+            margin: 34px auto 60px;
+        }
+
+        .intro {
+            margin-bottom: 24px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 8px;
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 8px;
+            font-size: clamp(27px, 5vw, 38px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
+
+        .intro p {
+            max-width: 700px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        .notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin: 22px 0;
+            padding: 15px 17px;
+            background: #eef4ff;
+            border: 1px solid #d5e3ff;
+            border-radius: 12px;
+            color: #244783;
+            font-size: 13px;
+        }
+
+        .notice-icon {
+            flex: 0 0 auto;
+            font-size: 18px;
+        }
+
+        .form-card {
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .section {
+            padding: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section:last-child {
+            border-bottom: 0;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .section-number {
+            flex: 0 0 32px;
+            width: 32px;
+            height: 32px;
+            display: grid;
+            place-items: center;
+            color: var(--primary);
+            background: #edf3ff;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+
+        .section-heading p {
+            margin: 3px 0 0;
+            color: var(--muted);
+            font-size: 12px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .field {
+            min-width: 0;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #344054;
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .required {
+            color: var(--danger);
+        }
+
+        input, select, textarea {
+            width: 100%;
+            min-height: 45px;
+            padding: 10px 12px;
+            color: var(--text);
+            background: #fff;
+            border: 1px solid #d0d5dd;
+            border-radius: 9px;
+            outline: none;
+            transition: border-color .2s, box-shadow .2s;
+        }
+
+        textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(36, 87, 214, .12);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #98a2b3;
+        }
+
+        .field-hint {
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .consent {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+            color: #475467;
+            font-size: 13px;
+        }
+
+        .consent input {
+            flex: 0 0 17px;
+            width: 17px;
+            min-height: 17px;
+            height: 17px;
+            margin: 3px 0 0;
+            accent-color: var(--primary);
+        }
+
+        .consent label {
+            margin: 0;
+            color: inherit;
+            font-size: inherit;
+            font-weight: 400;
+        }
+
+        .actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 14px;
+            padding: 22px 25px;
+            background: #fcfcfd;
+        }
+
+        .actions-note {
+            max-width: 420px;
+            color: var(--muted);
+            font-size: 11px;
+        }
+
+        .button {
+            min-height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            padding: 11px 20px;
+            color: #fff;
+            background: var(--primary);
+            border: 0;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 700;
+            transition: background .2s, transform .2s;
+        }
+
+        .button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .button:disabled {
+            opacity: .65;
+            cursor: wait;
+            transform: none;
+        }
+
+        .message {
+            display: none;
+            margin: 16px 25px 0;
+            padding: 12px 14px;
+            border-radius: 9px;
+            font-size: 13px;
+        }
+
+        .message.error {
+            display: block;
+            color: var(--danger);
+            background: #fef3f2;
+            border: 1px solid #fecdca;
+        }
+
+        .message.success {
+            display: block;
+            color: var(--success);
+            background: #ecfdf3;
+            border: 1px solid #abefc6;
+        }
+
+        .site-footer {
+            padding: 22px 16px;
+            color: var(--muted);
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .site-footer a {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Developer-only tools are hidden for normal visitors */
+        .developer-tools {
+            display: none;
+            margin-top: 24px;
+            padding: 20px;
+            background: #101828;
+            color: #f2f4f7;
+            border: 1px dashed #667085;
+            border-radius: 12px;
+        }
+
+        body.dev-mode .developer-tools {
+            display: block;
+        }
+
+        .developer-tools h2 {
+            margin: 0 0 6px;
+            font-size: 17px;
+        }
+
+        .developer-tools p {
+            margin: 0 0 12px;
+            color: #d0d5dd;
+            font-size: 12px;
+        }
+
+        .developer-tools .button {
+            min-height: 38px;
+            padding: 8px 13px;
+            color: #101828;
+            background: #f2f4f7;
+            font-size: 12px;
+        }
+
+        .developer-tools .button:hover {
+            background: #d0d5dd;
+        }
+
+        .dev-preview {
+            display: none;
+            margin-top: 16px;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+        }
+
+        .dev-preview.visible {
+            display: block;
+        }
+
+        .dev-preview iframe {
+            width: 100%;
+            height: 650px;
+            border: 1px solid var(--border);
+            border-radius: 5px;
+        }
+
+        .dev-status {
+            margin-top: 10px;
+            color: #d0d5dd;
+            font-size: 12px;
+        }
+
+        @media (max-width: 620px) {
+            .header-inner {
+                min-height: 62px;
+            }
+
+            .container {
+                width: min(100% - 22px, 900px);
+                margin-top: 24px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .field.full {
+                grid-column: auto;
+            }
+
+            .section {
+                padding: 19px 16px;
+            }
+
+            .actions {
+                align-items: stretch;
+                padding: 18px 16px;
+            }
+
+            .actions .button {
+                width: 100%;
+            }
+
+            .actions-note {
+                max-width: none;
+                order: 2;
+            }
+
+            .message {
+                margin-right: 16px;
+                margin-left: 16px;
+            }
+        }
+
+        @media print {
+            .site-header, .site-footer, .actions, .notice,
+            .developer-tools {
+                display: none !important;
+            }
+
+            body {
+                background: white;
+            }
+
+            .container {
+                width: 100%;
+                margin: 0;
+            }
+
+            .form-card {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="https://haproven.netlify.app" aria-label="Haproven home">
+                <span class="brand-mark">H</span>
+                <span>Haproven</span>
+            </a>
+            <a class="header-link" href="student-fee-support.html">Program Details ↗</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="intro">
+            <span class="eyebrow">Student Fee Support Program</span>
+            <h1>Student Application Form</h1>
+            <p>Fill in your details carefully. After completing the form, download your application PDF and follow the instructions provided in the program information page.</p>
+        </div>
+
+        <div class="notice">
+            <span class="notice-icon" aria-hidden="true">ⓘ</span>
+            <div>
+                <strong>Before you begin</strong><br>
+                Keep your student, course and institute details ready. Downloading this PDF does not mean your application is approved. Your application will be reviewed according to the program process.
+            </div>
+        </div>
+
+        <form id="applicationForm" class="form-card">
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">01</span>
+                    <div>
+                        <h2>Personal Information</h2>
+                        <p>Enter your details as they appear on your official documents.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="fullName">Full Name <span class="required">*</span></label>
+                        <input id="fullName" name="fullName" type="text" autocomplete="name" maxlength="100" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="dob">Date of Birth <span class="required">*</span></label>
+                        <input id="dob" name="dob" type="date" autocomplete="bday" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value="">Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                            <option>Prefer not to say</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="phone">Mobile Number <span class="required">*</span></label>
+                        <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" maxlength="15" placeholder="10-digit mobile number" required>
+                        <div class="field-hint">Enter a reachable phone number.</div>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input id="email" name="email" type="email" autocomplete="email" maxlength="150" placeholder="you@example.com" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="aadhaarLast4">Last 4 Digits of Aadhaar</label>
+                        <input id="aadhaarLast4" name="aadhaarLast4" type="text" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="Optional">
+                        <div class="field-hint">Do not enter your full Aadhaar number here.</div>
+                    </div>
+
+                    <div class="field full">
+                        <label for="address">Full Address <span class="required">*</span></label>
+                        <textarea id="address" name="address" maxlength="500" autocomplete="street-address" placeholder="House/Street, Village/City, District, State, PIN Code" required></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">02</span>
+                    <div>
+                        <h2>Education Details</h2>
+                        <p>Provide the current course and institute information.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="studentId">Student ID / Roll Number</label>
+                        <input id="studentId" name="studentId" type="text" maxlength="80" placeholder="Enter student ID or roll number">
+                    </div>
+
+                    <div class="field">
+                        <label for="qualification">Current Qualification <span class="required">*</span></label>
+                        <select id="qualification" name="qualification" required>
+                            <option value="">Select qualification</option>
+                            <option>Class 9</option>
+                            <option>Class 10</option>
+                            <option>Class 11</option>
+                            <option>Class 12</option>
+                            <option>Diploma</option>
+                            <option>ITI</option>
+                            <option>BA</option>
+                            <option>BSc</option>
+                            <option>BCom</option>
+                            <option>BCA</option>
+                            <option>BBA</option>
+                            <option>BTech / BE</option>
+                            <option>MA</option>
+                            <option>MSc</option>
+                            <option>MCom</option>
+                            <option>MCA</option>
+                            <option>MBA</option>
+                            <option>MTech / ME</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="course">Course / Stream <span class="required">*</span></label>
+                        <input id="course" name="course" type="text" maxlength="120" placeholder="e.g. Computer Science" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="year">Current Year / Class <span class="required">*</span></label>
+                        <input id="year" name="year" type="text" maxlength="50" placeholder="e.g. 1st Year" required>
+                    </div>
+
+                    <div class="field full">
+                        <label for="institute">School / College / Institute Name <span class="required">*</span></label>
+                        <input id="institute" name="institute" type="text" maxlength="180" placeholder="Enter official institute name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="instituteAddress">Institute District / City <span class="required">*</span></label>
+                        <input id="instituteAddress" name="instituteAddress" type="text" maxlength="150" placeholder="District, State" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="courseDuration">Course Duration</label>
+                        <input id="courseDuration" name="courseDuration" type="text" maxlength="60" placeholder="e.g. 3 years">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">03</span>
+                    <div>
+                        <h2>Fee Information</h2>
+                        <p>Enter the fee details relevant to your current academic session.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="academicSession">Academic Session <span class="required">*</span></label>
+                        <input id="academicSession" name="academicSession" type="text" maxlength="40" placeholder="e.g. 2026–2027" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="totalFee">Total Course / Annual Fee (₹) <span class="required">*</span></label>
+                        <input id="totalFee" name="totalFee" type="number" min="0" max="10000000" step="0.01" inputmode="decimal" placeholder="Enter amount in INR" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="paidFee">Fee Already Paid (₹)</label>
+                        <input id="paidFee" name="paidFee" type="number" min="0" max="10000000" step="0.01" inputmode="decimal" placeholder="Enter amount already paid">
+                    </div>
+
+                    <div class="field">
+                        <label for="pendingFee">Remaining Fee (₹)</label>
+                        <input id="pendingFee" name="pendingFee" type="number" min="0" max="10000000" step="0.01" inputmode="decimal" placeholder="Auto-calculated" readonly>
+                        <div class="field-hint">Calculated from total fee minus fee already paid.</div>
+                    </div>
+
+                    <div class="field full">
+                        <label for="feePurpose">Fee Support Purpose / Additional Details</label>
+                        <textarea id="feePurpose" name="feePurpose" maxlength="700" placeholder="Briefly explain your fee support requirement (optional)."></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">04</span>
+                    <div>
+                        <h2>Parent / Guardian Details</h2>
+                        <p>Provide a contact person for application verification.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="guardianName">Parent / Guardian Name <span class="required">*</span></label>
+                        <input id="guardianName" name="guardianName" type="text" maxlength="120" placeholder="Enter full name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="guardianRelation">Relationship <span class="required">*</span></label>
+                        <select id="guardianRelation" name="guardianRelation" required>
+                            <option value="">Select relationship</option>
+                            <option>Father</option>
+                            <option>Mother</option>
+                            <option>Guardian</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="guardianPhone">Guardian Mobile Number <span class="required">*</span></label>
+                        <input id="guardianPhone" name="guardianPhone" type="tel" inputmode="numeric" maxlength="15" placeholder="Enter contact number" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="annualIncome">Approx. Annual Family Income (₹)</label>
+                        <input id="annualIncome" name="annualIncome" type="number" min="0" max="100000000" step="1" inputmode="numeric" placeholder="Optional">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="section-heading">
+                    <span class="section-number">05</span>
+                    <div>
+                        <h2>Declaration</h2>
+                        <p>Review the declaration before generating your application PDF.</p>
+                    </div>
+                </div>
+
+                <div class="consent">
+                    <input id="declaration" name="declaration" type="checkbox" required>
+                    <label for="declaration">
+                        I declare that the information provided in this application is true and accurate to the best of my knowledge. I understand that submitting or downloading this application does not guarantee fee support. My details may be verified by my teacher/institute and Haproven as part of the program process. <span class="required">*</span>
+                    </label>
+                </div>
+            </section>
+
+            <div id="formMessage" class="message" role="alert" aria-live="polite"></div>
+
+            <div class="actions">
+                <div class="actions-note">
+                    Your application PDF will be generated on this device and downloaded directly. Keep the PDF safe, print and sign it if required, and submit it according to the program instructions.
+                </div>
+                <button id="downloadButton" class="button" type="submit">
+                    <span aria-hidden="true">↓</span>
+                    Download Application PDF
+                </button>
+            </div>
+        </form>
+
+        <!-- Visible only when URL contains ?dev=1 -->
+        <section class="developer-tools" id="developerTools" aria-label="Developer preview tools">
+            <h2>Developer Preview Mode</h2>
+            <p>This panel is only for development and testing. Normal visitors will not see it.</p>
+            <button type="button" class="button" id="previewToggle">Show / Hide PDF Preview</button>
+            <div class="dev-status" id="devStatus">Preview is hidden. Submit a test application to generate a PDF.</div>
+            <div class="dev-preview" id="devPreview">
+                <iframe id="pdfPreviewFrame" title="Developer-only PDF preview"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div>© <span id="currentYear"></span> Haproven. Built with care in India.</div>
+        <div><a href="https://haproven.netlify.app">Haproven Website</a> · <a href="mailto:haproven.tech@gmail.com">Contact Support</a></div>
+    </footer>
+
+    <script>
+        (() => {
+            "use strict";
+
+            /*
+             * PROGRAM CONFIGURATION
+             * Update program details here rather than editing the PDF logic.
+             * These values are informational. Final eligibility and support
+             * must be validated by your backend before approval/payment.
+             */
+            const PROGRAM_CONFIG = Object.freeze({
+                organization: "Haproven",
+                programName: "Student Fee Support Program",
+                programReference: "HAP-SFSP",
+                programVersion: "1.0",
+                website: "https://haproven.netlify.app",
+                contactEmail: "haproven.tech@gmail.com",
+                currency: "INR",
+                currencySymbol: "₹",
+                applicationPrefix: "HAP-SFSP",
+                applicationYear: new Date().getFullYear(),
+                pdfFilePrefix: "Haproven-Student-Application",
+                pdfTitle: "Student Fee Support Program - Application",
+                pdfFooter: "Generated by the Haproven Student Fee Support Program application form.",
+                /*
+                 * Set to true only after a backend has been implemented.
+                 * This standalone page currently generates a local PDF only.
+                 */
+                backendEnabled: false
+            });
+
+            const form = document.getElementById("applicationForm");
+            const downloadButton = document.getElementById("downloadButton");
+            const message = document.getElementById("formMessage");
+            const pendingFee = document.getElementById("pendingFee");
+            const paidFee = document.getElementById("paidFee");
+            const totalFee = document.getElementById("totalFee");
+
+            const developerMode = new URLSearchParams(window.location.search).get("dev") === "1";
+            const devStatus = document.getElementById("devStatus");
+            const devPreview = document.getElementById("devPreview");
+            const pdfPreviewFrame = document.getElementById("pdfPreviewFrame");
+            const previewToggle = document.getElementById("previewToggle");
+
+            let latestPdfUrl = null;
+            let previewEnabled = false;
+
+            if (developerMode) {
+                document.body.classList.add("dev-mode");
+            }
+
+            document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+            // Prevent selecting a future date of birth.
+            document.getElementById("dob").max = new Date().toISOString().split("T")[0];
+
+            function showMessage(text, type) {
+                message.textContent = text;
+                message.className = "message " + type;
+            }
+
+            function clearMessage() {
+                message.textContent = "";
+                message.className = "message";
+            }
+
+            function numericValue(element) {
+                const value = Number(element.value);
+                return Number.isFinite(value) && value >= 0 ? value : 0;
+            }
+
+            function updatePendingFee() {
+                const total = numericValue(totalFee);
+                const paid = numericValue(paidFee);
+                pendingFee.value = Math.max(0, total - paid).toFixed(2);
+            }
+
+            totalFee.addEventListener("input", updatePendingFee);
+            paidFee.addEventListener("input", updatePendingFee);
+
+            function getFormData() {
+                const data = {};
+                new FormData(form).forEach((value, key) => {
+                    if (key !== "declaration") {
+                        data[key] = String(value).trim();
+                    }
+                });
+                return data;
+            }
+
+            function makeApplicationNumber() {
+                const date = new Date();
+                const datePart = [
+                    date.getFullYear(),
+                    String(date.getMonth() + 1).padStart(2, "0"),
+                    String(date.getDate()).padStart(2, "0")
+                ].join("");
+
+                const randomPart = Math.random().toString(36).slice(2, 8).toUpperCase();
+                return `${PROGRAM_CONFIG.applicationPrefix}-${datePart}-${randomPart}`;
+            }
+
+            function formatDate(value) {
+                if (!value) return "Not provided";
+                const date = new Date(value + "T00:00:00");
+                if (Number.isNaN(date.getTime())) return value;
+                return date.toLocaleDateString("en-IN", {
+                    day: "2-digit",
+                    month: "short",
+                    year: "numeric"
+                });
+            }
+
+            function formatAmount(value) {
+                if (value === "" || value === null || value === undefined) {
+                    return "Not provided";
+                }
+
+                const amount = Number(value);
+                if (!Number.isFinite(amount)) return String(value);
+
+                return PROGRAM_CONFIG.currencySymbol + " " +
+                    amount.toLocaleString("en-IN", {
+                        minimumFractionDigits: 2,
+                        maximumFractionDigits: 2
+                    });
+            }
+
+            function addPdfText(doc, text, x, y, maxWidth, lineHeight = 6) {
+                const lines = doc.splitTextToSize(String(text || "Not provided"), maxWidth);
+                doc.text(lines, x, y);
+                return y + (lines.length * lineHeight);
+            }
+
+            function ensurePdfSpace(doc, y, requiredSpace = 12) {
+                const pageHeight = doc.internal.pageSize.getHeight();
+                if (y + requiredSpace > pageHeight - 18) {
+                    doc.addPage();
+                    return 18;
+                }
+                return y;
+            }
+
+            function addPdfSection(doc, title, y) {
+                y = ensurePdfSpace(doc, y, 18);
+                doc.setFillColor(239, 244, 255);
+                doc.roundedRect(14, y - 5, 182, 10, 2, 2, "F");
+                doc.setTextColor(36, 87, 214);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(10);
+                doc.text(title, 18, y + 1.5);
+                doc.setTextColor(24, 34, 48);
+                doc.setFont("helvetica", "normal");
+                return y + 13;
+            }
+
+            function addPdfField(doc, label, value, y) {
+                const left = 17;
+                const valueX = 67;
+                const maxWidth = 125;
+
+                y = ensurePdfSpace(doc, y, 13);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(9);
+                doc.setTextColor(71, 84, 103);
+                doc.text(label + ":", left, y);
+
+                doc.setFont("helvetica", "normal");
+                doc.setTextColor(24, 34, 48);
+                const lines = doc.splitTextToSize(String(value || "Not provided"), maxWidth);
+                doc.text(lines, valueX, y);
+
+                return y + Math.max(7, lines.length * 5);
+            }
+
+            function buildPdf(data, applicationNumber) {
+                if (!window.jspdf || !window.jspdf.jsPDF) {
+                    throw new Error("PDF library could not be loaded. Please check your internet connection and try again.");
+                }
+
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF({
+                    orientation: "portrait",
+                    unit: "mm",
+                    format: "a4",
+                    compress: true
+                });
+
+                const pageWidth = doc.internal.pageSize.getWidth();
+                const pageHeight = doc.internal.pageSize.getHeight();
+                const left = 14;
+                let y = 17;
+
+                doc.setProperties({
+                    title: PROGRAM_CONFIG.pdfTitle,
+                    subject: PROGRAM_CONFIG.programName,
+                    author: PROGRAM_CONFIG.organization,
+                    creator: PROGRAM_CONFIG.organization
+                });
+
+                // Header
+                doc.setFillColor(36, 87, 214);
+                doc.roundedRect(left, y, pageWidth - 28, 27, 3, 3, "F");
+
+                doc.setTextColor(255, 255, 255);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(17);
+                doc.text(PROGRAM_CONFIG.organization, 20, y + 10);
+
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9);
+                doc.text(PROGRAM_CONFIG.programName, 20, y + 17);
+
+                doc.setFontSize(8);
+                doc.text("STUDENT APPLICATION", pageWidth - 20, y + 11, { align: "right" });
+                doc.text("Reference: " + applicationNumber, pageWidth - 20, y + 18, { align: "right" });
+
+                y += 36;
+
+                doc.setTextColor(24, 34, 48);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(13);
+                doc.text("Application Details", left, y);
+                y += 7;
+
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9);
+                doc.setTextColor(71, 84, 103);
+                doc.text("Generated on: " + new Date().toLocaleDateString("en-IN"), left, y);
+                y += 9;
+
+                // Personal details
+                y = addPdfSection(doc, "01. PERSONAL INFORMATION", y);
+                y = addPdfField(doc, "Full Name", data.fullName, y);
+                y = addPdfField(doc, "Date of Birth", formatDate(data.dob), y);
+                y = addPdfField(doc, "Gender", data.gender || "Not provided", y);
+                y = addPdfField(doc, "Mobile Number", data.phone, y);
+                y = addPdfField(doc, "Email Address", data.email, y);
+                y = addPdfField(doc, "Aadhaar (last 4 digits)", data.aadhaarLast4 || "Not provided", y);
+                y = addPdfField(doc, "Full Address", data.address, y + 1);
+
+                // Education details
+                y += 3;
+                y = addPdfSection(doc, "02. EDUCATION DETAILS", y);
+                y = addPdfField(doc, "Student ID / Roll No.", data.studentId || "Not provided", y);
+                y = addPdfField(doc, "Qualification", data.qualification, y);
+                y = addPdfField(doc, "Course / Stream", data.course, y);
+                y = addPdfField(doc, "Current Year / Class", data.year, y);
+                y = addPdfField(doc, "Institute Name", data.institute, y);
+                y = addPdfField(doc, "Institute Location", data.instituteAddress, y);
+                y = addPdfField(doc, "Course Duration", data.courseDuration || "Not provided", y);
+
+                // Fee details
+                y += 3;
+                y = addPdfSection(doc, "03. FEE INFORMATION", y);
+                y = addPdfField(doc, "Academic Session", data.academicSession, y);
+                y = addPdfField(doc, "Total Fee", formatAmount(data.totalFee), y);
+                y = addPdfField(doc, "Fee Already Paid", formatAmount(data.paidFee || 0), y);
+                y = addPdfField(doc, "Remaining Fee", formatAmount(data.pendingFee), y);
+                y = addPdfField(doc, "Additional Details", data.feePurpose || "Not provided", y);
+
+                // Guardian details
+                y += 3;
+                y = addPdfSection(doc, "04. PARENT / GUARDIAN DETAILS", y);
+                y = addPdfField(doc, "Guardian Name", data.guardianName, y);
+                y = addPdfField(doc, "Relationship", data.guardianRelation, y);
+                y = addPdfField(doc, "Guardian Mobile", data.guardianPhone, y);
+                y = addPdfField(doc, "Annual Family Income", data.annualIncome ? formatAmount(data.annualIncome) : "Not provided", y);
+
+                // Declaration
+                y += 3;
+                y = addPdfSection(doc, "05. STUDENT DECLARATION", y);
+                const declarationText =
+                    "I declare that the information provided in this application is true and accurate to the best of my knowledge. I understand that submitting this application does not guarantee fee support. My details may be verified by my teacher/institute and Haproven as part of the program process.";
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(8.5);
+                doc.setTextColor(52, 64, 84);
+                y = addPdfText(doc, declarationText, 17, y, 176, 4.5);
+                y += 7;
+
+                y = ensurePdfSpace(doc, y, 35);
+                doc.setDrawColor(152, 162, 179);
+                doc.line(18, y + 12, 78, y + 12);
+                doc.line(125, y + 12, 185, y + 12);
+
+                doc.setFontSize(8);
+                doc.setTextColor(71, 84, 103);
+                doc.text("Student Signature", 18, y + 17);
+                doc.text("Parent / Guardian Signature", 125, y + 17);
+
+                y += 25;
+                y = ensurePdfSpace(doc, y, 25);
+                doc.setDrawColor(152, 162, 179);
+                doc.line(18, y + 8, 78, y + 8);
+                doc.line(125, y + 8, 185, y + 8);
+                doc.text("Teacher / Institute Verification", 18, y + 13);
+                doc.text("Date", 125, y + 13);
+
+                // Footer on each page
+                const pageCount = doc.internal.getNumberOfPages();
+                for (let page = 1; page <= pageCount; page++) {
+                    doc.setPage(page);
+                    doc.setDrawColor(228, 231, 236);
+                    doc.line(14, pageHeight - 13, pageWidth - 14, pageHeight - 13);
+                    doc.setFont("helvetica", "normal");
+                    doc.setFontSize(7);
+                    doc.setTextColor(102, 112, 133);
+                    doc.text(PROGRAM_CONFIG.pdfFooter, 14, pageHeight - 8);
+                    doc.text("Page " + page + " of " + pageCount, pageWidth - 14, pageHeight - 8, { align: "right" });
+                }
+
+                return doc;
+            }
+
+            function downloadBlob(blob, fileName) {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement("a");
+                link.href = url;
+                link.download = fileName;
+                link.style.display = "none";
+                document.body.appendChild(link);
+                link.click();
+                link.remove();
+
+                // Keep the latest URL only for developer preview.
+                if (latestPdfUrl) {
+                    URL.revokeObjectURL(latestPdfUrl);
+                }
+                latestPdfUrl = url;
+
+                if (!developerMode) {
+                    // No preview is created or displayed for normal users.
+                    setTimeout(() => URL.revokeObjectURL(url), 60000);
+                }
+            }
+
+            function validateBusinessRules(data) {
+                const phone = data.phone.replace(/\D/g, "");
+                const guardianPhone = data.guardianPhone.replace(/\D/g, "");
+                const total = Number(data.totalFee);
+                const paid = data.paidFee === "" ? 0 : Number(data.paidFee);
+
+                if (phone.length < 10 || phone.length > 15) {
+                    return "Please enter a valid mobile number.";
+                }
+
+                if (guardianPhone.length < 10 || guardianPhone.length > 15) {
+                    return "Please enter a valid parent/guardian mobile number.";
+                }
+
+                if (data.aadhaarLast4 && !/^\d{4}$/.test(data.aadhaarLast4)) {
+                    return "If provided, Aadhaar must contain only its last 4 digits.";
+                }
+
+                if (!Number.isFinite(total) || total <= 0) {
+                    return "Please enter a valid total fee greater than zero.";
+                }
+
+                if (!Number.isFinite(paid) || paid < 0) {
+                    return "Please enter a valid fee-paid amount.";
+                }
+
+                if (paid > total) {
+                    return "Fee already paid cannot be greater than the total fee.";
+                }
+
+                if (data.dob) {
+                    const dob = new Date(data.dob + "T00:00:00");
+                    if (Number.isNaN(dob.getTime()) || dob > new Date()) {
+                        return "Please enter a valid date of birth.";
+                    }
+                }
+
+                return "";
+            }
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                clearMessage();
+
+                if (!form.reportValidity()) {
+                    return;
+                }
+
+                const data = getFormData();
+                const validationError = validateBusinessRules(data);
+
+                if (validationError) {
+                    showMessage(validationError, "error");
+                    return;
+                }
+
+                if (!window.jspdf || !window.jspdf.jsPDF) {
+                    showMessage("PDF generator did not load. Please check your internet connection and reload the page.", "error");
+                    return;
+                }
+
+                downloadButton.disabled = true;
+                downloadButton.textContent = "Preparing PDF...";
+
+                try {
+                    const applicationNumber = makeApplicationNumber();
+                    const doc = buildPdf(data, applicationNumber);
+                    const blob = doc.output("blob");
+                    const fileName = `${PROGRAM_CONFIG.pdfFilePrefix}-${applicationNumber}.pdf`;
+
+                    downloadBlob(blob, fileName);
+
+                    showMessage(
+                        "Your application PDF has been generated and downloaded. Application Reference: " + applicationNumber +
+                        ". Keep this reference number for future communication.",
+                        "success"
+                    );
+
+                    if (developerMode) {
+                        devStatus.textContent = "Generated test PDF: " + fileName;
+                        if (previewEnabled && latestPdfUrl) {
+                            pdfPreviewFrame.src = latestPdfUrl;
+                            devPreview.classList.add("visible");
+                        }
+                    }
+                } catch (error) {
+                    console.error("PDF generation error:", error);
+                    showMessage(error.message || "Unable to generate PDF. Please try again.", "error");
+                } finally {
+                    downloadButton.disabled = false;
+                    downloadButton.innerHTML = '<span aria-hidden="true">↓</span> Download Application PDF';
+                }
+            });
+
+            if (developerMode) {
+                previewToggle.addEventListener("click", () => {
+                    previewEnabled = !previewEnabled;
+
+                    if (previewEnabled && latestPdfUrl) {
+                        pdfPreviewFrame.src = latestPdfUrl;
+                        devPreview.classList.add("visible");
+                        devStatus.textContent = "Developer preview is enabled.";
+                    } else {
+                        devPreview.classList.remove("visible");
+                        pdfPreviewFrame.removeAttribute("src");
+                        devStatus.textContent = previewEnabled
+                            ? "Preview is enabled. Generate a test PDF to view it here."
+                            : "Preview is hidden.";
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,1814 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10243b">
+  <meta name="description" content="Learn how the Haproven Student Fee Support Program works, from winner selection and student application to teacher verification, approval, agreement and payment.">
+  <title>Student Fee Support Program | Haproven Technologies</title>
+
+  <style>
+    :root {
+      --primary: #10243b;
+      --primary-light: #193b5c;
+      --accent: #16a078;
+      --accent-dark: #128765;
+      --accent-light: #e9f8f2;
+      --text: #263648;
+      --muted: #718096;
+      --border: #e3e9ef;
+      --bg: #f5f8fb;
+      --white: #fff;
+      --shadow: 0 12px 35px rgba(16,36,59,.07);
+      --radius: 14px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .brand-name {
+      color: var(--primary);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: .4px;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 9px;
+      letter-spacing: .25px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #526174;
+    }
+
+    .nav-links a {
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-links .nav-button {
+      padding: 10px 15px;
+      border-radius: 8px;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .nav-links .nav-button:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: var(--white);
+      padding: 76px 0 72px;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(22,160,120,.2), transparent 28%),
+        linear-gradient(120deg, #10243b, #193b5c);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      right: -120px;
+      bottom: -190px;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(255,255,255,.025),
+                  0 0 0 70px rgba(255,255,255,.02);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 790px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      padding: 7px 13px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 30px;
+      background: rgba(255,255,255,.08);
+      color: #a6f0d5;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #39d5a2;
+    }
+
+    .hero h1 {
+      margin-bottom: 18px;
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+    }
+
+    .hero h1 span {
+      color: #56dfb1;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      margin-bottom: 27px;
+      color: #d0dbe6;
+      font-size: 14px;
+      line-height: 1.9;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 800;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 7px 20px #0002;
+    }
+
+    .btn-outline {
+      border-color: #ffffff4d;
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: #ffffff1a;
+    }
+
+    /* OVERVIEW */
+    .overview {
+      position: relative;
+      z-index: 2;
+      margin-top: -25px;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .overview-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .overview-icon {
+      flex: 0 0 39px;
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-size: 19px;
+    }
+
+    .overview-card h3 {
+      margin-bottom: 5px;
+      color: var(--primary);
+      font-size: 13px;
+    }
+
+    .overview-card p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    /* COMMON SECTION */
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: clamp(25px, 3vw, 35px);
+      line-height: 1.25;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PROCESS */
+    .process-section {
+      padding-top: 75px;
+    }
+
+    .process-list {
+      position: relative;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .process-list::before {
+      content: "";
+      position: absolute;
+      top: 30px;
+      bottom: 35px;
+      left: 26px;
+      width: 2px;
+      background: #dce8e6;
+    }
+
+    .process-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 19px;
+      margin-bottom: 15px;
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: var(--white);
+      box-shadow: 0 5px 20px rgba(16,36,59,.035);
+      transition: .2s ease;
+    }
+
+    .process-card:hover {
+      transform: translateY(-2px);
+      border-color: #a9dccc;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      position: relative;
+      z-index: 1;
+      width: 53px;
+      height: 53px;
+      display: grid;
+      place-items: center;
+      border: 5px solid var(--bg);
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .process-card:nth-child(2n) .step-number {
+      background: var(--accent);
+    }
+
+    .step-content {
+      padding-top: 2px;
+    }
+
+    .step-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .step-content h3 {
+      color: var(--primary);
+      font-size: 15px;
+    }
+
+    .step-tag {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      color: #168362;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .step-content p {
+      color: #68788a;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .step-content ul {
+      margin-top: 9px;
+      padding-left: 18px;
+      color: #68788a;
+      font-size: 11px;
+    }
+
+    .step-content li {
+      margin-bottom: 4px;
+    }
+
+    /* FLOW */
+    .flow-section {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+    }
+
+    .flow-item {
+      position: relative;
+      padding: 19px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+      text-align: center;
+    }
+
+    .flow-item:not(:nth-child(4n))::after {
+      content: "›";
+      position: absolute;
+      z-index: 2;
+      top: 50%;
+      right: -13px;
+      width: 25px;
+      height: 25px;
+      display: grid;
+      place-items: center;
+      transform: translate(50%, -50%);
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 21px;
+      line-height: 1;
+    }
+
+    .flow-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 10px;
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--accent);
+      font-size: 19px;
+    }
+
+    .flow-item h3 {
+      margin-bottom: 5px;
+      color: var(--primary);
+      font-size: 11px;
+    }
+
+    .flow-item p {
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    /* FEE EXAMPLE */
+    .fee-layout {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: stretch;
+      gap: 22px;
+    }
+
+    .fee-info {
+      padding: 28px;
+      border-radius: 15px;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .fee-info h3 {
+      margin-bottom: 9px;
+      font-size: 19px;
+    }
+
+    .fee-info p {
+      margin-bottom: 22px;
+      color: #c6d3df;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    .fee-note {
+      padding-top: 15px;
+      border-top: 1px solid #ffffff29;
+      color: #d2e2ed;
+      font-size: 10px;
+      line-height: 1.8;
+    }
+
+    .fee-table-wrap {
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .fee-table-wrap h3 {
+      margin-bottom: 15px;
+      color: var(--primary);
+      font-size: 15px;
+    }
+
+    .fee-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .fee-table th,
+    .fee-table td {
+      padding: 11px 8px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .fee-table th {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .fee-table td:last-child,
+    .fee-table th:last-child {
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    .fee-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .fee-table .highlight td {
+      background: #f0fbf6;
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .fee-footnote {
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    /* DOCUMENTS */
+    .documents {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .document-card {
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--white);
+      transition: .2s ease;
+    }
+
+    .document-card:hover {
+      transform: translateY(-3px);
+      border-color: #a9dccc;
+      box-shadow: var(--shadow);
+    }
+
+    .doc-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 13px;
+      border-radius: 11px;
+      background: #edf4fa;
+      color: var(--primary);
+      font-size: 19px;
+    }
+
+    .document-card h3 {
+      margin-bottom: 7px;
+      color: var(--primary);
+      font-size: 13px;
+    }
+
+    .document-card p {
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* RULES */
+    .rules-section {
+      border-top: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .rule-card {
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+    }
+
+    .rule-card h3 {
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 14px;
+    }
+
+    .rule-card ul {
+      list-style: none;
+    }
+
+    .rule-card li {
+      position: relative;
+      margin-bottom: 10px;
+      padding-left: 23px;
+      color: #637386;
+      font-size: 11px;
+      line-height: 1.7;
+    }
+
+    .rule-card li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 800;
+    }
+
+    .rule-card.allowed li::before {
+      content: "✓";
+      color: var(--accent);
+    }
+
+    .rule-card.not-allowed li::before {
+      content: "×";
+      color: #d34c4c;
+    }
+
+    .rule-note {
+      margin-top: 18px;
+      padding: 19px;
+      border: 1px solid #c9e7db;
+      border-radius: 12px;
+      background: #f0fbf6;
+    }
+
+    .rule-note h3 {
+      margin-bottom: 6px;
+      color: #176e52;
+      font-size: 13px;
+    }
+
+    .rule-note p {
+      color: #557365;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 820px;
+      margin: auto;
+    }
+
+    .faq-item {
+      overflow: hidden;
+      margin-bottom: 10px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--white);
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 16px 19px;
+      border: 0;
+      background: transparent;
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .faq-question span:last-child {
+      color: var(--accent);
+      font-size: 19px;
+      transition: transform .2s;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 0 19px 16px;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-question span:last-child {
+      transform: rotate(45deg);
+    }
+
+    .faq-question:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: -3px;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 45px 0;
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .cta-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .cta h2 {
+      margin-bottom: 7px;
+      font-size: 22px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      color: #c6d3df;
+      font-size: 11px;
+      line-height: 1.8;
+    }
+
+    .cta .btn {
+      flex-shrink: 0;
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .cta .btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    .footer {
+      padding: 25px 0;
+      background: #0b1b2d;
+      color: #b7c5d2;
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .footer p,
+    .footer a {
+      font-size: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+    }
+
+    .footer a:hover {
+      color: #56dfb1;
+    }
+
+    .footer-bottom {
+      margin-top: 18px;
+      padding-top: 13px;
+      border-top: 1px solid #ffffff1a;
+      color: #8da0b2;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a:not(.nav-button) {
+        display: none;
+      }
+
+      .flow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .flow-item:not(:nth-child(4n))::after {
+        display: none;
+      }
+
+      .flow-item:nth-child(odd)::after {
+        display: grid;
+      }
+
+      .flow-item:nth-child(even)::after {
+        display: none;
+      }
+
+      .fee-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .navbar {
+        min-height: 66px;
+      }
+
+      .brand-logo {
+        width: 38px;
+        height: 38px;
+      }
+
+      .brand-name {
+        font-size: 12px;
+      }
+
+      .brand-subtitle {
+        font-size: 8px;
+      }
+
+      .nav-button {
+        padding: 9px 11px !important;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 49px 0 55px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero-description {
+        font-size: 12px;
+      }
+
+      .overview-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .overview-card {
+        padding: 15px;
+      }
+
+      .section {
+        padding: 52px 0;
+      }
+
+      .process-list::before {
+        left: 20px;
+      }
+
+      .process-card {
+        grid-template-columns: 42px 1fr;
+        gap: 12px;
+        padding: 15px 12px;
+      }
+
+      .step-number {
+        width: 41px;
+        height: 41px;
+        border-width: 3px;
+        font-size: 11px;
+      }
+
+      .step-content h3 {
+        font-size: 13px;
+      }
+
+      .step-content p {
+        font-size: 11px;
+      }
+
+      .flow-grid {
+        gap: 10px;
+      }
+
+      .flow-item {
+        padding: 15px 8px;
+      }
+
+      .flow-item h3 {
+        font-size: 10px;
+      }
+
+      .flow-item p {
+        font-size: 9px;
+      }
+
+      .fee-info,
+      .fee-table-wrap {
+        padding: 19px;
+      }
+
+      .fee-table {
+        font-size: 10px;
+      }
+
+      .fee-table th,
+      .fee-table td {
+        padding: 9px 5px;
+      }
+
+      .documents,
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-box {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .cta h2 {
+        font-size: 20px;
+      }
+
+      .footer-content {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+
+    @media print {
+      .header,
+      .hero-actions,
+      .cta,
+      .faq-section {
+        display: none !important;
+      }
+
+      body {
+        background: white;
+      }
+
+      .section {
+        padding: 25px 0;
+      }
+
+      .process-card,
+      .overview-card,
+      .document-card,
+      .rule-card {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="#" class="brand" aria-label="Haproven Technologies Home">
+        <div class="brand-logo">H</div>
+        <div>
+          <div class="brand-name">HAPROVEN TECHNOLOGIES</div>
+          <div class="brand-subtitle">Technology • Projects • Community • Educational Support</div>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="application.html">application</a>
+        <a href="pdf.html">PDF</a>
+        <a href="bill.html">Bill</a>
+        <a href="student.html">Student</a>
+        <a href="#process">Process</a>
+        <a href="#fee">Fee Support</a>
+        <a href="#rules">Terms</a>
+        <a href="#faq">FAQs</a>
+        <a href="application.html" class="nav-button">Apply Now ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Educational Support Program
+          </div>
+
+          <h1>Student Fee <span>Support</span> Program</h1>
+
+          <p class="hero-description">
+            Haproven provides educational fee support to eligible winners
+            of its programs and events, subject to the applicable program
+            rules and approval. Learn how to apply, complete teacher
+            verification, receive an agreement and follow the payment process.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#process" class="btn btn-primary">Explore Full Process ↓</a>
+            <a href="#fee" class="btn btn-outline">Understand Fee Support</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="overview" aria-label="Program overview">
+      <div class="container overview-grid">
+        <article class="overview-card">
+          <div class="overview-icon">🏆</div>
+          <div>
+            <h3>Eligible Winner-Based Support</h3>
+            <p>Eligible winners selected through Haproven programs may apply under the published criteria.</p>
+          </div>
+        </article>
+
+        <article class="overview-card">
+          <div class="overview-icon">📄</div>
+          <div>
+            <h3>Application & Agreement</h3>
+            <p>The student submits an application first. An agreement is prepared only after approval.</p>
+          </div>
+        </article>
+
+        <article class="overview-card">
+          <div class="overview-icon">✓</div>
+          <div>
+            <h3>Verified Payment</h3>
+            <p>Payment is recorded after verification, and the final receipt is issued after payment confirmation.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section process-section" id="process">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Complete Procedure</span>
+          <h2>How the Fee Support Process Works</h2>
+          <p>
+            Follow these steps to understand the application,
+            teacher verification, approval, agreement and payment process.
+          </p>
+        </div>
+
+        <div class="process-list">
+          <article class="process-card">
+            <div class="step-number">01</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Program or Event Participation</h3>
+                <span class="step-tag">Participation</span>
+              </div>
+              <p>
+                Haproven organizes a program, competition, event or
+                educational activity. Participants take part according
+                to that program's rules and eligibility criteria.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">02</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Winner Selection</h3>
+                <span class="step-tag">Selection</span>
+              </div>
+              <p>
+                The winner or eligible top-ranked participant is
+                selected according to the program results and
+                selection criteria. The applicable support rate
+                and eligibility are defined by Haproven.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">03</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Official Support Information</h3>
+                <span class="step-tag">Announcement</span>
+              </div>
+              <p>
+                Haproven may publish the selected winner's details
+                and applicable support information through its
+                official communication channels. The announcement
+                explains how the eligible student can apply.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">04</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Student Application Form</h3>
+                <span class="step-tag">Student</span>
+              </div>
+              <p>
+                The selected student opens the application form
+                and enters their own personal, contact and academic
+                information. Program details, eligibility, support
+                rate and other fixed program settings are provided
+                by Haproven and are not student-editable.
+              </p>
+              <ul>
+                <li>Full name and contact details</li>
+                <li>Student or enrollment ID, if available</li>
+                <li>Program or event and winner information</li>
+                <li>Institute, course and teacher details</li>
+                <li>Monthly fee information and requested documents, if applicable</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">05</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Application Number & PDF</h3>
+                <span class="step-tag">Student Copy</span>
+              </div>
+              <p>
+                After successful submission, the system generates
+                a unique application number and an application PDF.
+                The student downloads the PDF and checks that the
+                submitted information is correct.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">06</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Student Signature & Teacher Submission</h3>
+                <span class="step-tag">Student</span>
+              </div>
+              <p>
+                The student prints the application PDF, signs it
+                where required and submits it to the concerned
+                teacher or authorized institute representative
+                for verification.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">07</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Teacher Verification</h3>
+                <span class="step-tag">Teacher</span>
+              </div>
+              <p>
+                The teacher opens the application using the
+                application number or a secure verification link.
+                They check the student's identity, institute,
+                course, fee information and other relevant details.
+                The teacher then records their verification and
+                submits it to Haproven.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">08</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Haproven Application Review</h3>
+                <span class="step-tag">Review</span>
+              </div>
+              <p>
+                Haproven reviews the student's application and
+                teacher verification, including winner eligibility,
+                institute details, course fee and program conditions.
+                The application may be approved, rejected or
+                returned for correction or additional information.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">09</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Approval & Support Confirmation</h3>
+                <span class="step-tag">Haproven</span>
+              </div>
+              <p>
+                If the application is approved, Haproven confirms
+                the support percentage, approved amount, duration,
+                eligible fee and payment arrangement. Approval
+                details are recorded for preparing the agreement.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">10</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Fee Support Agreement PDF</h3>
+                <span class="step-tag">Agreement</span>
+              </div>
+              <p>
+                After approval, Haproven prepares the official
+                Fee Support Agreement PDF using the approved
+                application and payment details.
+              </p>
+              <ul>
+                <li>Student and institute or teacher details</li>
+                <li>Unique reference number and document date</li>
+                <li>Approved support percentage and duration</li>
+                <li>Monthly fee and total support calculation</li>
+                <li>Payment arrangement and applicable terms</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">11</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Agreement Signature</h3>
+                <span class="step-tag">Student & Teacher</span>
+              </div>
+              <p>
+                The agreement is shared with the student through
+                the approved communication method. The student
+                downloads and prints it, then submits it to the
+                concerned teacher or authorized institute
+                representative for review and signature.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">12</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Signed Agreement Returned</h3>
+                <span class="step-tag">Final Verification</span>
+              </div>
+              <p>
+                The signed agreement is returned to Haproven.
+                Haproven checks the signatures, approved amount,
+                institute details and required documents before
+                proceeding with the payment arrangement.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">13</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Payment Processing & Verification</h3>
+                <span class="step-tag">Payment</span>
+              </div>
+              <p>
+                Haproven processes the approved support payment
+                to the verified teacher or institute according
+                to the agreement. The transaction details are
+                recorded and checked before the payment is
+                marked as completed.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">14</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Final Payment Receipt</h3>
+                <span class="step-tag">Receipt Issued</span>
+              </div>
+              <p>
+                After successful payment verification, Haproven
+                generates the final payment receipt with a unique
+                receipt number, payment date, verified amount,
+                transaction reference and relevant support details.
+                The receipt is shared with the student and the
+                concerned teacher or institute.
+              </p>
+            </div>
+          </article>
+
+          <article class="process-card">
+            <div class="step-number">15</div>
+            <div class="step-content">
+              <div class="step-top">
+                <h3>Monthly Fee Adjustment & Record</h3>
+                <span class="step-tag">Support Period</span>
+              </div>
+              <p>
+                The student's remaining applicable fee is paid
+                according to the agreed monthly schedule.
+                Haproven records each applicable support payment
+                or installment. Any change in fee, course,
+                teacher or institute must be reported and
+                reviewed before adjustment.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FLOW -->
+    <section class="section flow-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">At a Glance</span>
+          <h2>Application to Final Receipt</h2>
+          <p>A quick overview of the main stages of the support process.</p>
+        </div>
+
+        <div class="flow-grid">
+          <article class="flow-item">
+            <div class="flow-icon">🏆</div>
+            <h3>Winner Selected</h3>
+            <p>Eligible participant is selected under the program criteria.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">📝</div>
+            <h3>Application Submitted</h3>
+            <p>Student submits details and downloads the application PDF.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">✍️</div>
+            <h3>Teacher Verified</h3>
+            <p>Teacher verifies the student and sends the application to Haproven.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">🔎</div>
+            <h3>Haproven Review</h3>
+            <p>Application is reviewed and an approval decision is recorded.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">📄</div>
+            <h3>Agreement Signed</h3>
+            <p>Approved agreement is prepared, signed and returned.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">₹</div>
+            <h3>Payment Verified</h3>
+            <p>Payment is processed and transaction details are checked.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">🧾</div>
+            <h3>Receipt Issued</h3>
+            <p>Final payment receipt is generated and shared.</p>
+          </article>
+
+          <article class="flow-item">
+            <div class="flow-icon">🗂️</div>
+            <h3>Support Record</h3>
+            <p>Payment and remaining eligible support are recorded.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEE EXAMPLE -->
+    <section class="section fee-section" id="fee">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Fee Calculation</span>
+          <h2>How Student Fee Support Is Calculated</h2>
+          <p>
+            The support amount depends on the approved percentage,
+            eligible monthly fee and support duration.
+          </p>
+        </div>
+
+        <div class="fee-layout">
+          <div class="fee-info">
+            <h3>Example of 12% Support</h3>
+            <p>
+              If the eligible monthly fee is ₹500 and the student
+              receives 12% support for six months, Haproven's
+              monthly support is ₹60. The student's remaining
+              monthly fee is ₹440.
+            </p>
+            <div class="fee-note">
+              This is an illustrative calculation only, not a
+              confirmed support offer. Each student's approved
+              percentage, fee and duration will be stated in
+              their official agreement.
+            </div>
+          </div>
+
+          <div class="fee-table-wrap">
+            <h3>Student Fee Summary</h3>
+            <table class="fee-table">
+              <thead>
+                <tr>
+                  <th>Particular</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Eligible Monthly Fee</td><td>₹500</td></tr>
+                <tr><td>Illustrative Support Rate</td><td>12%</td></tr>
+                <tr><td>Monthly Support</td><td>₹60</td></tr>
+                <tr class="highlight"><td>Student Monthly Payable</td><td>₹440</td></tr>
+                <tr><td>Support Duration</td><td>6 Months</td></tr>
+                <tr><td>Total Fee</td><td>₹3,000</td></tr>
+                <tr><td>Total Support</td><td>₹360</td></tr>
+                <tr class="highlight"><td>Student Total Payable</td><td>₹2,640</td></tr>
+              </tbody>
+            </table>
+            <p class="fee-footnote">
+              Calculation: Monthly fee × support rate × support duration.
+              Actual amounts are subject to approval and the agreement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCUMENTS -->
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Required Records</span>
+          <h2>Documents and Payment Records</h2>
+          <p>The following records may be used during the support process, as applicable.</p>
+        </div>
+
+        <div class="documents">
+          <article class="document-card">
+            <div class="doc-icon">📋</div>
+            <h3>Student Application</h3>
+            <p>Student details, program information, course and institute details, fee information and required documents.</p>
+          </article>
+
+          <article class="document-card">
+            <div class="doc-icon">🪪</div>
+            <h3>Teacher Verification</h3>
+            <p>Teacher's verification record confirming relevant student, course and institute information.</p>
+          </article>
+
+          <article class="document-card">
+            <div class="doc-icon">📄</div>
+            <h3>Fee Support Agreement</h3>
+            <p>Approved support amount, percentage, duration, payment arrangement and applicable terms.</p>
+          </article>
+
+          <article class="document-card">
+            <div class="doc-icon">✍️</div>
+            <h3>Signed Agreement</h3>
+            <p>Agreement reviewed and signed by the student and concerned teacher or authorized representative, as required.</p>
+          </article>
+
+          <article class="document-card">
+            <div class="doc-icon">₹</div>
+            <h3>Payment Proof</h3>
+            <p>Verified transaction reference and payment record for the approved support amount.</p>
+          </article>
+
+          <article class="document-card">
+            <div class="doc-icon">🧾</div>
+            <h3>Final Payment Receipt</h3>
+            <p>Receipt showing the payment date, verified amount, receipt number and relevant payment details.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- RULES -->
+    <section class="section rules-section" id="rules">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Terms and Conditions</span>
+          <h2>Important Support Rules</h2>
+          <p>These rules help keep the process clear for the student, teacher and Haproven.</p>
+        </div>
+
+        <div class="rules-grid">
+          <div class="rule-card allowed">
+            <h3>✓ Program Guidelines</h3>
+            <ul>
+              <li>Students may apply after being declared eligible under the program.</li>
+              <li>Support is limited to the amount and duration approved by Haproven.</li>
+              <li>Student information must be accurate and complete.</li>
+              <li>Teacher or institute verification is required where specified by the program.</li>
+              <li>Payment records and receipts are issued according to the verified payment status.</li>
+            </ul>
+          </div>
+
+          <div class="rule-card not-allowed">
+            <h3>× Restrictions</h3>
+            <ul>
+              <li>Support cannot be claimed without eligibility review and approval.</li>
+              <li>Submitting an application does not guarantee approval or payment.</li>
+              <li>Unused support cannot be claimed by the student as cash unless explicitly permitted in the official program terms.</li>
+              <li>Support cannot automatically move to a different course, teacher or institute.</li>
+              <li>Changes to the approved arrangement require prior review and approval.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rule-note">
+          <h3>Institute or Teacher Change</h3>
+          <p>
+            If a student changes their institute, teacher or course,
+            they must inform Haproven before continuing the support
+            arrangement. Any remaining eligible support will be
+            reviewed and may be adjusted only after verification
+            and prior approval. The student or previous teacher
+            must not independently transfer or alter the approved
+            support arrangement.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Help Center</span>
+          <h2>Frequently Asked Questions</h2>
+          <p>Answers to common questions about the fee support process.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item active">
+            <button class="faq-question" type="button" aria-expanded="true">
+              <span>Who can apply for Student Fee Support?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Students selected as eligible winners under a Haproven
+              program or event may apply, subject to the published
+              eligibility criteria and Haproven's approval.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What happens after submitting the application?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              The system generates an application number and
+              application PDF. The student downloads, prints
+              and signs the PDF, then submits it to the concerned
+              teacher for verification.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Why is teacher verification required?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Teacher verification helps confirm the student's
+              identity and relevant course, fee and institute
+              details before the application is reviewed by Haproven.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Does submitting an application guarantee support?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              No. The application must go through teacher verification
+              where required and Haproven's review. The application
+              may be approved, rejected or returned for correction.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>When will the agreement PDF be issued?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              The agreement PDF is prepared after the application
+              is reviewed and support is approved. It contains
+              the confirmed support details and applicable terms.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Who receives the support payment?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Under the payment arrangement described by this program,
+              Haproven pays the approved support amount to the
+              concerned verified teacher or institute, not directly
+              to the student.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>When is the final payment receipt issued?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              The final payment receipt is issued after the payment
+              has been completed and the transaction details have
+              been verified and recorded by Haproven.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can a student change their teacher or institute?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              Any change must be reported to Haproven in advance.
+              Remaining eligible support will be reviewed and
+              adjusted only after verification and prior approval.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can the approved support rate change?</span>
+              <span aria-hidden="true">+</span>
+            </button>
+            <div class="faq-answer">
+              The applicable support rate is determined by the
+              program and confirmed during approval. The student's
+              approved rate and amount should be recorded in the
+              official agreement.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+      <div class="container cta-box">
+        <div>
+          <h2>Ready to Apply?</h2>
+          <p>
+            Review the application process and program conditions.
+            If you are eligible, continue to the Student Fee Support
+            Application Form.
+          </p>
+        </div>
+        <a href="application.html" class="btn">Start Application ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">HAPROVEN TECHNOLOGIES</div>
+          <p>Technology • Projects • Community • Educational Support</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://haproven.netlify.app" target="_blank" rel="noopener noreferrer">Website</a>
+          <a href="mailto:haproven.tech@gmail.com">Email</a>
+          <a href="#process">Process</a>
+          <a href="#rules">Terms</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        © <span id="year"></span> Haproven Technologies. All rights reserved.
+        <br>
+        Student Fee Support Program
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach(function (item) {
+        const button = item.querySelector(".faq-question");
+
+        button.addEventListener("click", function () {
+          const wasActive = item.classList.contains("active");
+
+          faqItems.forEach(function (faq) {
+            faq.classList.remove("active");
+            faq.querySelector(".faq-question")
+              .setAttribute("aria-expanded", "false");
+          });
+
+          if (!wasActive) {
+            item.classList.add("active");
+            button.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+
+      const year = document.getElementById("year");
+      if (year) {
+        year.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+</html>

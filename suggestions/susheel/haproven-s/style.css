@@ -1,0 +1,723 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #111;
+    --gray: #666;
+    --border: #ddd;
+    --green: #16834b;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================
+   EDITOR
+========================= */
+
+.editor {
+    width: calc(100% - 30px);
+    max-width: 1000px;
+    margin: 25px auto;
+    padding: 22px;
+    background: #111;
+    color: #fff;
+    border-radius: 12px;
+}
+
+.editor h2 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.editor > p {
+    margin: 0 0 18px;
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 5px;
+    color: #bbb;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.field input {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    outline: none;
+    background: #1d1d1d;
+    color: #fff;
+    font-family: inherit;
+    font-size: 13px;
+    transition: border-color .2s ease;
+}
+
+.field input:focus {
+    border-color: #aaa;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+button {
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.print-btn {
+    background: #fff;
+    color: #111;
+}
+
+.print-btn:hover {
+    background: #e5e5e5;
+}
+
+.reset-btn {
+    background: #333;
+    color: #fff;
+}
+
+.reset-btn:hover {
+    background: #444;
+}
+
+/* =========================
+   A4 DOCUMENT
+========================= */
+
+.page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 25px auto;
+    padding: 13mm;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, .12);
+    overflow-wrap: break-word;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #111;
+}
+
+.brand {
+    min-width: 0;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    line-height: 1.3;
+}
+
+.brand p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.doc-title {
+    min-width: 0;
+    text-align: right;
+}
+
+.doc-title h2 {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.doc-title p {
+    margin: 4px 0 0;
+    color: #666;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.intro {
+    margin: 12px 0;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* =========================
+   STUDENT INFORMATION
+========================= */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+}
+
+.info-item {
+    min-width: 0;
+    padding: 8px 9px;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    overflow-wrap: anywhere;
+}
+
+.info-item:nth-child(3n) {
+    border-right: 0;
+}
+
+.info-item:nth-last-child(-n+3) {
+    border-bottom: 0;
+}
+
+.info-item label {
+    display: block;
+    margin-bottom: 3px;
+    color: #777;
+    font-size: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+}
+
+.info-item strong {
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    min-width: 0;
+    margin-top: 13px;
+}
+
+.section-title {
+    margin-bottom: 7px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #111;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+    break-after: avoid;
+    page-break-after: avoid;
+}
+
+/* =========================
+   FEE SUMMARY
+========================= */
+
+.fee-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 7px;
+}
+
+.fee-card {
+    min-width: 0;
+    padding: 9px 7px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.fee-card span {
+    display: block;
+    margin-bottom: 5px;
+    color: #777;
+    font-size: 8px;
+    line-height: 1.4;
+}
+
+.fee-card strong {
+    font-size: 13px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.support {
+    color: var(--green);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 10px;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid var(--border);
+    text-align: left;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+th {
+    background: #f5f5f5;
+    font-weight: 700;
+}
+
+td:last-child,
+th:last-child {
+    text-align: right;
+}
+
+/* =========================
+   CONTENT BOXES
+========================= */
+
+.compact-box {
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.compact-box p {
+    margin: 0 0 6px;
+}
+
+.compact-box p:last-child {
+    margin-bottom: 0;
+}
+
+.highlight {
+    border-left: 3px solid var(--green);
+    background: #f7fbf8;
+}
+
+.warning {
+    border-left: 3px solid #777;
+    background: #fafafa;
+}
+
+/* =========================
+   TWO COLUMNS
+========================= */
+
+.two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+}
+
+ul {
+    margin: 5px 0 0;
+    padding-left: 17px;
+}
+
+li {
+    margin-bottom: 5px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+li:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================
+   SIGNATURE
+========================= */
+
+.signatures {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px;
+    margin-top: 24px;
+}
+
+.sign-box {
+    min-width: 0;
+    padding-top: 6px;
+    border-top: 1px solid #111;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.sign-box p {
+    margin: 7px 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 8px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: 8px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* =========================
+   PAGE BREAK CONTROL
+========================= */
+
+.compact-box,
+.fee-card,
+.info-item,
+.sign-box,
+.signatures,
+.two-col,
+table tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.section-title {
+    break-after: avoid;
+    page-break-after: avoid;
+}
+
+thead {
+    display: table-header-group;
+}
+
+tfoot {
+    display: table-footer-group;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+    .editor {
+        width: calc(100% - 20px);
+        margin: 10px auto;
+        padding: 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .page {
+        width: calc(100% - 20px);
+        min-height: auto;
+        margin: 10px auto;
+        padding: 20px;
+    }
+
+    .info-grid,
+    .fee-grid,
+    .two-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .info-item:nth-child(3n) {
+        border-right: 1px solid var(--border);
+    }
+
+    .info-item:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .info-item:nth-last-child(-n+3) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:nth-last-child(-n+2) {
+        border-bottom: 0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+    .editor {
+        width: calc(100% - 16px);
+        padding: 15px;
+        border-radius: 9px;
+    }
+
+    .editor h2 {
+        font-size: 18px;
+    }
+
+    .form-grid,
+    .info-grid,
+    .fee-grid,
+    .two-col,
+    .signatures {
+        grid-template-columns: 1fr;
+    }
+
+    .page {
+        width: 100%;
+        min-height: auto;
+        margin: 10px auto;
+        padding: 16px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, .1);
+    }
+
+    .info-item,
+    .info-item:nth-child(2n),
+    .info-item:nth-child(3n) {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .info-item:last-child {
+        border-bottom: 0;
+    }
+
+    .info-item:nth-last-child(-n+2) {
+        border-bottom: 1px solid var(--border);
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .brand h1 {
+        font-size: 20px;
+    }
+
+    .doc-title {
+        text-align: left;
+    }
+
+    .signatures {
+        gap: 25px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    table {
+        font-size: 9px;
+    }
+
+    th,
+    td {
+        padding: 7px 6px;
+    }
+}
+
+/* =========================
+   PRINT PAGE SETTINGS
+========================= */
+
+@page {
+    size: A4;
+    margin: 13mm 0;
+}
+
+/* =========================
+   PRINT / SAVE PDF
+========================= */
+
+@media print {
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    body {
+        color: #111;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .editor,
+    .buttons,
+    button {
+        display: none !important;
+    }
+
+    .page {
+        display: block;
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        margin: 0 !important;
+        padding: 0 13mm !important;
+        border: 0;
+        box-shadow: none !important;
+        overflow: visible;
+        background: #fff !important;
+    }
+
+    .header {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .intro {
+        margin-top: 12px;
+    }
+
+    .section {
+        margin-top: 12px;
+        break-inside: auto;
+        page-break-inside: auto;
+    }
+
+    .section-title {
+        margin-bottom: 6px;
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .compact-box,
+    .fee-card,
+    .info-item,
+    .sign-box,
+    .signatures,
+    .two-col,
+    table tr {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tfoot {
+        display: table-footer-group;
+    }
+
+    tr,
+    img {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .signatures {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .footer {
+        break-inside: avoid;
+        page-break-inside: avoid;
+        margin-top: 14px;
+    }
+
+    .highlight {
+        background: #f7fbf8 !important;
+    }
+
+    .warning {
+        background: #fafafa !important;
+    }
+
+    .fee-card,
+    .info-item,
+    .compact-box,
+    th,
+    td {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+/* =========================
+   PRINT SMALL PAGE SAFETY
+========================= */
+
+@media print {
+    * {
+        text-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .page,
+    .section,
+    .compact-box,
+    .fee-grid,
+    .info-grid,
+    .two-col {
+        max-width: 100%;
+    }
+}

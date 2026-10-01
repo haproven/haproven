@@ -1,0 +1,340 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haproven Payment Receipt</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#10243b;--green:#16845f;--muted:#64748b;--border:#dce4eb}
+body{font-family:Arial,sans-serif;background:#edf1f5;color:#263445;font-size:13px}
+.editor{max-width:900px;margin:22px auto;padding:22px;background:#fff;border:1px solid var(--border);border-radius:10px}
+.editor h2{font-size:20px;color:var(--navy);margin-bottom:6px}
+.editor>p{font-size:12px;color:var(--muted);margin-bottom:16px;line-height:1.5}
+.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.field label{display:block;font-size:11px;font-weight:bold;margin-bottom:5px;color:#334155}
+.field input,.field select,.field textarea{width:100%;padding:9px;border:1px solid #cbd5e1;border-radius:5px;background:#fff;color:#263445;font:inherit;min-width:0}
+.field input:focus,.field select:focus{outline:2px solid #16845f30;border-color:var(--green)}
+.field.full{grid-column:1/-1}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:16px}
+button{border:0;border-radius:5px;padding:10px 15px;background:var(--navy);color:#fff;font-weight:bold;cursor:pointer}
+button.green{background:var(--green)}
+button.light{background:#edf1f5;color:var(--navy)}
+.hint{font-size:11px!important;color:var(--muted);margin-top:12px!important;margin-bottom:0!important}
+.error{display:none;margin-top:12px;padding:10px;border-radius:5px;background:#fff1f2;color:#be123c;font-size:12px}
+.page{width:210mm;min-height:148mm;margin:20px auto;padding:12mm 13mm;background:#fff;box-shadow:0 5px 25px #10243b18}
+.header{display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:2px solid var(--navy);padding-bottom:11px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{width:42px;height:42px;flex:none;border-radius:8px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:bold}
+.brand h1{font-size:16px;color:var(--navy);letter-spacing:.5px}
+.brand p{font-size:9px;color:var(--muted);margin-top:3px}
+.meta{text-align:right;font-size:10px;line-height:1.7;color:var(--muted);overflow-wrap:anywhere}
+.meta strong{color:var(--navy)}
+.title{text-align:center;padding:14px 0 10px}
+.title small{color:var(--green);font-weight:bold;letter-spacing:1.5px;font-size:9px}
+.title h2{font-size:21px;color:var(--navy);margin:4px 0}
+.title p{font-size:10px;color:var(--muted)}
+.status{display:block;width:max-content;max-width:100%;text-align:center;margin:0 auto 11px;padding:5px 15px;border-radius:20px;background:#e8f7ef;color:#13794f;font-size:10px;font-weight:bold;letter-spacing:.5px}
+.notice{padding:9px 11px;background:#f3f7fa;border-left:3px solid var(--green);font-size:10px;line-height:1.5;color:#536477;margin-bottom:11px}
+.section{margin-top:11px;break-inside:avoid;page-break-inside:avoid}
+.section h3{font-size:10px;color:var(--navy);letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:5px;margin-bottom:8px}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+.detail{border-bottom:1px dotted var(--border);padding-bottom:5px;min-height:30px;overflow-wrap:anywhere}
+.label{display:block;color:var(--muted);font-size:9px;margin-bottom:2px}
+.value{font-size:11px;font-weight:bold;color:#263445;overflow-wrap:anywhere}
+.amount-box{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.amount{padding:10px;background:#f3f7fa;border:1px solid var(--border);border-radius:6px;min-width:0}
+.amount.support{background:#eef9f4;border-color:#c7e9d8}
+.amount span{display:block;font-size:9px;color:var(--muted);margin-bottom:5px}
+.amount strong{font-size:15px;color:var(--navy);overflow-wrap:anywhere}
+.amount.support strong{color:var(--green)}
+table{width:100%;border-collapse:collapse;font-size:10px}
+th{background:var(--navy);color:#fff;text-align:left;padding:7px 9px}
+th:last-child,td:last-child{text-align:right}
+td{padding:7px 9px;border-bottom:1px solid var(--border);overflow-wrap:anywhere}
+.total td{font-weight:bold;color:var(--green);background:#eef9f4}
+.confirm{font-size:10px;line-height:1.6;color:#536477}
+.signatures{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+.sign{border:1px solid var(--border);border-radius:6px;padding:10px;min-height:75px;break-inside:avoid}
+.sign h4{font-size:9px;color:var(--navy);margin-bottom:6px}
+.sign b{font-size:10px;overflow-wrap:anywhere}
+.sign p{font-size:9px;color:var(--muted);margin-top:2px}
+.line{font-size:9px;color:var(--muted);margin-top:12px;border-bottom:1px solid #aab5c1;padding-bottom:3px}
+.footer{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--border);padding-top:7px;margin-top:12px;color:var(--muted);font-size:8px;line-height:1.5}
+.footer strong{color:var(--navy)}
+@media(max-width:760px){
+ .editor{margin:10px;padding:14px}
+ .form-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .page{width:100%;min-height:0;margin:10px auto;padding:22px 16px}
+}
+@media(max-width:480px){
+ .form-grid,.details,.signatures{grid-template-columns:1fr}
+ .header{align-items:flex-start;flex-wrap:wrap}
+ .meta{text-align:left;padding-left:52px}
+ .amount-box{grid-template-columns:1fr}
+}
+@page{size:A4;margin:10mm}
+@media print{
+ html,body{width:auto;margin:0!important;padding:0!important;background:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .editor{display:none!important}
+ .page{width:auto;min-height:0;margin:0;padding:0;box-shadow:none;overflow:visible}
+ .section,.sign,.amount{break-inside:avoid;page-break-inside:avoid}
+ thead{display:table-header-group}
+ tr{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="editor">
+ <h2>Payment Receipt Details</h2>
+ <p>भुगतान की वास्तविक जानकारी भरें। भुगतान पूरा होने के बाद ही Paid status के साथ receipt जारी करें।</p>
+
+ <div class="form-grid">
+  <div class="field"><label>Receipt / Reference No. *</label><input id="receiptNo" value="HAP-PAY-2026-001"></div>
+  <div class="field"><label>Payment Date *</label><input id="paymentDate" type="date" value="2026-10-01"></div>
+  <div class="field"><label>Payment Status *</label>
+   <select id="status">
+    <option value="PAID">Paid — भुगतान हो गया</option>
+    <option value="APPROVED">Approved — स्वीकृत</option>
+    <option value="PENDING">Pending — लंबित</option>
+   </select>
+  </div>
+  <div class="field"><label>Student Name *</label><input id="student" value="Student Name"></div>
+  <div class="field"><label>Student ID</label><input id="studentId" value="STU-001"></div>
+  <div class="field"><label>Institute / Teacher *</label><input id="institute" value="Institute / Teacher Name"></div>
+  <div class="field"><label>Course</label><input id="course" value="Course Name"></div>
+  <div class="field"><label>Program / Event</label><input id="program" value="Haproven Program"></div>
+  <div class="field"><label>Approved Support Rate (%) *</label><input id="rate" type="number" min="0" max="100" step="0.01" value="12"></div>
+  <div class="field"><label>Normal Monthly Fee (₹) *</label><input id="monthlyFee" type="number" min="0" step="0.01" value="500"></div>
+  <div class="field"><label>Support Duration (Months) *</label><input id="duration" type="number" min="1" step="1" value="6"></div>
+  <div class="field"><label>Amount Paid by Haproven (₹) *</label><input id="paid" type="number" min="0" step="0.01" value="360"></div>
+  <div class="field"><label>Payment Method *</label>
+   <select id="method">
+    <option>Bank Transfer</option><option>UPI</option><option>NEFT</option><option>IMPS</option><option>Cheque</option><option>Other</option>
+   </select>
+  </div>
+  <div class="field"><label>Transaction / UTR ID</label><input id="transaction" value="TXN-XXXXXXXX"></div>
+  <div class="field"><label>Payment Period</label><input id="period" value="01 Sep 2026 – 28 Feb 2027"></div>
+  <div class="field"><label>Authorized By *</label><input id="authorized" value="Susheel Kumar"></div>
+  <div class="field"><label>Designation</label><input id="designation" value="Founder & CEO"></div>
+  <div class="field"><label>Contact / Email</label><input id="contact" value="haproven.tech@gmail.com"></div>
+ </div>
+
+ <div class="error" id="errorBox" role="alert"></div>
+ <div class="actions">
+  <button class="green" type="button" onclick="updateReceipt()">Update Receipt</button>
+  <button type="button" onclick="printReceipt()">Print / Save PDF</button>
+  <button class="light" type="button" onclick="resetForm()">Reset</button>
+ </div>
+ <p class="hint">Note: Receipt PDF is a record document. Verify the transaction and payment status before issuing it. Use the browser print dialog and select “Save as PDF”.</p>
+</div>
+
+<main class="page">
+ <header class="header">
+  <div class="brand">
+   <div class="logo">H</div>
+   <div><h1>HAPROVEN TECHNOLOGIES</h1><p>Technology • Projects • Community • Educational Support</p></div>
+  </div>
+  <div class="meta">
+   <div><strong>Receipt No:</strong> <span data-bind="receiptNo">HAP-PAY-2026-001</span></div>
+   <div><strong>Date:</strong> <span data-bind="paymentDate">01 October 2026</span></div>
+   <div><strong>Document:</strong> Payment Record</div>
+  </div>
+ </header>
+
+ <div class="title">
+  <small>EDUCATIONAL SUPPORT PROGRAM</small>
+  <h2>PAYMENT RECEIPT</h2>
+  <p>Student Fee Support Payment Record</p>
+ </div>
+
+ <div class="status" id="statusView">PAID — PAYMENT COMPLETED</div>
+ <div class="notice" id="noticeText">This document records the Haproven fee support payment details for the student and the concerned Institute / Teacher. Payment confirmation is subject to the transaction details and verification recorded below.</div>
+
+ <section class="section">
+  <h3>01 — Student & Beneficiary Information</h3>
+  <div class="details">
+   <div class="detail"><span class="label">Student Name</span><div class="value" data-bind="student">Student Name</div></div>
+   <div class="detail"><span class="label">Student ID</span><div class="value" data-bind="studentId">STU-001</div></div>
+   <div class="detail"><span class="label">Institute / Teacher</span><div class="value" data-bind="institute">Institute / Teacher Name</div></div>
+   <div class="detail"><span class="label">Course</span><div class="value" data-bind="course">Course Name</div></div>
+   <div class="detail"><span class="label">Program / Event</span><div class="value" data-bind="program">Haproven Program</div></div>
+   <div class="detail"><span class="label">Approved Support Rate</span><div class="value" data-bind="rate">12%</div></div>
+   <div class="detail"><span class="label">Support Period</span><div class="value" data-bind="period">01 Sep 2026 – 28 Feb 2027</div></div>
+   <div class="detail"><span class="label">Payment Beneficiary</span><div class="value" data-bind="institute">Institute / Teacher Name</div></div>
+  </div>
+ </section>
+
+ <section class="section">
+  <h3>02 — Payment Summary</h3>
+  <div class="amount-box">
+   <div class="amount"><span>Normal Total Fee</span><strong id="normalTotal">₹3,000</strong></div>
+   <div class="amount support"><span>Approved Haproven Support</span><strong id="approvedTotal">₹360</strong></div>
+   <div class="amount support"><span>Amount Paid by Haproven</span><strong id="paidTotal">₹360</strong></div>
+  </div>
+ </section>
+
+ <section class="section">
+  <h3>03 — Payment Details</h3>
+  <table>
+   <thead><tr><th>Particular</th><th>Details / Amount</th></tr></thead>
+   <tbody>
+    <tr><td>Normal Monthly Fee</td><td id="monthlyView">₹500</td></tr>
+    <tr><td>Support Duration</td><td id="durationView">6 Months</td></tr>
+    <tr><td>Approved Support Rate</td><td data-bind="rate">12%</td></tr>
+    <tr><td>Approved Total Support</td><td id="supportView">₹360</td></tr>
+    <tr><td>Amount Paid by Haproven</td><td id="paymentView">₹360</td></tr>
+    <tr><td>Remaining Approved Support</td><td id="remainingView">₹0</td></tr>
+    <tr><td>Payment Method</td><td data-bind="method">Bank Transfer</td></tr>
+    <tr><td>Transaction / UTR ID</td><td data-bind="transaction">TXN-XXXXXXXX</td></tr>
+    <tr><td>Payment Date</td><td data-bind="paymentDate">01 October 2026</td></tr>
+   </tbody>
+  </table>
+ </section>
+
+ <section class="section">
+  <h3>04 — Payment Confirmation</h3>
+  <p class="confirm" id="confirmationText">Haproven Technologies confirms that the recorded educational fee support payment has been sent to the concerned Institute / Teacher, as per the payment details stated in this receipt.</p>
+  <p class="confirm" style="margin-top:5px"><strong>Important:</strong> This document records only the Haproven support amount shown above. Any remaining student fee is payable separately according to the agreed fee arrangement.</p>
+ </section>
+
+ <section class="section">
+  <h3>05 — Acknowledgment</h3>
+  <p class="confirm">The concerned parties may retain this document for record-keeping. The Institute / Teacher should verify the credited amount against the transaction reference and inform Haproven if any discrepancy is found.</p>
+  <div class="signatures">
+   <div class="sign">
+    <h4>FOR HAPROVEN TECHNOLOGIES</h4>
+    <b data-bind="authorized">Susheel Kumar</b>
+    <p data-bind="designation">Founder & CEO</p>
+    <div class="line">Authorized Signature / Stamp</div>
+   </div>
+   <div class="sign">
+    <h4>RECEIVED BY — INSTITUTE / TEACHER</h4>
+    <b data-bind="institute">Institute / Teacher Name</b>
+    <p>Authorized Representative</p>
+    <div class="line">Signature / Stamp & Date</div>
+   </div>
+  </div>
+ </section>
+
+ <footer class="footer">
+  <div><strong>HAPROVEN TECHNOLOGIES</strong><br>Educational Support • Projects • Community</div>
+  <div style="text-align:right">haproven.netlify.app<br><span data-bind="contact">haproven.tech@gmail.com</span></div>
+ </footer>
+</main>
+
+<script>
+const ids=["receiptNo","paymentDate","status","student","studentId","institute","course","program","rate","monthlyFee","duration","paid","method","transaction","period","authorized","designation","contact"];
+const $=id=>document.getElementById(id);
+const val=id=>$(id).value.trim();
+
+function fmt(n){
+ return "₹"+Number(n).toLocaleString("en-IN",{minimumFractionDigits:0,maximumFractionDigits:2});
+}
+function dateFmt(v){
+ if(!v)return "—";
+ const d=new Date(v+"T00:00:00");
+ return Number.isNaN(d.getTime())?v:d.toLocaleDateString("en-GB",{day:"2-digit",month:"long",year:"numeric"});
+}
+function bind(key,value){
+ document.querySelectorAll('[data-bind="'+key+'"]').forEach(el=>el.textContent=value||"—");
+}
+function getAmounts(){
+ const fee=Number(val("monthlyFee"));
+ const months=Number(val("duration"));
+ const rate=Number(val("rate"));
+ const paid=Number(val("paid"));
+ return {fee,months,rate,paid,normal:fee*months,approved:fee*months*rate/100};
+}
+function validate(){
+ const required=["receiptNo","paymentDate","student","institute","authorized","monthlyFee","duration","rate","paid"];
+ for(const id of required){
+  if(!val(id)){return "Please fill all required fields.";}
+ }
+ const {fee,months,rate,paid,approved}=getAmounts();
+ if(!Number.isFinite(fee)||fee<0)return "Monthly fee must be zero or greater.";
+ if(!Number.isInteger(months)||months<1)return "Duration must be a whole number of at least 1 month.";
+ if(!Number.isFinite(rate)||rate<0||rate>100)return "Support rate must be between 0 and 100.";
+ if(!Number.isFinite(paid)||paid<0)return "Paid amount must be zero or greater.";
+ if(paid>approved+0.001)return "Paid amount cannot exceed the approved support amount.";
+ if(val("status")==="PAID"&&paid<=0)return "For Paid status, enter the actual amount paid.";
+ if(val("status")==="PAID"&&!val("transaction"))return "Enter the transaction / UTR ID for a paid receipt.";
+ return "";
+}
+function updateReceipt(showError=false){
+ const error=validate();
+ $("errorBox").textContent=error;
+ $("errorBox").style.display=error?"block":"none";
+ const {fee,months,rate,paid,normal,approved}=getAmounts();
+ bind("receiptNo",val("receiptNo"));
+ bind("paymentDate",dateFmt(val("paymentDate")));
+ bind("student",val("student"));
+ bind("studentId",val("studentId"));
+ bind("institute",val("institute"));
+ bind("course",val("course"));
+ bind("program",val("program"));
+ bind("rate",Number.isFinite(rate)?rate+"%":"—");
+ bind("period",val("period"));
+ bind("method",val("method"));
+ bind("transaction",val("transaction"));
+ bind("authorized",val("authorized"));
+ bind("designation",val("designation"));
+ bind("contact",val("contact"));
+
+ $("normalTotal").textContent=fmt(Number.isFinite(normal)?normal:0);
+ $("approvedTotal").textContent=fmt(Number.isFinite(approved)?approved:0);
+ $("paidTotal").textContent=fmt(Number.isFinite(paid)?paid:0);
+ $("monthlyView").textContent=fmt(Number.isFinite(fee)?fee:0);
+ $("durationView").textContent=(Number.isFinite(months)?months:0)+" Months";
+ $("supportView").textContent=fmt(Number.isFinite(approved)?approved:0);
+ $("paymentView").textContent=fmt(Number.isFinite(paid)?paid:0);
+ $("remainingView").textContent=fmt(Math.max(0,(approved||0)-(paid||0)));
+
+ const status=val("status");
+ const badge=$("statusView");
+ const confirmation=$("confirmationText");
+ if(status==="PAID"){
+  badge.textContent="PAID — PAYMENT COMPLETED";
+  badge.style.background="#e8f7ef";badge.style.color="#13794f";
+  confirmation.textContent="Haproven Technologies records that the educational fee support payment stated above has been sent to the concerned Institute / Teacher. The transaction reference and beneficiary details should be checked against the actual transfer record.";
+ }else if(status==="APPROVED"){
+  badge.textContent="APPROVED — PAYMENT NOT CONFIRMED";
+  badge.style.background="#fff5dc";badge.style.color="#95620b";
+  confirmation.textContent="The educational fee support amount stated above has been approved. This is an approval record only and does not confirm that payment has been transferred.";
+ }else{
+  badge.textContent="PENDING — AWAITING PAYMENT";
+  badge.style.background="#f1f5f9";badge.style.color="#536477";
+  confirmation.textContent="The educational fee support payment is pending. This document records the submitted payment details and does not confirm that funds have been transferred.";
+ }
+ $("noticeText").textContent=status==="PAID"
+  ?"This document records the Haproven fee support payment details. Verify the transaction reference and credited amount with the payment record."
+  :"This document records the current support status. It is not proof of a completed payment.";
+ return !error;
+}
+function printReceipt(){
+ if(!updateReceipt(true))return;
+ window.print();
+}
+function resetForm(){
+ if(!confirm("Reset all receipt details to default values?"))return;
+ const defaults={
+  receiptNo:"HAP-PAY-2026-001",paymentDate:"2026-10-01",status:"PAID",
+  student:"Student Name",studentId:"STU-001",institute:"Institute / Teacher Name",
+  course:"Course Name",program:"Haproven Program",rate:12,monthlyFee:500,
+  duration:6,paid:360,method:"Bank Transfer",transaction:"TXN-XXXXXXXX",
+  period:"01 Sep 2026 – 28 Feb 2027",authorized:"Susheel Kumar",
+  designation:"Founder & CEO",contact:"haproven.tech@gmail.com"
+ };
+ Object.entries(defaults).forEach(([id,value])=>$(id).value=value);
+ updateReceipt();
+}
+ids.forEach(id=>{
+ $(id).addEventListener("input",()=>updateReceipt());
+ $(id).addEventListener("change",()=>updateReceipt());
+});
+updateReceipt();
+</script>
+</body>
+</html>
