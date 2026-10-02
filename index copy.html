@@ -2,10 +2,15 @@
 <html lang="en-in">
 
 
+
 <head>
 
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ================= BASIC SEO ================= -->
+
     <title>
         Haproven Frame — Developers, Builders & Contributors | Haproven
     </title>
@@ -16,23 +21,39 @@
     <meta name="keywords"
         content="Haproven Frame, Haproven, developers, builders, contributors, developer showcase, contributor showcase, GitHub contributors, open source developers, community builders, Haproven developers, Haproven contributors">
 
+    <meta name="author" content="Haproven Team">
+    <meta name="publisher" content="Haproven">
+
+    <!-- ================= APP NAME ================= -->
+
+    <meta name="application-name" content="Haproven Frame">
+    <meta name="apple-mobile-web-app-title" content="Haproven Frame">
+
+    <!-- ================= ROBOTS ================= -->
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+
+    <!-- ================= CANONICAL URL ================= -->
 
     <link rel="canonical" href="https://haproven-frame.netlify.app/">
 
+    <!-- ================= OPEN GRAPH ================= -->
 
-    <meta name="robots" content="index, follow">
     <meta property="og:type" content="website">
+
     <meta property="og:title" content="Haproven Frame — Developers, Builders & Contributors">
+
     <meta property="og:description"
         content="Discover developers, builders and contributors through Haproven Frame — a showcase for the people and projects building with Haproven.">
+
     <meta property="og:url" content="https://haproven-frame.netlify.app/">
 
     <meta property="og:image" content="https://haproven.netlify.app/assets/img/haproven-logo.png">
 
     <meta property="og:site_name" content="Haproven">
 
-
-    <!-- ================= TWITTER / X ================= -->
+    <!-- ================= TWITTER CARD ================= -->
 
     <meta name="twitter:card" content="summary_large_image">
 
@@ -43,33 +64,41 @@
 
     <meta name="twitter:image" content="https://haproven.netlify.app/assets/img/haproven-logo.png">
 
-
     <!-- ================= FAVICON ================= -->
 
     <link rel="icon" href="https://haproven.netlify.app/assets/img/haproven.ico" type="image/x-icon">
 
-
     <link rel="apple-touch-icon" href="https://haproven.netlify.app/assets/img/haproven-logo.png">
-    v
 
+    <!-- ================= THEME COLOR ================= -->
 
-    <!-- ================= PWA ================= -->
+    <meta name="theme-color" content="#000000">
+
+    <!-- ================= PWA SUPPORT ================= -->
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <link rel="manifest" href="/manifest.json">
 
+    <!-- ================= PERFORMANCE ================= -->
 
-    <!-- ================= ICONS ================= -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- 🟢 Keep only if Font Awesome is used on this page -->
+    <!-- ================= FONT AWESOME ================= -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- ================= REMIX ICON ================= -->
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
-    <link rel="stylesheet" href="https://haprobase.netlify.app/external/css/base.css">
-    <link rel="stylesheet" href="https://haprobase.netlify.app/external/css/addon.css">
 
-
+    <meta name="google-site-verification" content="pFQ1E7rwZfZG883E_7F4WYRTV6bd-wm_H4KHD5lhFsk" />
 
     <!-- ================= STRUCTURED DATA ================= -->
-    <!-- 🔴 Change page-specific information -->
+
     <script type="application/ld+json" id="ldjson-website">
     {
         "@context": "https://schema.org",
@@ -93,35 +122,70 @@
     }
     </script>
 
+    <!-- ================= HAPROBASE ================= -->
+
+
+
+    <link rel="stylesheet" href="https://codersusheel.github.io/haprobase/external/css/base.css">
 
     <link rel="stylesheet" href="suggestions/susheel/main/style.css">
 
 
 
-</head>
+    <!-- ================= PERFORMANCE — FIXED ================= -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!-- ================= ICONS — FIXED ================= -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css">
+
+
+    <!-- ================= HAPROVEN GLOBAL CSS — FIXED ================= -->
+
+    <link rel="stylesheet"
+        href="data:text/css;base64,CkBpbXBvcnQgdXJsKCdodHRwczovL2hhcHJvYmFzZS5uZXRsaWZ5LmFwcC9leHRlcm5hbC9jc3MvbWFpbi9zdHlsZS5jc3MnKTs=">
+    <!-- 
+    <link rel="stylesheet"
+        href="data:text/css;base64,CgpAaW1wb3J0IHVybCgnaHR0cHM6Ly9oYXByb2Jhc2UubmV0bGlmeS5hcHAvZXh0ZXJuYWwvY3NzL21haW4vc3R5bGUuY3NzJyk7CkBpbXBvcnQgdXJsKCdodHRwczovL2hhcHJvYmFzZS5uZXRsaWZ5LmFwcC9leHRlcm5hbC9jc3MvbWFpbi9hc2lkZS5jc3MnKTsKCg=="> -->
+
+
+    <!-- page ke andar ke css join -->
+    <link rel="stylesheet" href="/assets/css/common.css">
+
+    <!-- ==================================================
+         🔴 PAGE-SPECIFIC — STRUCTURED DATA
+         ================================================== -->
+
+
+</head>
 
 
 <body>
 
 
-    <!-- ======================================================================================================================================================================================= -->
+
     <header id="header">
 
         <div class="header">
             <div class="logo">
                 <a href="/">
-                    <div class="haproven-brand animate" data-name="site name by haproven ">haproven</div>
+                    <div class="haproven-brand animate" data-name="HaproFrame by haproven ">haproven</div>
                 </a>
             </div>
 
-            <div class="header-senter">
+            <!-- <div class="header-senter">
                 <ul id="header-links">
                     <li class="nav-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</li>
                     <li class="nav-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</li>
                     <li class="nav-loading"><i class="fas fa-spinner fa-spin"></i> Loading...</li>
                 </ul>
-            </div>
+            </div> -->
 
 
             <div class="header-right-side">
@@ -216,6 +280,13 @@
     </header>
 
 
+
+
+
+
+    <!-- =====================================================
+     ///////          aside      sidebar           ////////////
+    ======================================================= -->
     <aside class="sidebar">
         <div class="sidebar-brand">
             <div class="sidebar-live-box">
@@ -258,79 +329,76 @@
                 <li><i class="fas fa-spinner fa-spin social-loader"></i></li>
             </ul>
         </div>
+
     </aside>
 
-    <!-- ======================================================================================================================================================================================= -->
 
 
 
 
-    <main class=" main">
 
-        <section id="haprovenFrameSection" class="haproven-frame">
+    <!-- +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
-            <span class="frame-label">
-                HAPROVEN COMMUNITY
-            </span>
+    <main class="haproven-frame main" id="haprovenFrameSection">
 
-            <h1>
-                Haproven Frame
-            </h1>
+        <span class="frame-label">
+            HAPROVEN COMMUNITY
+        </span>
+
+        <h1>
+            Haproven Frame
+        </h1>
+
+        <p class="frame-description">
+            The people behind Haproven —
+            developers, builders and contributors
+            helping the community grow.
+        </p>
 
 
-            <p class="frame-description">
-                The people behind Haproven —
-                developers, builders and contributors
-                helping the community grow.
+        <!-- Contributors -->
+
+        <div class="haproven-frame-grid" id="haprovenFrame">
+
+            <div class="frame-loading">
+
+                Loading contributors
+
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+                <span class="loading-dot"></span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+
+        <div class="frame-footer">
+
+            <p class="frame-footer-text">
+                Discover Haproven on GitHub, explore our community,
+                or share your ideas to help make Haproven better.
             </p>
 
+            <div class="frame-footer-links">
 
-            <!-- Contributors -->
+                <a href="https://github.com/haproven/" target="_blank" rel="noopener noreferrer">
+                    Explore Haproven on GitHub →
+                </a>
 
-            <div class="haproven-frame-grid" id="haprovenFrame">
-
-                <div class="frame-loading">
-
-                    Loading contributors
-
-                    <span class="loading-dot"></span>
-                    <span class="loading-dot"></span>
-                    <span class="loading-dot"></span>
-
-                </div>
+                <a href="https://github.com/haproven/haproven/tree/main/suggestions" target="_blank"
+                    rel="noopener noreferrer">
+                    Send a Suggestion →
+                </a>
 
             </div>
 
+        </div>
 
-            <!-- Footer -->
 
-            <div class="frame-footer">
-
-                <p class="frame-footer-text">
-                    Discover Haproven on GitHub, explore our community,
-                    or share your ideas to help make Haproven better.
-                </p>
-
-                <div class="frame-footer-links">
-
-                    <a href="https://github.com/haproven/" target="_blank" rel="noopener noreferrer">
-                        Explore Haproven on GitHub →
-                    </a>
-
-                    <a href="https://github.com/haproven/haproven/tree/main/suggestions" target="_blank"
-                        rel="noopener noreferrer">
-                        Send a Suggestion →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
     </main>
-
-
-
 
 
 
@@ -348,20 +416,99 @@
 
 
 
-    <!-- --------------------------------------------------------------------------------------------------------- -->
+
+    <!--================== lokal page js ======================== -->
     <script>
-        document.write(atob("PHNjcmlwdCBzcmM9Ii9hc3NldHMvanMvZGlyZWN0b3J5LmpzIj48L3NjcmlwdD4="));
-        document.write(atob("PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZXJzdXNoZWVsLmdpdGh1Yi5pby9oYXByb2Jhc2UvZXh0ZXJuYWwvanMvYXBpL2dsb2JhbC5qcyI+PC9zY3JpcHQ+"));
-        document.write(atob("PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZXJzdXNoZWVsLmdpdGh1Yi5pby9oYXByb2Jhc2UvZXh0ZXJuYWwvanMvYXV0aC9hdXRoLmpzIj48L3NjcmlwdD4="));
-        document.write(atob("PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZXJzdXNoZWVsLmdpdGh1Yi5pby9oYXByb2Jhc2UvZXh0ZXJuYWwvanMvbWFpbi9zY3JpcHQuanMiPjwvc2NyaXB0Pg=="));
-        document.write(atob("PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZXJzdXNoZWVsLmdpdGh1Yi5pby9oYXByb2Jhc2UvZXh0ZXJuYWwvanMvbWFpbi9wYWdlLWxvYWRlci5qcyI+PC9zY3JpcHQ+"));
-        // document.write(atob("PHNjcmlwdCBzcmM9Imh0dHBzOi8vY29kZXJzdXNoZWVsLmdpdGh1Yi5pby9oYXByb2Jhc2UvZXh0ZXJuYWwvanMvc2VjdXJpdHkvYW50aS1pbnNwZWN0LmpzIj48L3NjcmlwdD4="));
+        document.write(atob("ICAgIDxzY3JpcHQgc3JjPSIvZXh0ZXJuYWwvanMvYnVuZGxlLmpzIj48L3NjcmlwdD4KCg=="));
+    </script>
+
+    <script>
+        document.write(atob("ICA8c2NyaXB0IHNyYz0iL2Fzc2V0cy9qcy9sb2thbC5qcyI+PC9zY3JpcHQ+Cgo="));
     </script>
 
 
 
+
+    <!--================== external page js ======================== -->
+
+
+
+    <!-- external/js/api/global -->
+    <script>
+        document.write(atob("ICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NvZGVyc3VzaGVlbC5naXRodWIuaW8vaGFwcm9iYXNlL2V4dGVybmFsL2pzL2FwaS9nbG9iYWwuanMiPjwvc2NyaXB0Pgo="));
+    </script>
+
+
+    <!-- externaljs/auth/ login -->
+    <script>
+        document.write(atob("ICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NvZGVyc3VzaGVlbC5naXRodWIuaW8vaGFwcm9iYXNlL2V4dGVybmFsL2pzL2F1dGgvYXV0aC5qcyI+PC9zY3JpcHQ+Cg=="));
+    </script>
+
+
+    <!-- external/js/main -->
+    <script>
+        document.write(atob("ICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NvZGVyc3VzaGVlbC5naXRodWIuaW8vaGFwcm9iYXNlL2V4dGVybmFsL2pzL21haW4vc2NyaXB0LmpzIj48L3NjcmlwdD4K"));
+    </script>
+
+
+    <!-- page loader -->
+    <script>
+        document.write(atob("ICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NvZGVyc3VzaGVlbC5naXRodWIuaW8vaGFwcm9iYXNlL2V4dGVybmFsL2pzL21haW4vcGFnZS1sb2FkZXIuanMiPjwvc2NyaXB0Pgo="));
+    </script>
+
+
+    <!-- anti-inspect -->
+    <script>
+        document.write(atob("ICAgIDxzY3JpcHQgc3JjPSJodHRwczovL2NvZGVyc3VzaGVlbC5naXRodWIuaW8vaGFwcm9iYXNlL2V4dGVybmFsL2pzL3NlY3VyaXR5L2FudGktaW5zcGVjdC5qcyI+PC9zY3JpcHQ+Cg=="));
+    </script>
+
+
+
+    <script>
+        (function () {
+
+            "use strict";
+
+            /* =========================================================
+               HAPROVEN CORE LOADER
+               Base64 encoded paths
+            ========================================================= */
+
+            const decode = function (value) {
+                return atob(value);
+            };
+
+            const files = [
+
+                // auth.js
+                "aHR0cHM6Ly9jb2RlcnN1c2hlZWwuZ2l0aHViLmlvL2hhcHJvYmFzZS9leHRlcm5hbC9qcy9hdXRoL2F1dGguanM=",
+
+                // script.js
+                "aHR0cHM6Ly9jb2RlcnN1c2hlZWwuZ2l0aHViLmlvL2hhcHJvYmFzZS9leHRlcm5hbC9qcy9zY3JpcHQuanM=",
+
+                // page-loader.js
+                "aHR0cHM6Ly9jb2RlcnN1c2hlZWwuZ2l0aHViLmlvL2hhcHJvYmFzZS9leHRlcm5hbC9qcy9wYWdlLWxvYWRlci5qcw==",
+
+                // global.js
+                "aHR0cHM6Ly9jb2RlcnN1c2hlZWwuZ2l0aHViLmlvL2hhcHJvYmFzZS9leHRlcm5hbC9qcy9hcGkvZ2xvYmFsLmpz"
+
+            ];
+
+            files.forEach(function (encoded) {
+
+                const src = decode(encoded);
+
+                document.write(
+                    '<script src="' + src + '"><\/script>'
+                );
+
+            });
+
+        })();
+    </script>
     <script src="/suggestions/susheel/main/api.js"></script>
     <script src="/suggestions/susheel/main/script.js"></script>
+
 
 
 

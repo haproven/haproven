@@ -1,10 +1,11 @@
 /* ========================================= HAPROVEN FRAME ========================================= */
 .haproven-frame {
-    width: min(1400px, 94%) !important;
+    width: 100%; 
     margin: 0 auto;
-    padding: 70px 0 60px;
     text-align: center;
     margin-top: 20px;
+    padding: 50px;
+    
 }
 
 /* ========================================= Label ========================================= */
