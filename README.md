@@ -57,68 +57,68 @@ Building a community-powered technology ecosystem for developers, students, crea
 
 <p align="center">
 
-<a href="https://github.com/haproven" title="haproven — Haproven GitHub Organization">
-  <img src="https://avatars.githubusercontent.com/u/279256795?v=4" width="90" height="90" alt="Haproven GitHub Organization">
+<a href="https://github.com/haproven" title="haproven — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/279256795?v=4" width="90" height="90" loading="lazy" alt="haproven — Haproven Contributor">
 </a>
 
-<a href="https://github.com/codersusheel" title="codersusheel — Haproven Founder">
-  <img src="https://avatars.githubusercontent.com/u/195109254?v=4" width="90" height="90" alt="Codersusheel — Founder of Haproven">
+<a href="https://github.com/codersusheel" title="codersusheel — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/195109254?v=4" width="90" height="90" loading="lazy" alt="codersusheel — Haproven Contributor">
 </a>
 
-<a href="https://github.com/coder-sk-2026" title="coder-sk-2026 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/310669286?v=4" width="90" height="90" alt="coder-sk-2026 GitHub Profile">
+<a href="https://github.com/coder-sk-2026" title="coder-sk-2026 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/310669286?v=4" width="90" height="90" loading="lazy" alt="coder-sk-2026 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/deepakyadav1425" title="deepakyadav1425 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/321023452?v=4" width="90" height="90" alt="deepakyadav1425 GitHub Profile">
+<a href="https://github.com/deepakyadav1425" title="deepakyadav1425 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/321023452?v=4" width="90" height="90" loading="lazy" alt="deepakyadav1425 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/susheel026" title="susheel026 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/199501106?v=4" width="90" height="90" alt="susheel026 GitHub Profile">
+<a href="https://github.com/susheel026" title="susheel026 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/199501106?v=4" width="90" height="90" loading="lazy" alt="susheel026 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/udaykumar25398-droid" title="udaykumar25398-droid — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/297070626?v=4" width="90" height="90" alt="udaykumar25398-droid GitHub Profile">
+<a href="https://github.com/udaykumar25398-droid" title="udaykumar25398-droid — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/297070626?v=4" width="90" height="90" loading="lazy" alt="udaykumar25398-droid — Haproven Contributor">
 </a>
 
-<a href="https://github.com/techiesusheel" title="techiesusheel — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/342510307?v=4" width="90" height="90" alt="techiesusheel GitHub Profile">
+<a href="https://github.com/techiesusheel" title="techiesusheel — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/342510307?v=4" width="90" height="90" loading="lazy" alt="techiesusheel — Haproven Contributor">
 </a>
 
-<a href="https://github.com/rajputhimanshusingh01" title="rajputhimanshusingh01 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/224974472?v=4" width="90" height="90" alt="rajputhimanshusingh01 GitHub Profile">
+<a href="https://github.com/rajputhimanshusingh01" title="rajputhimanshusingh01 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/224974472?v=4" width="90" height="90" loading="lazy" alt="rajputhimanshusingh01 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/raima-mondal2005" title="raima-mondal2005 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/221466727?v=4" width="90" height="90" alt="raima-mondal2005 GitHub Profile">
+<a href="https://github.com/raima-mondal2005" title="raima-mondal2005 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/221466727?v=4" width="90" height="90" loading="lazy" alt="raima-mondal2005 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/amansingh1182006" title="amansingh1182006 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/205407093?v=4" width="90" height="90" alt="amansingh1182006 GitHub Profile">
+<a href="https://github.com/amansingh1182006" title="amansingh1182006 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/205407093?v=4" width="90" height="90" loading="lazy" alt="amansingh1182006 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/vijaylaxmi88582-art" title="vijaylaxmi88582-art — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/263568971?v=4" width="90" height="90" alt="vijaylaxmi88582-art GitHub Profile">
+<a href="https://github.com/vijaylaxmi88582-art" title="vijaylaxmi88582-art — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/263568971?v=4" width="90" height="90" loading="lazy" alt="vijaylaxmi88582-art — Haproven Contributor">
 </a>
 
-<a href="https://github.com/teerthroymcpe" title="teerthroymcpe — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/223886330?v=4" width="90" height="90" alt="teerthroymcpe GitHub Profile">
+<a href="https://github.com/teerthroymcpe" title="teerthroymcpe — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/223886330?v=4" width="90" height="90" loading="lazy" alt="teerthroymcpe — Haproven Contributor">
 </a>
 
-<a href="https://github.com/Swalih-05" title="Swalih-05 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/201027180?v=4" width="90" height="90" alt="Swalih-05 GitHub Profile">
+<a href="https://github.com/Swalih-05" title="Swalih-05 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/201027180?v=4" width="90" height="90" loading="lazy" alt="Swalih-05 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/surajpaniyara102-web" title="surajpaniyara102-web — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/240368312?v=4" width="90" height="90" alt="surajpaniyara102-web GitHub Profile">
+<a href="https://github.com/surajpaniyara102-web" title="surajpaniyara102-web — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/240368312?v=4" width="90" height="90" loading="lazy" alt="surajpaniyara102-web — Haproven Contributor">
 </a>
 
-<a href="https://github.com/shivamrai26" title="shivamrai26 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/285886682?v=4" width="90" height="90" alt="shivamrai26 GitHub Profile">
+<a href="https://github.com/shivamrai26" title="shivamrai26 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/285886682?v=4" width="90" height="90" loading="lazy" alt="shivamrai26 — Haproven Contributor">
 </a>
 
-<a href="https://github.com/Kushagra1001" title="Kushagra1001 — Haproven Community">
-  <img src="https://avatars.githubusercontent.com/u/146299482?v=4" width="90" height="90" alt="Kushagra1001 GitHub Profile">
+<a href="https://github.com/Kushagra1001" title="Kushagra1001 — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/146299482?v=4" width="90" height="90" loading="lazy" alt="Kushagra1001 — Haproven Contributor">
 </a>
 
 </p>
