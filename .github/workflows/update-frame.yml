@@ -1,3 +1,4 @@
+
 name: Update Haproven Frame
 
 on:
@@ -9,9 +10,16 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - "README.md"
+      - "data/contributors.json"
 
 permissions:
   contents: write
+
+concurrency:
+  group: haproven-frame
+  cancel-in-progress: false
 
 jobs:
   update-frame:
@@ -20,72 +28,349 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
-      - name: Generate Haproven Frame
+      - name: Generate Haproven Frame and JSON
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           python <<'PY'
           import json
           import os
+          import time
           import urllib.request
+          import urllib.error
           from pathlib import Path
+          from datetime import datetime, timezone
+          from html import escape
 
           OWNER = "haproven"
-          REPO = "haproven"
+
           README = Path("README.md")
+          JSON_FILE = Path("data/contributors.json")
 
           START = "<!-- HAPROVEN-FRAME:START -->"
           END = "<!-- HAPROVEN-FRAME:END -->"
 
-          url = (
-              f"https://api.github.com/repos/"
-              f"{OWNER}/{REPO}/contributors?per_page=100"
+          TOKEN = os.environ["GH_TOKEN"]
+
+          API = "https://api.github.com"
+
+          HEADERS = {
+              "Accept": "application/vnd.github+json",
+              "Authorization": f"Bearer {TOKEN}",
+              "X-GitHub-Api-Version": "2022-11-28",
+              "User-Agent": "Haproven-Frame"
+          }
+
+          # ==========================================
+          # GITHUB API
+          # ==========================================
+
+          def api_get(url):
+              request = urllib.request.Request(
+                  url,
+                  headers=HEADERS
+              )
+
+              for attempt in range(3):
+                  try:
+                      with urllib.request.urlopen(
+                          request,
+                          timeout=25
+                      ) as response:
+                          return json.load(response)
+
+                  except urllib.error.HTTPError as error:
+                      if error.code == 409:
+                          return []
+
+                      if error.code in (403, 429, 500, 502, 503, 504):
+                          if attempt < 2:
+                              time.sleep(3 * (attempt + 1))
+                              continue
+
+                      raise
+
+                  except (TimeoutError, urllib.error.URLError):
+                      if attempt < 2:
+                          time.sleep(3 * (attempt + 1))
+                          continue
+                      raise
+
+          # ==========================================
+          # PAGINATION
+          # ==========================================
+
+          def fetch_all(base_url):
+              results = []
+              page = 1
+
+              while True:
+                  separator = "&" if "?" in base_url else "?"
+
+                  url = (
+                      f"{base_url}{separator}"
+                      f"per_page=100&page={page}"
+                  )
+
+                  data = api_get(url)
+
+                  if not isinstance(data, list):
+                      raise RuntimeError(
+                          f"Invalid GitHub response: {url}"
+                      )
+
+                  results.extend(data)
+
+                  if len(data) < 100:
+                      break
+
+                  page += 1
+
+              return results
+
+          # ==========================================
+          # FILTER BOTS
+          # ==========================================
+
+          BOT_NAMES = {
+              "github-actions",
+              "dependabot",
+              "renovate",
+              "codecov",
+              "greenkeeper",
+              "snyk-bot",
+              "semantic-release-bot",
+              "imgbot"
+          }
+
+          def is_human(user):
+              login = str(user.get("login") or "").lower()
+
+              return (
+                  user.get("type") == "User"
+                  and bool(login)
+                  and not login.endswith("[bot]")
+                  and not login.endswith("-bot")
+                  and not login.endswith("_bot")
+                  and login not in BOT_NAMES
+              )
+
+          # ==========================================
+          # FETCH ORGANIZATION REPOSITORIES
+          # ==========================================
+
+          print("Fetching Haproven repositories...")
+
+          repositories = fetch_all(
+              f"{API}/orgs/{OWNER}/repos?type=public"
           )
 
-          request = urllib.request.Request(
-              url,
-              headers={
-                  "Accept": "application/vnd.github+json",
-                  "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
-                  "X-GitHub-Api-Version": "2022-11-28",
-                  "User-Agent": "Haproven-Frame"
-              }
-          )
-
-          with urllib.request.urlopen(request) as response:
-              contributors = json.load(response)
-
-          # Only GitHub users, not anonymous contributors
-          contributors = [
-              user for user in contributors
-              if user.get("type") == "User"
-              and user.get("login")
-              and user.get("avatar_url")
-              and user.get("html_url")
+          repositories = [
+              repo for repo in repositories
+              if not repo.get("disabled")
           ]
+
+          print(
+              f"Found {len(repositories)} public repositories."
+          )
+
+          # ==========================================
+          # COLLECT ALL CONTRIBUTORS
+          # ==========================================
+
+          users = {}
+
+          for repo in repositories:
+              repo_name = repo["name"]
+
+              print(f"Checking: {repo_name}")
+
+              url = (
+                  f"{API}/repos/{OWNER}/"
+                  f"{repo_name}/contributors"
+              )
+
+              contributors = fetch_all(url)
+
+              for person in contributors:
+                  if not is_human(person):
+                      continue
+
+                  username = person["login"]
+                  key = username.lower()
+
+                  if key not in users:
+                      users[key] = {
+                          "login": username,
+                          "name": username,
+                          "bio": "",
+                          "avatar_url": person.get(
+                              "avatar_url", ""
+                          ),
+                          "html_url": person.get(
+                              "html_url",
+                              f"https://github.com/{username}"
+                          ),
+                          "contributions": 0,
+                          "repoCount": 0,
+                          "repositories": []
+                      }
+
+                  user = users[key]
+
+                  count = int(
+                      person.get("contributions", 0)
+                  )
+
+                  user["contributions"] += count
+
+                  user["repositories"].append({
+                      "name": repo_name,
+                      "url": repo.get("html_url", ""),
+                      "contributions": count
+                  })
+
+                  user["repoCount"] = len(
+                      user["repositories"]
+                  )
+
+              print(
+                  f"  Human contributors: "
+                  f"{sum(is_human(p) for p in contributors)}"
+              )
+
+          # ==========================================
+          # SORT CONTRIBUTORS
+          # ==========================================
+
+          members = sorted(
+              users.values(),
+              key=lambda user: (
+                  -user["contributions"],
+                  user["login"].lower()
+              )
+          )
+
+          # ==========================================
+          # LOAD PROFILE INFORMATION
+          # ==========================================
+
+          for member in members:
+              username = member["login"]
+
+              try:
+                  profile = api_get(
+                      f"{API}/users/{username}"
+                  )
+
+                  member["name"] = (
+                      profile.get("name") or username
+                  )
+
+                  member["bio"] = (
+                      profile.get("bio") or ""
+                  )
+
+                  member["avatar_url"] = (
+                      profile.get("avatar_url")
+                      or member["avatar_url"]
+                  )
+
+              except Exception as error:
+                  print(
+                      f"Profile details skipped: "
+                      f"{username} - {error}"
+                  )
+
+              member["repositories"].sort(
+                  key=lambda repo: -repo["contributions"]
+              )
+
+          for index, member in enumerate(members, 1):
+              member["rank"] = index
+
+          # ==========================================
+          # GENERATE JSON
+          # ==========================================
+
+          total_contributions = sum(
+              member["contributions"]
+              for member in members
+          )
+
+          data = {
+              "organization": OWNER,
+              "generatedAt": datetime.now(
+                  timezone.utc
+              ).isoformat(),
+              "totalRepositories": len(repositories),
+              "totalMembers": len(members),
+              "totalContributions": total_contributions,
+              "topContributors": members[:3],
+              "members": members
+          }
+
+          JSON_FILE.parent.mkdir(
+              parents=True,
+              exist_ok=True
+          )
+
+          JSON_FILE.write_text(
+              json.dumps(
+                  data,
+                  indent=2,
+                  ensure_ascii=False
+              ) + "\n",
+              encoding="utf-8"
+          )
+
+          print(
+              f"JSON generated: {JSON_FILE}"
+          )
+
+          # ==========================================
+          # GENERATE README FRAME
+          # ==========================================
 
           frame = [
               '<p align="center">',
               ''
           ]
 
-          for user in contributors:
-              username = user["login"]
-              profile = user["html_url"]
-              avatar = user["avatar_url"]
+          for member in members:
+              username = member["login"]
+              profile = member["html_url"]
+              avatar = member["avatar_url"]
 
-              frame.append(
-                  f'<a href="{profile}" '
-                  f'title="{username} — Haproven Contributor">'
+              safe_name = escape(
+                  username,
+                  quote=True
+              )
+
+              safe_profile = escape(
+                  profile,
+                  quote=True
+              )
+
+              safe_avatar = escape(
+                  avatar,
+                  quote=True
               )
 
               frame.append(
-                  f'  <img src="{avatar}" '
+                  f'<a href="{safe_profile}" '
+                  f'title="{safe_name} — Haproven Contributor">'
+              )
+
+              frame.append(
+                  f'  <img src="{safe_avatar}" '
                   f'width="90" '
                   f'height="90" '
                   f'loading="lazy" '
-                  f'alt="{username} — Haproven Contributor">'
+                  f'alt="{safe_name} — Haproven Contributor">'
               )
 
               frame.append("</a>")
@@ -95,20 +380,31 @@ jobs:
 
           generated_frame = "\n".join(frame)
 
-          content = README.read_text(encoding="utf-8")
+          # ==========================================
+          # UPDATE README BETWEEN MARKERS
+          # ==========================================
+
+          content = README.read_text(
+              encoding="utf-8"
+          )
 
           if START not in content:
               raise SystemExit(
-                  "HAPROVEN-FRAME:START marker not found in README.md"
+                  "HAPROVEN-FRAME:START marker missing"
               )
 
           if END not in content:
               raise SystemExit(
-                  "HAPROVEN-FRAME:END marker not found in README.md"
+                  "HAPROVEN-FRAME:END marker missing"
               )
 
           start = content.index(START) + len(START)
           end = content.index(END)
+
+          if end < start:
+              raise SystemExit(
+                  "Invalid README Frame marker order"
+              )
 
           new_content = (
               content[:start]
@@ -123,22 +419,32 @@ jobs:
               encoding="utf-8"
           )
 
-          print(
-              f"Haproven Frame updated with "
-              f"{len(contributors)} contributors."
-          )
+          # ==========================================
+          # SUMMARY
+          # ==========================================
+
+          print("\n==============================")
+          print("HAPROVEN FRAME UPDATED")
+          print("==============================")
+          print(f"Repositories: {len(repositories)}")
+          print(f"Contributors: {len(members)}")
+          print(f"Contributions: {total_contributions}")
+          print("README: Updated")
+          print("JSON: Generated")
+          print("==============================")
+
           PY
 
-      - name: Commit updated Frame
+      - name: Commit updated Frame and JSON
         run: |
           git config user.name "Haproven Frame Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add README.md
+          git add README.md data/contributors.json
 
           if git diff --cached --quiet; then
             echo "No Frame changes."
           else
-            git commit -m "chore: update Haproven Frame"
+            git commit -m "chore: update Haproven Frame and contributors JSON"
             git push
           fi

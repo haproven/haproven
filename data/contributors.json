@@ -1,0 +1,33 @@
+
+{
+  "organization": "haproven",
+  "generatedAt": "2026-10-24T00:00:00Z",
+  "totalRepositories": 3,
+  "totalMembers": 2,
+  "totalContributions": 85,
+  "topContributors": [
+    {
+      "login": "exampledev",
+      "name": "Example Developer",
+      "bio": "Full Stack Developer",
+      "avatar_url": "https://github.com/exampledev.png",
+      "html_url": "https://github.com/exampledev",
+      "contributions": 60,
+      "repoCount": 2,
+      "rank": 1,
+      "repositories": [
+        {
+          "name": "HaproID",
+          "url": "https://github.com/haproven/HaproID",
+          "contributions": 40
+        },
+        {
+          "name": "haproven",
+          "url": "https://github.com/haproven/haproven",
+          "contributions": 20
+        }
+      ]
+    }
+  ],
+  "members": []
+}
