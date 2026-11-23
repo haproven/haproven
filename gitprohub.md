@@ -35,7 +35,7 @@ protocol: GitProHub
 version: 1.0
 id: haproven
 name: Haproven
-owner: codersusheel
-repository: https://github.com/codersusheel/haproven
+owner: haproven
+repository: https://github.com/haproven/haproven
 description: Hackathons, Projects, Events & Technology.
 status: active
