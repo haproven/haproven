@@ -85,6 +85,10 @@ Building a community-powered technology ecosystem for developers, students, crea
   <img src="https://avatars.githubusercontent.com/u/342510307?v=4" width="90" height="90" loading="lazy" alt="techiesusheel — Haproven Contributor">
 </a>
 
+<a href="https://github.com/svsthali-arch" title="svsthali-arch — Haproven Contributor">
+  <img src="https://avatars.githubusercontent.com/u/361015439?v=4" width="90" height="90" loading="lazy" alt="svsthali-arch — Haproven Contributor">
+</a>
+
 <a href="https://github.com/rajputhimanshusingh01" title="rajputhimanshusingh01 — Haproven Contributor">
   <img src="https://avatars.githubusercontent.com/u/224974472?v=4" width="90" height="90" loading="lazy" alt="rajputhimanshusingh01 — Haproven Contributor">
 </a>
