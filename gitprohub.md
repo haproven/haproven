@@ -15,4 +15,4 @@ name: Haproven
 owner: haproven
 repository: https://github.com/haproven/haproven
 description: Hackathons, Projects, Events & Technology.
-status: disabled
+status: verified
